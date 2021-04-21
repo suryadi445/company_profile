@@ -1,0 +1,132 @@
+/* slider */
+.carousel-item {
+	height: 600px;
+}
+
+.carousel-item img {
+	margin-top: -100px;
+}
+
+.carousel-item .display-4 {
+	margin-top: -340px;
+}
+
+#about h2 {
+	margin-top: 15px;
+}
+
+/* hubungi_kami */
+#hubungi_kami {
+	background-image: url(../image/work.jpg);
+	background-size: cover;
+	background-position: 0 -385px;
+	background-repeat: no-repeat;
+}
+
+
+/* media query */
+/* tablet */
+@media (max-width:768px) {
+	.carousel-inner .carousel-item img {
+		height: 550px;
+	}
+
+	.container button {
+		margin-right: 70px;
+	}
+
+	.carousel-item img {
+		height: 550px;
+		width: 30%;
+	}
+
+	.carousel-item img {
+		width: 40px;
+	}
+
+	#about {
+		margin-top: -160px;
+	}
+
+	#gambar img {
+		width: 93%;
+	}
+
+	#hubungi_kami {
+		width: 90%;
+		margin-left: 20px;
+	}
+
+	#sejarah {
+		margin-left: 20px;
+		width: 90%;
+	}
+
+	#contact {
+		margin-left: 20px;
+		width: 90%;
+	}
+
+	.form-group label {
+		display: flex;
+	}
+
+	footer {
+		width: 93%;
+	}
+}
+
+
+
+/* smartphone */
+@media (min-device-width: 360px) and (max-width:576px) {
+	.carousel-inner .carousel-item img {
+		height: 550px;
+	}
+
+	.container button {
+		margin-right: -10px;
+	}
+
+	.carousel-item img {
+		height: 550px;
+		width: 30%;
+	}
+
+	.carousel-item img {
+		width: 40px;
+	}
+
+
+	#gambar img {
+		width: 100%;
+	}
+
+	#hubungi_kami {
+		width: 93%;
+		margin-left: 20px;
+		text-align: center;
+	}
+
+	#hubungi {
+		margin-left: 32px;
+	}
+
+	#sejarah {
+		margin-left: 20px;
+		width: 93%;
+	}
+
+	#contact {
+		margin-left: 20px;
+		width: 93%;
+	}
+
+	.form-group label {
+		display: flex;
+	}
+
+	footer {
+		width: 100%;
+	}
+}
