@@ -1,3 +1,18 @@
+.garis_vertikal {
+	color: goldenrod;
+	margin-top: 7px;
+}
+
+ul.navbar-nav a:hover {
+	color: goldenrod !important;
+}
+
+ul.navbar-nav a {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+
+
 /* slider */
 .carousel-item {
 	height: 600px;
@@ -11,122 +26,193 @@
 	margin-top: -340px;
 }
 
-#about h2 {
-	margin-top: 15px;
+.carousel-caption a {
+	width: 230px;
+	border-radius: 0%;
+	margin-top: 30px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-/* hubungi_kami */
-#hubungi_kami {
-	background-image: url(../image/work.jpg);
-	background-size: cover;
-	background-position: 0 -385px;
-	background-repeat: no-repeat;
+.carousel-caption a:hover {
+	color: black;
+	width: 230px;
+	font-weight: bold;
 }
 
-
-/* media query */
-/* tablet */
-@media (max-width:768px) {
-	.carousel-inner .carousel-item img {
-		height: 550px;
-	}
-
-	.container button {
-		margin-right: 70px;
-	}
-
-	.carousel-item img {
-		height: 550px;
-		width: 30%;
-	}
-
-	.carousel-item img {
-		width: 40px;
-	}
-
-	#about {
-		margin-top: -160px;
-	}
-
-	#gambar img {
-		width: 93%;
-	}
-
-	#hubungi_kami {
-		width: 90%;
-		margin-left: 20px;
-	}
-
-	#sejarah {
-		margin-left: 20px;
-		width: 90%;
-	}
-
-	#contact {
-		margin-left: 20px;
-		width: 90%;
-	}
-
-	.form-group label {
-		display: flex;
-	}
-
-	footer {
-		width: 93%;
-	}
+.btn_carousel_daftar {
+	color: white;
+	width: 230px;
+	margin-right: 40px;
+	background-color: goldenrod;
 }
 
+.btn_carousel_masuk {
+	color: goldenrod;
+	width: 230px;
+	margin-left: 40px;
+	background-color: white;
+}
 
+.carousel-control-prev-icon {
+	width: 30px;
+	height: 70px;
+	margin-top: 25px;
+}
 
-/* smartphone */
-@media (min-device-width: 360px) and (max-width:576px) {
-	.carousel-inner .carousel-item img {
-		height: 550px;
-	}
+.carousel-control-next-icon {
+	width: 30px;
+	height: 70px;
+	margin-top: 25px;
+}
 
-	.container button {
-		margin-right: -10px;
-	}
+.carousel-indicators li {
+	width: 40px;
+	height: 10px;
+	background-color: goldenrod;
+}
 
-	.carousel-item img {
-		height: 550px;
-		width: 30%;
-	}
+/* akhir slider */
 
-	.carousel-item img {
-		width: 40px;
-	}
+/* rekomendasi */
+#rekomendasi {
+	margin-left: 30px;
+	margin-right: 30px;
+}
 
+.gambar_rekomendasi {
+	width: 100%;
+	height: 300px;
+	border-radius: 5%;
+}
 
-	#gambar img {
-		width: 100%;
-	}
+.btn_rekomendasi {
+	background-color: rgb(228, 0, 0);
+	width: 150px;
+	color: white;
+	outline: none;
+}
 
-	#hubungi_kami {
-		width: 93%;
-		margin-left: 20px;
-		text-align: center;
-	}
+.btn_rekomendasi:hover {
+	width: 150px;
+	font-weight: bold;
+	color: white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	outline: none;
+}
 
-	#hubungi {
-		margin-left: 32px;
-	}
+/* akhir rekomendasi */
 
-	#sejarah {
-		margin-left: 20px;
-		width: 93%;
-	}
+/* modal */
+#exampleModalLabel {
+	font-size: 22px;
+	color: goldenrod;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-	#contact {
-		margin-left: 20px;
-		width: 93%;
-	}
+#harga_modal {
+	color: red;
+	text-align: left;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
-	.form-group label {
-		display: flex;
-	}
+.modal-footer button {
+	width: 140px;
+}
 
-	footer {
-		width: 100%;
-	}
+/* akhir modal */
+
+/* loker */
+#loker {
+	height: 500px;
+	background-color: white;
+}
+
+.gambar_loker {
+	height: 500px;
+}
+
+.btn_merah {
+	background-color: red;
+	color: white;
+	font-weight: bold;
+}
+
+.btn_merah:hover {
+	background-color: rgb(184, 3, 3);
+	color: white;
+	font-weight: bold;
+}
+
+/* akhir loker */
+
+/* Atas footer */
+#atas_footer {
+	height: 400px;
+}
+
+.list_about {
+	color: rgb(151, 151, 151);
+	font-size: 16px;
+	padding-top: 5px;
+	text-decoration: none;
+}
+
+.list_about:hover {
+	color: rgb(255, 187, 0);
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.gambar_footer {
+	height: 180px;
+	width: 80%;
+}
+
+.logo {
+	font-size: 25px;
+}
+
+#facebook {
+	color: rgb(0, 0, 192);
+}
+
+#instagram {
+	color: rgb(255, 29, 29);
+}
+
+#twitter {
+	color: rgb(66, 66, 255);
+}
+
+#youtube {
+	color: rgb(216, 0, 0);
+}
+
+#email {
+	color: rgb(175, 22, 22);
+}
+
+/* Bawah footer */
+
+/* footer */
+footer {
+	color: rgb(82, 82, 82);
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 14px;
+	background-color: rgb(240, 240, 240);
+}
+
+#kebijakan,
+#syarat {
+	color: rgb(82, 82, 82);
+	text-decoration: none;
+	font-size: 16px;
+}
+
+#kebijakan:hover,
+#syarat:hover {
+	font-size: 16px;
+	color: rgb(255, 187, 0);
+	text-decoration: none;
 }

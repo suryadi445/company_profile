@@ -7,7 +7,7 @@
 <!-- sweetalert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-<script>
+<!-- <script>
     $(document).ready(function() {
         Swal.fire({
             title: 'SELAMAT DATANG DI PT. WEBSOLUTION',
@@ -21,7 +21,7 @@
   `
         })
     })
-</script>
+</script> -->
 </body>
 
 </html>

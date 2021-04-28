@@ -9,16 +9,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#home">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-light" href="#beranda">Beranda <span class="sr-only">(current)</span></a>
                     </li>
+                    <span class="garis_vertikal"> | </span>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#about">About Us</a>
+                        <a class="nav-link text-light" href="#menu">Menu</a>
                     </li>
+                    <span class="garis_vertikal"> | </span>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#hubungi_kami">Hubungi Kami</a>
+                        <a class="nav-link text-light" href="#outlet">Outlet</a>
                     </li>
+                    <span class="garis_vertikal"> | </span>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#contact">Contact</a>
+                        <a class="nav-link text-light" href="#promo">Promo</a>
                     </li>
                 </ul>
             </div>
@@ -37,7 +40,8 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4"><b>WEBSOLUTION</b></h1>
                     <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di Proyek Implementasi dan Konsultasi Teknologi Informasi</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Kunjungi</a>
+                    <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
+                    <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -45,7 +49,8 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4"><b>WEBSOLUTION</b></h1>
                     <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di Proyek Implementasi dan Konsultasi Teknologi Informasi</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Kunjungi</a>
+                    <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
+                    <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -53,7 +58,8 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4"><b>WEBSOLUTION</b></h1>
                     <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di Proyek Implementasi dan Konsultasi Teknologi Informasi</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Kunjungi</a>
+                    <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
+                    <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
                 </div>
             </div>
         </div>
@@ -67,23 +73,243 @@
         </a>
     </div>
 
-    <section id="about" class="mb-3">
-        <h2 class="text-center">About US</h2>
-        <div class="container">
-            <div class="row" id="vimi">
-                <div class="col-6">
-                    <h3 class="text-center">Visi</h3>
-                    <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit labore facere quos dolor at impedit, veritatis architecto mollitia rerum commodi voluptatum omnis ab alias, maiores officia sed excepturi vel! Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nesciunt deserunt quam veniam, quidem fugiat aliquid accusantium et dicta vel atque expedita qui illo libero quos earum dolorem laudantium laborum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eos odit voluptatum culpa quis asperiores quisquam eveniet itaque omnis porro adipisci tenetur ea tempore quod? Vel sed facilis voluptate quo?</p>
-                    <h3 class="text-center">Misi</h3>
-                    <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit labore facere quos dolor at impedit, veritatis architecto mollitia rerum commodi voluptatum omnis ab alias, maiores officia sed excepturi vel! Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nesciunt deserunt quam veniam, quidem fugiat aliquid accusantium et dicta vel atque expedita qui illo libero quos earum dolorem laudantium laborum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eos odit voluptatum culpa quis asperiores quisquam eveniet itaque omnis porro adipisci tenetur ea tempore quod? Vel sed facilis voluptate quo?</p>
+    <section id="rekomendasi" class="mb-3">
+        <h2 class="text-center">Rekomendasi</h2>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 mt-5" id="gambar">
-                    <img src="<?= base_url('assets/image/technology.jpg') ?>" height="480px" width="550px">
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="loker">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="<?= base_url('assets/image/join.jpg') ?>" class="gambar_loker card-img-top" alt="gambar loker">
+                        </div>
+                        <div class="col-lg-6">
+                            <h1>JADILAH BAGIAN DARI KELUARGA KAMI</h1>
+                            <p>Di PT. Surya_Resto, kami lebih dari sekadar bisnis. Kami adalah komunitas tempat Anda berlatih keterampilan hidup dan sebagai wadah untuk mengejar serta mewujudkan impianmu.</p>
+                            <div class="text-center mt-5">
+                                <a href="" class="btn btn_merah">LIHAT LOWONGAN</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="pt-5" id="atas_footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h3 class=" ml-3 mb-3" id="surya_resto">Surya_Resto</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 mt-2">
+                                        <a href="#" class="text-capitalized list_about">Hubungi kami</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 mt-2">
+                                        <a href="#" class="text-capitalized list_about">Tentang Kami</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 mt-2">
+                                        <a href="#" class="text-capitalized list_about">Karier</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 mt-2">
+                                        <a href="#" class="text-capitalized list_about">CSR</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 mt-2">
+                                        <a href="#" class="text-capitalized list_about">Layanan</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_footer card-img-top" alt="gambar footer">
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="container">
+                                <h3 class="text-center mb-3" id="ikuti_kami">Ikuti Kami</h3>
+                                <div class="row">
+                                    <div class="col-lg-3 text-center">
+                                        <a href="">
+                                            <i class="fab fa-facebook-f logo" id="facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <a href="">
+                                            <i class="fab fa-instagram logo" id="instagram"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <a href="">
+                                            <i class="fab fa-twitter logo" id="twitter"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <a href="">
+                                            <i class="fab fa-youtube logo" id="youtube"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 text-center" for="facebook">
+                                        <p>Facebook</p>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <p>Instagram</p>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <p>Twitter</p>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <p>Youtube</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center mt-3">
+                                    <a href="">
+                                        <i class="fas fa-envelope text-center logo" id="email">
+                                        </i>
+                                    </a>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <p>Suryadi.hhb@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row ml-1 mt-1 pb-1">
+                <div class="col-lg-12 text-left">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <i class="far fa-copyright"></i>
+                            PT. SURYADI INDONESIA
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="container">
+                                <div class="row float-right">
+                                    <!-- <div class="col-lg-6"> -->
+                                    <a href="" class="mr-3" id="kebijakan">Kebijakan Privasi</a>
+                                    <!-- </div> -->
+                                    <!-- <div class="col-lg-6"> -->
+                                    <a href="" class="mr-3" id="syarat">Syarat & Ketentuan</a>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 
     <section id="hubungi_kami" class="bg-secondary pt-3 pb-3">
         <div class="container">
             <div class="row">
@@ -204,14 +430,41 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <footer class="bg-dark text-white pt-1">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <p>Copyright <i class="far fa-copyright"></i><?= date(' Y') ?> PT. WEBSOLUTION</p>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">PAKET ABC</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                                </div>
+                                <div class="col-lg-6 ml-auto">
+                                    <h3 id="harga_modal">Rp. 30.000,-</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sapiente libero at est commodi voluptates hic fugit omnis? Voluptatum dolorem saepe placeat tempora eveniet repellendus rem cumque voluptatibus dignissimos temporibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                        Kembali</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                        Pesan</button>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
