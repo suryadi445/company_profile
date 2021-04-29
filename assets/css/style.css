@@ -216,3 +216,118 @@ footer {
 	color: rgb(255, 187, 0);
 	text-decoration: none;
 }
+
+
+
+/* media query home */
+
+/* smartphone */
+@media (max-width:575.98px) {
+	.garis_vertikal {
+		visibility: hidden;
+	}
+
+	.carousel-item img {
+		height: 600px;
+	}
+
+	ol li {
+		margin-top: -110px;
+	}
+
+	#rekomendasi {
+		margin-top: -100px;
+	}
+
+	.btn_rekomendasi {
+		display: inline;
+		width: 110px;
+		font-size: 14px;
+	}
+
+	#atas_footer {
+		margin-top: 330px;
+	}
+
+	#row_logo .col-lg-3 {
+		margin-top: 3px;
+	}
+
+	#text_sosmed {
+		visibility: hidden;
+		margin-bottom: -165px;
+	}
+
+	#email {
+		position: relative;
+		/* margin-bottom: 400px; */
+	}
+
+	footer {
+		margin-top: 300px;
+		padding-bottom: 15px;
+	}
+
+	#pt_suryadi {
+		text-align: center;
+	}
+}
+
+/* tab */
+@media (min-width: 576px) and (max-width: 991.98px) {
+	.garis_vertikal {
+		visibility: hidden;
+	}
+
+	.carousel-item img {
+		height: 600px;
+	}
+
+	.btn_carousel_daftar {
+		margin-left: -10px;
+	}
+
+
+	ol li {
+		margin-top: -120px;
+	}
+
+	#rekomendasi {
+		margin-top: -90px;
+	}
+
+	.btn_rekomendasi {
+		display: block;
+		width: 140px;
+		font-size: 14px;
+		margin-right: 4px;
+	}
+
+	.card-body h5 {
+		text-align: center;
+	}
+
+	#atas_footer {
+		margin-top: 230px;
+	}
+
+	#row_logo .col-lg-3 {
+		margin-top: 3px;
+	}
+
+	#text_sosmed {
+		visibility: hidden;
+		margin-bottom: -165px;
+	}
+
+	footer {
+		margin-top: 300px;
+		padding-bottom: 15px;
+	}
+
+	#pt_suryadi {
+		text-align: center;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}

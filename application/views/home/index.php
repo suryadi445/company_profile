@@ -1,31 +1,31 @@
 <body id="home">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand text-light" href="#">PT. WEBSOLUTION</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="#beranda">Beranda <span class="sr-only">(current)</span></a>
-                    </li>
-                    <span class="garis_vertikal"> | </span>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#menu">Menu</a>
-                    </li>
-                    <span class="garis_vertikal"> | </span>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#outlet">Outlet</a>
-                    </li>
-                    <span class="garis_vertikal"> | </span>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#promo">Promo</a>
-                    </li>
-                </ul>
-            </div>
+        <!-- <div class="container"> -->
+        <a class="navbar-brand text-light ml-3" href="#">PT. SURYA_RESTO</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto mr-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#beranda">Beranda <span class="sr-only">(current)</span></a>
+                </li>
+                <span class="garis_vertikal"> | </span>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#menu">Menu</a>
+                </li>
+                <span class="garis_vertikal"> | </span>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#outlet">Outlet</a>
+                </li>
+                <span class="garis_vertikal"> | </span>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#promo">Promo</a>
+                </li>
+            </ul>
         </div>
+        <!-- </div> -->
     </nav>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -230,7 +230,7 @@
                         <div class="col-lg-4">
                             <div class="container">
                                 <h3 class="text-center mb-3" id="ikuti_kami">Ikuti Kami</h3>
-                                <div class="row">
+                                <div class="row" id="row_logo">
                                     <div class="col-lg-3 text-center">
                                         <a href="">
                                             <i class="fab fa-facebook-f logo" id="facebook"></i>
@@ -252,7 +252,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" id="text_sosmed">
                                     <div class="col-lg-3 text-center" for="facebook">
                                         <p>Facebook</p>
                                     </div>
@@ -266,7 +266,7 @@
                                         <p>Youtube</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 text-center mt-3">
+                                <div class="col-lg-12 text-center mt-3" id="wrap_email">
                                     <a href="">
                                         <i class="fas fa-envelope text-center logo" id="email">
                                         </i>
@@ -287,7 +287,7 @@
         <div class="container-fluid">
             <div class="row ml-1 mt-1 pb-1">
                 <div class="col-lg-12 text-left">
-                    <div class="row">
+                    <div class="row" id="pt_suryadi">
                         <div class="col-lg-6">
                             <i class="far fa-copyright"></i>
                             PT. SURYADI INDONESIA
