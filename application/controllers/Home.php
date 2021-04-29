@@ -11,4 +11,13 @@ class Home extends CI_Controller
         $this->load->view('home/index');
         $this->load->view('templates/footer');
     }
+
+    public function hubungi_kami()
+    {
+        $data['judul'] = 'Hubungi Kami';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('footer/hubungi_kami');
+        $this->load->view('templates/footer');
+    }
 }

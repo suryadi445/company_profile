@@ -8,7 +8,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="#" class="text-capitalized list_about">Hubungi kami</a>
+                                    <a href="<?= base_url('home/hubungi_kami') ?>" class="text-capitalized list_about">Hubungi kami</a>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -45,22 +45,22 @@
                             <h3 class="text-center mb-3" id="ikuti_kami">Ikuti Kami</h3>
                             <div class="row" id="row_logo">
                                 <div class="col-lg-3 text-center">
-                                    <a href="">
+                                    <a href="https://facebook.com/suryadi.hobe/">
                                         <i class="fab fa-facebook-f logo" id="facebook"></i>
                                     </a>
                                 </div>
                                 <div class="col-lg-3 text-center">
-                                    <a href="">
+                                    <a href="https://www.instagram.com/suryadi_moksc/">
                                         <i class="fab fa-instagram logo" id="instagram"></i>
                                     </a>
                                 </div>
                                 <div class="col-lg-3 text-center">
-                                    <a href="">
+                                    <a href="https://www.twitter.com/">
                                         <i class="fab fa-twitter logo" id="twitter"></i>
                                     </a>
                                 </div>
                                 <div class="col-lg-3 text-center">
-                                    <a href="">
+                                    <a href="https://www.youtube.com/">
                                         <i class="fab fa-youtube logo" id="youtube"></i>
                                     </a>
                                 </div>
