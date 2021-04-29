@@ -1,3 +1,135 @@
+<section class="pt-5" id="atas_footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h3 class=" ml-3 mb-3" id="surya_resto">Surya_Resto</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="col-lg-12 mt-2">
+                                    <a href="#" class="text-capitalized list_about">Hubungi kami</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="col-lg-12 mt-2">
+                                    <a href="#" class="text-capitalized list_about">Tentang Kami</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="col-lg-12 mt-2">
+                                    <a href="#" class="text-capitalized list_about">Karier</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="col-lg-12 mt-2">
+                                    <a href="#" class="text-capitalized list_about">CSR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="col-lg-12 mt-2">
+                                    <a href="#" class="text-capitalized list_about">Layanan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <img src="<?= base_url('assets/image/logo_resto.png') ?>" class="gambar_footer card-img-top" alt="gambar footer">
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="container">
+                            <h3 class="text-center mb-3" id="ikuti_kami">Ikuti Kami</h3>
+                            <div class="row" id="row_logo">
+                                <div class="col-lg-3 text-center">
+                                    <a href="">
+                                        <i class="fab fa-facebook-f logo" id="facebook"></i>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 text-center">
+                                    <a href="">
+                                        <i class="fab fa-instagram logo" id="instagram"></i>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 text-center">
+                                    <a href="">
+                                        <i class="fab fa-twitter logo" id="twitter"></i>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 text-center">
+                                    <a href="">
+                                        <i class="fab fa-youtube logo" id="youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row" id="text_sosmed">
+                                <div class="col-lg-3 text-center" for="facebook">
+                                    <p>Facebook</p>
+                                </div>
+                                <div class="col-lg-3 text-center">
+                                    <p>Instagram</p>
+                                </div>
+                                <div class="col-lg-3 text-center">
+                                    <p>Twitter</p>
+                                </div>
+                                <div class="col-lg-3 text-center">
+                                    <p>Youtube</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 text-center mt-3" id="wrap_email">
+                                <a href="">
+                                    <i class="fas fa-envelope text-center logo" id="email">
+                                    </i>
+                                </a>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <p>Suryadi.hhb@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-fluid">
+        <div class="row ml-1 mt-1 pb-1">
+            <div class="col-lg-12 text-left">
+                <div class="row" id="pt_suryadi">
+                    <div class="col-lg-6">
+                        <i class="far fa-copyright"></i>
+                        PT. SURYADI INDONESIA
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="container">
+                            <div class="row float-right">
+                                <a href="" class="mr-3" id="kebijakan">Kebijakan Privasi</a>
+                                <a href="" class="mr-3" id="syarat">Syarat & Ketentuan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
