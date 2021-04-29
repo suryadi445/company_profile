@@ -6,28 +6,28 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="<?= base_url('assets/image/laptop.jpg') ?>" class="d-block w-100">
+            <img src="<?= base_url('assets/image/makanan/bakso.jpg') ?>" class="d-block w-100">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4"><b>WEBSOLUTION</b></h1>
-                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di Proyek Implementasi dan Konsultasi Teknologi Informasi</p>
+                <h1 class="display-4"><b>Surya_Resto</b></h1>
+                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.</p>
                 <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('assets/image/teknologi.jpg') ?>" class="d-block w-100">
+            <img src="<?= base_url('assets/image/makanan/sate_ayam.jpg') ?>" class="d-block w-100">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4"><b>WEBSOLUTION</b></h1>
-                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di Proyek Implementasi dan Konsultasi Teknologi Informasi</p>
+                <h1 class="display-4"><b>Surya_Resto</b></h1>
+                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.</p>
                 <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('assets/image/computer.jpg') ?>" class="d-block w-100">
+            <img src="<?= base_url('assets/image/makanan/martabak_manis.jpg') ?>" class="d-block w-100">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4"><b>WEBSOLUTION</b></h1>
-                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di Proyek Implementasi dan Konsultasi Teknologi Informasi</p>
+                <h1 class="display-4"><b>Surya_Resto</b></h1>
+                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.</p>
                 <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
             </div>
@@ -49,7 +49,7 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                    <img src="<?= base_url('assets/image/makanan/martabak_telor.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                     </div>
@@ -63,7 +63,7 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                    <img src="<?= base_url('assets/image/makanan/soto_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                     </div>
@@ -77,7 +77,7 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                    <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                     </div>
@@ -91,7 +91,7 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                    <img src="<?= base_url('assets/image/makanan/somay.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                     </div>
@@ -105,7 +105,7 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                    <img src="<?= base_url('assets/image/makanan/jus_alpukat.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                     </div>
@@ -119,7 +119,7 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                    <img src="<?= base_url('assets/image/makanan/pempek.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                     </div>
@@ -187,7 +187,7 @@
         </div>
     </section>
     <section id="sejarah" class="pt-3">
-        <h2 class="text-center">SEJARAH WEBSOLUTION</h2>
+        <h2 class="text-center">SEJARAH Surya_Resto</h2>
         <div class="container pt-3">
             <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quod minima illo iste cumque eveniet quaerat exercitationem doloremque delectus repudiandae nam necessitatibus obcaecati quo quam odit, rerum nisi illum vitae unde esse, odio id molestias, aut nulla. Ex error dignissimos vel! Ducimus at corrupti architecto vitae quaerat dolorum omnis, dicta assumenda iste eius mollitia. Cum maxime corporis fuga? At numquam accusantium enim recusandae aut incidunt pariatur fugiat, iure beatae sit! Quae omnis consequatur nesciunt beatae quas rerum dolores quisquam dignissimos nostrum? Omnis vitae id nostrum perspiciatis sint, repellendus ipsum iure aliquid possimus excepturi tempore cupiditate, nemo tenetur veniam maxime non vero doloribus laudantium vel, saepe officiis quaerat? Voluptate itaque iusto dolorum sapiente harum cumque minima nulla veritatis quisquam porro aliquam, earum tempora neque nisi laboriosam ratione excepturi possimus. Doloremque libero, possimus provident consequatur nihil, dolores, sed numquam dignissimos vero est minus totam sunt deserunt. Laboriosam, voluptatem? Odit, cupiditate maxime? Nulla suscipit perferendis placeat dolor nostrum eligendi quod dolores fugit deleniti? Reiciendis voluptates ratione odio voluptatem tenetur fugit quos dolores corrupti minima, debitis quod maiores repudiandae blanditiis rerum consequuntur numquam molestiae saepe nesciunt sit consequatur dicta libero? In facere laudantium nam ullam molestiae error exercitationem voluptate delectus placeat ex? Qui explicabo, porro illo, autem voluptate aut velit nam deserunt veniam nostrum, similique quod incidunt saepe atque? Nam ratione repudiandae, corporis dolores nobis sunt nesciunt quidem explicabo veritatis quo ut iusto, odio fugiat exercitationem vitae dolorum nihil praesentium fuga temporibus vero earum nisi quis qui amet. Quia impedit saepe fugiat quod laboriosam possimus voluptas corrupti molestiae assumenda, velit debitis minima? Possimus maiores aliquid, laboriosam cupiditate numquam, totam ipsam consectetur, ea animi similique at autem ipsum? Sunt nemo ex voluptatem doloribus aliquam quia earum laborum atque modi tempora nulla nam similique cumque dolorem non voluptatum minima libero corporis dignissimos, repellendus explicabo nisi necessitatibus?</p>
         </div>

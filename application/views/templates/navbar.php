@@ -20,7 +20,7 @@
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#promo">Promo</a>
+                    <a class="nav-link text-light" href="<?= base_url('promo/index') ?>">Promo</a>
                 </li>
             </ul>
         </div>
