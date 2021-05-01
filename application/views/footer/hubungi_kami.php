@@ -6,39 +6,45 @@
                 <h1 id="promo_title">Hubungi Kami</h1>
             </div>
         </div>
-        <div class="row text-justify">
+        <div class="row text-justify" id="gambar_contact">
             <div class="col-12">
                 <div class="row justify-content-between">
                     <div class="col-5">
-                        <div class="row ml-2">
-                            <div class="col">
-                                <h2>Kepuaan Anda selalu menjadi prioritas Kami</h2>
-
-                                <p>Untuk pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami menggunakan formulir yang tersedia disisi kanan. Kami akan menghubungi Anda sesegera mungkin.</p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="<?= base_url('assets/image/call.jpg') ?>" width="150%">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row ml-2">
+                                    <div class="col">
+                                        <h2>Kepuasan Anda selalu menjadi prioritas Kami</h2>
+                                        <p>Untuk pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami menggunakan formulir yang tersedia disisi kanan. Kami akan menghubungi Anda sesegera mungkin.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
                     <div class="col-6">
-                        <div class="card">
+                        <div class="card shadow-sm p-3 mb-5 bg-white rounded">
                             <form>
                                 <div class="container mt-3">
                                     <div class="form-group row">
                                         <label for="nama" class="col-sm-2 col-form-label font-weight-bold ">Nama</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control font-weight-bold" placeholder="Masukkan nama lengkap Anda" id="nama">
+                                            <input type="text" class="form-control font-weight-bold shadow-sm p-3 bg-white rounded" placeholder="Masukkan nama lengkap Anda" id="nama">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="email" class="col-sm-2 col-form-label font-weight-bold">Email</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control font-weight-bold" placeholder="Masukkan email Anda" id="email">
+                                            <input type="email" class="form-control font-weight-bold shadow-sm p-3 bg-white rounded" placeholder="Masukkan email Anda" id="email">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="phone" class="col-sm-2 col-form-label font-weight-bold">Phone</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control font-weight-bold" placeholder="Masukkan nomor telepon Anda" id="phone">
+                                            <input type="text" class="form-control font-weight-bold shadow-sm p-3 bg-white rounded" placeholder="Masukkan nomor telepon Anda" id="phone">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -57,7 +63,7 @@
                                     <div class="form-group row">
                                         <label for="pesan" class="col-sm-2 col-form-label font-weight-bold">Pesan</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control font-weight-bold" placeholder="Masukkan pesan Anda" id="pesan" rows="3"></textarea>
+                                            <textarea class="form-control font-weight-bold shadow-sm p-3 bg-white rounded" placeholder="Masukkan pesan Anda" id="pesan" rows="3"></textarea>
                                         </div>
                                     </div>
                                     <button class="btn btn-danger float-right mb-3">Kirim Pesan</button>

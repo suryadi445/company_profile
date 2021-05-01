@@ -13,14 +13,14 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="#" class="text-capitalized list_about">Tentang Kami</a>
+                                    <a href="<?= base_url('home/tentang_kami') ?>" class="text-capitalized list_about">Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="#" class="text-capitalized list_about">Karier</a>
+                                    <a href="<?= base_url('home/karir') ?>" class="text-capitalized list_about">Karier</a>
                                 </div>
                             </div>
                             <div class="col-lg-6">

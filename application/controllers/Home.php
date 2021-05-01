@@ -20,4 +20,22 @@ class Home extends CI_Controller
         $this->load->view('footer/hubungi_kami');
         $this->load->view('templates/footer');
     }
+
+    public function tentang_kami()
+    {
+        $data['judul'] = 'Tentang Kami';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('footer/tentang_kami');
+        $this->load->view('templates/footer');
+    }
+
+    public function karir()
+    {
+        $data['judul'] = 'Karir';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('footer/karir');
+        $this->load->view('templates/footer');
+    }
 }
