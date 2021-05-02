@@ -47,4 +47,13 @@ class Home extends CI_Controller
         $this->load->view('footer/csr');
         $this->load->view('templates/footer');
     }
+
+    public function layanan()
+    {
+        $data['judul'] = 'Layanan';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('footer/layanan');
+        $this->load->view('templates/footer');
+    }
 }

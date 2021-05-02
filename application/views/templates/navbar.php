@@ -16,7 +16,7 @@
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#outlet">Outlet</a>
+                    <a class="nav-link text-light" href="<?= base_url('outlet/index') ?>">Outlet</a>
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">

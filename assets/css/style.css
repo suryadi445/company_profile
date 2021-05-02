@@ -369,6 +369,22 @@ footer {
 
 /* akhir halaman menu */
 
+
+/* halaman outlet */
+#jumbotron_outlet img {
+	height: 400px;
+	width: 100%;
+}
+
+#jumbotron_outlet h2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 38px;
+	font-weight: bold;
+	margin-top: 140px;
+}
+
+/* akhir halaman_outlet */
+
 /* halaman promo */
 #promo {
 	margin-left: 8px;
@@ -507,7 +523,15 @@ footer {
 
 
 /* halaman csr */
+#jumbotron_csr img {
+	height: 400px;
+	width: 100%;
+}
+
 #jumbotron_csr h2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 38px;
+	font-weight: bold;
 	margin-top: 120px;
 }
 
@@ -522,13 +546,37 @@ footer {
 	height: 500px;
 }
 
+.jenis_kegiatan {
+	margin-top: -160px;
+}
+
 .card-img-top {
 	height: 200px;
 	background-size: cover;
 	width: 100%;
 }
 
-
-
-
 /* akhir halaman csr */
+
+/* halaman layanan */
+#jumbotron_layanan img {
+	height: 400px;
+	width: 100%;
+}
+
+#jumbotron_layanan h2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 38px;
+	font-weight: bold;
+	margin-top: 140px;
+}
+
+#layanan_body {
+	margin-top: -80px;
+}
+
+#layanan_body h1 {
+	margin-bottom: 40px;
+}
+
+/* akhir halaman layanan */
