@@ -1,27 +1,30 @@
-<div class="jumbotron jumbotron-fluid">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img src="<?= base_url('assets/image/logo_resto.png') ?>" class="card-img-top logo_jumbotron" alt="bakso">
-                    </div>
-                    <div class="col-lg-6">
-
+<section id="jumbotron_aboutUs">
+    <div class="jumbotron jumbotron-fluid bg-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <img src="<?= base_url('assets/image/about.jpg') ?>" class="card-img-top logo_jumbotron" width="100%" height="600px">
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <h2 class="text-capitalize" id="aboutUs_title">tentang kami</h2>
+                            <a href="#visi" class="font-weight-bold mt-3">Selengkapnya</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<section id="visi" class="pt-5 pb-5">
+<section id="visi" class="pt-5 pb-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="<?= base_url('assets/image/logo_resto.png') ?>" class="card-img-top logo_jumbotron" alt="bakso">
+                        <img src="<?= base_url('assets/image/visi.jpg') ?>" class="card-img-top logo_jumbotron" alt="bakso">
                     </div>
                     <div class="col-lg-6">
                         <h1 class="font-weight-bold">VISI</h1>
@@ -35,7 +38,7 @@
     </div>
 </section>
 
-<section id="misi" class="bg-light pt-5 pb-5">
+<section id="misi" class="pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -49,7 +52,7 @@
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <img src="<?= base_url('assets/image/logo_resto.png') ?>" class="card-img-top logo_jumbotron" alt="bakso">
+                        <img src="<?= base_url('assets/image/misi.jpg') ?>" class="card-img-top logo_jumbotron" alt="bakso">
                     </div>
                 </div>
             </div>
@@ -57,7 +60,7 @@
     </div>
 </section>
 
-<section id="sejarah" class="pt-5 pb-5">
+<section id="sejarah" class="pt-5 pb-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

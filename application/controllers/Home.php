@@ -38,4 +38,13 @@ class Home extends CI_Controller
         $this->load->view('footer/karir');
         $this->load->view('templates/footer');
     }
+
+    public function csr()
+    {
+        $data['judul'] = 'CSR';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('footer/csr');
+        $this->load->view('templates/footer');
+    }
 }

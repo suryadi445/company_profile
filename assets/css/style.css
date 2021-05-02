@@ -388,17 +388,48 @@ footer {
 /* akhir halaman promo */
 
 
-/* halaman sejarah */
+/* halaman tentang kami */
+
+#jumbotron_aboutUs {
+	height: 600px;
+}
+
+#jumbotron_aboutUs h2 {
+	font-size: 40px;
+	text-decoration: none;
+	text-align: center;
+}
+
+#jumbotron_aboutUs a {
+	font-size: 20px;
+	text-decoration: none;
+	text-align: center;
+	color: red;
+}
+
+#jumbotron_aboutUs a:hover {
+	font-size: 22px;
+	color: red;
+	text-decoration: none;
+	text-align: center;
+}
+
+#aboutUs_title {
+	margin-top: 170px;
+	color: goldenrod;
+}
+
 #sejarah {
 	color: goldenrod;
 }
 
 .text_visiMisi {
 	font-size: 18px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-top: 15px;
 }
 
-/* akhir halaman sejarah */
+/* akhir halaman tentang kami */
 
 
 /* halaman karir */
@@ -473,3 +504,31 @@ footer {
 }
 
 /* akhir hubungi kami */
+
+
+/* halaman csr */
+#jumbotron_csr h2 {
+	margin-top: 120px;
+}
+
+#csr_body p {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: lighter;
+}
+
+#csr_body .carousel-item img {
+	background-size: cover;
+	height: 500px;
+}
+
+.card-img-top {
+	height: 200px;
+	background-size: cover;
+	width: 100%;
+}
+
+
+
+
+/* akhir halaman csr */

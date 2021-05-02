@@ -25,14 +25,14 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="#" class="text-capitalized list_about">CSR</a>
+                                    <a href="<?= base_url('home/csr') ?>" class="text-capitalized list_about">CSR</a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="#" class="text-capitalized list_about">Layanan</a>
+                                    <a href="<?= base_url('home/layanan') ?>" class="text-capitalized list_about">Layanan</a>
                                 </div>
                             </div>
                         </div>
