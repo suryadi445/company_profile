@@ -580,3 +580,23 @@ footer {
 }
 
 /* akhir halaman layanan */
+
+
+/* halaman snk */
+#snk {
+	margin-top: 70px;
+}
+
+#snk h1,
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+#snk p {
+	font-size: 17px;
+	text-align: justify;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* akhir halaman snk */

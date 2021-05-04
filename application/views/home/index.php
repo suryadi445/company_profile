@@ -293,7 +293,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-6">
-                                <img src="<?= base_url('assets/image/biru.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
+                                <img src="<?= base_url('assets/image/hello.jpg') ?>" class="gambar_rekomendasi card-img-top" alt="gambar rekomendasi">
                             </div>
                             <div class="col-lg-6 ml-auto">
                                 <h3 id="harga_modal">Rp. 30.000,-</h3>

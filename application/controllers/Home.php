@@ -56,4 +56,22 @@ class Home extends CI_Controller
         $this->load->view('footer/layanan');
         $this->load->view('templates/footer');
     }
+
+    public function kebijakan()
+    {
+        $data['judul'] = 'Privacy Police';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('footer/kebijakan');
+        $this->load->view('templates/footer');
+    }
+
+    public function snk()
+    {
+        $data['judul'] = 'Terms Conditions';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('footer/snk');
+        $this->load->view('templates/footer');
+    }
 }
