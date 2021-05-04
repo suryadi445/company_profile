@@ -126,13 +126,46 @@
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<!-- sweetalert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- aos library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
-<!-- sweetalert -->
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- gsap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
+<script>
+    gsap.from("nav", {
+        duration: 1,
+        y: -100,
+        opacity: 0,
+        ease: 'bounce'
+    });
+    gsap.from(".carousel-caption .display-4", {
+        x: 700,
+        opacity: 0,
+        color: 'gold',
+        ease: 'elastic',
+        duration: 1,
+        delay: 1.2
+    });
+    gsap.registerPlugin(TextPlugin);
+    gsap.to('.lead', {
+        duration: 3,
+        delay: 2,
+        text: `Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.
+        `
+    })
+    gsap.from(".carousel-inner a", {
+        x: 700,
+        opacity: 0,
+        ease: 'elastic',
+        duration: 1,
+        delay: 1.5
+    });
+</script>
 </body>
 
 </html>
