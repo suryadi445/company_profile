@@ -8,31 +8,31 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="<?= base_url('home/hubungi_kami') ?>" class="text-capitalized list_about">Hubungi kami</a>
+                                    <a href="<?= base_url('hubungi_kami') ?>" class="text-capitalized list_about">Hubungi kami</a>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="<?= base_url('home/tentang_kami') ?>" class="text-capitalized list_about">Tentang Kami</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="col-lg-12 mt-2">
-                                    <a href="<?= base_url('home/karir') ?>" class="text-capitalized list_about">Karier</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="col-lg-12 mt-2">
-                                    <a href="<?= base_url('home/csr') ?>" class="text-capitalized list_about">CSR</a>
+                                    <a href="<?= base_url('tentang_kami') ?>" class="text-capitalized list_about">Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="col-lg-12 mt-2">
-                                    <a href="<?= base_url('home/layanan') ?>" class="text-capitalized list_about">Layanan</a>
+                                    <a href="<?= base_url('karir') ?>" class="text-capitalized list_about">Karier</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="col-lg-12 mt-2">
+                                    <a href="<?= base_url('csr') ?>" class="text-capitalized list_about">CSR</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="col-lg-12 mt-2">
+                                    <a href="<?= base_url('layanan') ?>" class="text-capitalized list_about">Layanan</a>
                                 </div>
                             </div>
                         </div>
@@ -108,8 +108,8 @@
                     <div class="col-lg-6">
                         <div class="container">
                             <div class="row float-right">
-                                <a href="<?= base_url('home/kebijakan') ?>" class="mr-3" id="kebijakan">Kebijakan Privasi</a>
-                                <a href="<?= base_url('home/snk') ?>" class="mr-3" id="syarat">Syarat & Ketentuan</a>
+                                <a href="<?= base_url('kebijakan') ?>" class="mr-3" id="kebijakan">Kebijakan Privasi</a>
+                                <a href="<?= base_url('snk') ?>" class="mr-3" id="syarat">Syarat & Ketentuan</a>
                             </div>
                         </div>
                     </div>
