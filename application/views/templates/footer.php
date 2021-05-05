@@ -130,12 +130,119 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- aos library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 <!-- gsap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
+
+<script>
+    // halaman menu
+    const gambar_menu = document.querySelectorAll('.gambar_menu');
+
+    const nama_menu = document.querySelectorAll('.nama_menu');
+
+    gambar_menu.forEach((img, i) => {
+        img.dataset.aos = 'fade-down', img.dataset.aosDelay = i * 100, img.dataset.aosDuration = 900
+    });
+
+    nama_menu.forEach((text, i) => {
+        text.dataset.aos = 'fade-down', text.dataset.aosDelay = i * 10, text.dataset.aosDuration = 900
+    })
+    // akhir halaman menu
+
+    // halaman hubungi kami
+    gsap.from("#contact", {
+        y: -100,
+        opacity: 0,
+        ease: 'slow',
+        duration: 2,
+        delay: 0.5
+    });
+    // akhir halaman hubung kami
+
+    // halaman promo
+    gsap.to('#promo h1', {
+        duration: 3,
+        text: 'PROMO SAAT INI'
+    })
+    // akhir halaman promo
+
+    // halaman karir
+    gsap.from('#jumbotron_karir', {
+        y: -100,
+        opacity: 0,
+        ease: 'slow',
+        duration: 2,
+        delay: 0.5
+    })
+
+    gsap.to('#karir_body h1', {
+        duration: 3,
+        delay: 2,
+        text: 'Nilai-Nilai Perusahaan'
+    })
+    // akhir halaman karir
+
+    // halaman csr
+    gsap.from('#jumbotron_csr', {
+        y: -100,
+        opacity: 0,
+        ease: 'slow',
+        duration: 2,
+        delay: 0.5
+    })
+
+    gsap.to('#jumbotron_csr h2', {
+        duration: 3,
+        delay: 2,
+        text: 'Gerakan kami untuk membuat perbedaan di komunitas'
+    })
+    // akhir halaman csr
+
+    // halaman layanan
+    gsap.from('#jumbotron_layanan', {
+        y: -100,
+        opacity: 0,
+        ease: 'slow',
+        duration: 2,
+        delay: 0.5
+    })
+
+    gsap.to('#jumbotron_layanan h2', {
+        duration: 2,
+        delay: 2,
+        text: 'Layanan Kami'
+    })
+    // akhir halaman layanan
+
+    //halaman tentang kami 
+    gsap.from('#jumbotron_aboutUs', {
+        y: -100,
+        opacity: 0,
+        ease: 'slow',
+        duration: 2,
+        delay: 0.5
+    })
+
+    gsap.to('#jumbotron_aboutUs h2', {
+        duration: 2,
+        delay: 2,
+        text: 'Tentang Kami',
+        fontSize: 50,
+        color: 'gold'
+    })
+    // akhir halaman kami
+
+    // halaman snk
+    gsap.to('#snk h1', {
+        duration: 2,
+        delay: 0.5,
+        text: 'SYARAT & KETENTUAN',
+    })
+    // akhir halaman snk
+
+    AOS.init();
+</script>
+
 <script>
     gsap.from("nav", {
         duration: 1,
@@ -143,6 +250,7 @@
         opacity: 0,
         ease: 'bounce'
     });
+
     gsap.from(".carousel-caption .display-4", {
         x: 700,
         opacity: 0,
@@ -152,6 +260,8 @@
         delay: 1.2
     });
     gsap.registerPlugin(TextPlugin);
+
+    // halaman home
     gsap.to('.lead', {
         duration: 3,
         delay: 2,
@@ -165,7 +275,26 @@
         duration: 1,
         delay: 1.5
     });
+    // akhir halaman home
+
+    // halaman menu
+    gsap.from("#text_jumbotron", {
+        duration: 2,
+        delay: 1,
+        x: -100,
+        opacity: 0,
+        ease: "elastic"
+    });
+    gsap.from("#jumbotron_menu img", {
+        duration: 2,
+        delay: 2,
+        x: 100,
+        opacity: 0,
+    });
+    // akhir halaman menu
 </script>
+
+
 </body>
 
 </html>

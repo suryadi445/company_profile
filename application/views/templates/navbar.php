@@ -8,19 +8,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto mr-2">
                 <li class="nav-item active">
-                    <a class="nav-link text-light" href="<?= base_url('home/index') ?>">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-light" href="<?= base_url('home') ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= base_url('menu/index') ?>">Menu</a>
+                    <a class="nav-link text-light" href="<?= base_url('menu') ?>">Menu</a>
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= base_url('outlet/index') ?>">Outlet</a>
+                    <a class="nav-link text-light" href="<?= base_url('outlet') ?>">Outlet</a>
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= base_url('promo/index') ?>">Promo</a>
+                    <a class="nav-link text-light" href="<?= base_url('promo') ?>">Promo</a>
                 </li>
             </ul>
         </div>

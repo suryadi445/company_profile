@@ -8,7 +8,7 @@
                             <img src="<?= base_url('assets/image/csr.jpg') ?>" class="card-img-top logo_jumbotron" width="100%" height="600px">
                         </div>
                         <div class="col-lg-5 text-center">
-                            <h2 class="text-capitalize" id="csr_title">Gerakan kami untuk membuat perbedaan di komunitas</h2>
+                            <h2 class="text-capitalize" id="csr_title"></h2>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1200">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1500">
                         <h1>Kontribusi Sosial Surya_Resto</h1>
                         <p class="text-justify pr-3">Surya_Resto berkomitmen untuk secara konsisten berkontribusi untuk masyarakat Indonesia. Salah satu gerakan yang selalu kami lakukan ialah berbagi dengan mereka yang membutuhkan melalui jaringan restoran kami. Lebih dari ribuan bantuan dalam bentuk makanan maupun lainnya telah kami salurkan secara langsung baik itu untuk bencana maupun bantuan untuk masyarakat sekitar lingkungan restoran Surya_Resto.</p>
                     </div>
@@ -47,13 +47,13 @@
 
         <div class="jenis_kegiatan">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" data-aos="fade-down" data-aos-duration="1200">
                     <h1 class="text-center mb-5">Beberapa Program CSR Yang Telah Kami Lakukan</h1>
                 </div>
             </div>
 
             <div class="row row-cols-1 row-cols-md-3">
-                <div class="col mb-4">
+                <div class="col mb-4" data-aos="fade-up" data-aos-duration="1200">
                     <div class="card h-100 shadow-sm p-3 mb-5 bg-white rounded">
                         <img src="<?= base_url('assets/image/renovasi.jpg') ?>" class="card-img-top">
                         <div class="card-body">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col mb-4">
+                <div class="col mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
                     <div class="card h-100 shadow-sm p-3 mb-5 bg-white rounded">
                         <img src="<?= base_url('assets/image/beasiswa.jpg') ?>" class="card-img-top">
                         <div class="card-body">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col mb-4">
+                <div class="col mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">
                     <div class="card h-100 shadow-sm p-3 mb-5 bg-white rounded">
                         <img src="<?= base_url('assets/image/bencana.jpg') ?>" class="card-img-top">
                         <div class="card-body">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col mb-4">
+                <div class="col mb-4" data-aos="fade-up" data-aos-duration="1200">
                     <div class="card h-100 shadow-sm p-3 mb-5 bg-white rounded">
                         <img src="<?= base_url('assets/image/sekolah.jpg') ?>" class="card-img-top">
                         <div class="card-body">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col mb-4">
+                <div class="col mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
                     <div class="card h-100 shadow-sm p-3 mb-5 bg-white rounded">
                         <img src="<?= base_url('assets/image/donor.jpg') ?>" class="card-img-top">
                         <div class="card-body">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col mb-4">
+                <div class="col mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">
                     <div class="card h-100 shadow-sm p-3 mb-5 bg-white rounded">
                         <img src="<?= base_url('assets/image/doctor.jpg') ?>" class="card-img-top">
                         <div class="card-body">

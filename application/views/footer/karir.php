@@ -1,24 +1,26 @@
-<div class="jumbotron jumbotron-fluid">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="d-block w-100" height="600px">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="d-block w-100" height="600px">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="d-block w-100" height="600px">
+<section id="jumbotron_karir">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="d-block w-100" height="600px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="d-block w-100" height="600px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="d-block w-100" height="600px">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <section id="karir_body">
     <div class="container">
@@ -27,8 +29,8 @@
                 <div class="row">
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
-                        <h1 class="text-center font-weight-bold">Nilai-Nilai Perusahaan</h1>
-                        <p class="text-center">Di Surya_Resto kami saling menghargai masing-masing. Sebagai komunitas yang ketat, kami beroperasional dengan mengikuti tiga nilai:
+                        <h1 class="text-center font-weight-bold"></h1>
+                        <p class="text-center" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">Di Surya_Resto kami saling menghargai masing-masing. Sebagai komunitas yang ketat, kami beroperasional dengan mengikuti tiga nilai:
                         </p>
                     </div>
                     <div class="col-lg-3"></div>
@@ -40,21 +42,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card-deck">
-                    <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                    <div class="card shadow-sm p-3 mb-5 bg-white rounded" data-aos="fade-up" data-aos-duration="2000">
                         <img src="<?= base_url('assets/image/family.jpg') ?>" class="card-img-top">
                         <div class="card-body">
                             <h4 class="text-center font-weight-bold">Keluarga dan teman</h4>
                             <p class="card-text text-center">Tim kami saling memberi dukungan kepad satu sama lain. Sebagai komunitas, kami maju bersama dan saling menghormati.</p>
                         </div>
                     </div>
-                    <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                    <div class="card shadow-sm p-3 mb-5 bg-white rounded" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
                         <img src="<?= base_url('assets/image/flexible.jpg') ?>" class="card-img-top">
                         <div class="card-body">
                             <h4 class="text-center font-weight-bold">Fleksibilitas</h4>
                             <p class="card-text text-center">Nikmati jadwal kerja yang fleksibel. Anda dapat mengatur jadwal kerja sesuai dengan keperluanmu sendiri-dengan tetap mengacu kepada peraturan perusahaan.</p>
                         </div>
                     </div>
-                    <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                    <div class="card shadow-sm p-3 mb-5 bg-white rounded" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">
                         <img src="<?= base_url('assets/image/future.png') ?>" class="card-img-top">
                         <div class="card-body">
                             <h4 class="text-center font-weight-bold">Masa Depan</h4>
@@ -72,10 +74,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1200">
                         <img src="<?= base_url('assets/image/teams.png') ?>" width="100%">
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1200">
                         <h1 class="text-capitalize font-weight-bold text-center mt-3">bergabunglah dengan kami</h1>
                         <div class="row">
                             <div class="col-lg-12 text-center mt-3">
@@ -83,7 +85,7 @@
                             </div>
                         </div>
                         <div class="row mt-3 mb-3">
-                            <div class="col-lg-12 text-center">
+                            <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500">
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#daftar_karir">Daftar</button>
                             </div>
                         </div>

@@ -49,8 +49,8 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/martabak_telor.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="2000">
+                    <img src="<?= base_url('assets/image/makanan/martabak_telor.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
                         <h5 class="card-title">Card title</h5>
                     </div>
                     <div class="card-body">
@@ -63,8 +63,8 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/soto_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="2000">
+                    <img src="<?= base_url('assets/image/makanan/soto_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
+                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                         <h5 class="card-title">Card title</h5>
                     </div>
                     <div class="card-body">
@@ -77,8 +77,8 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="2000">
+                    <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="1000">
+                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
                         <h5 class="card-title">Card title</h5>
                     </div>
                     <div class="card-body">
@@ -91,8 +91,8 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/somay.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="2000">
+                    <img src="<?= base_url('assets/image/makanan/somay.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
                         <h5 class="card-title">Card title</h5>
                     </div>
                     <div class="card-body">
@@ -105,8 +105,8 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/jus_alpukat.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="2000">
+                    <img src="<?= base_url('assets/image/makanan/jus_alpukat.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
+                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                         <h5 class="card-title">Card title</h5>
                     </div>
                     <div class="card-body">
@@ -119,8 +119,8 @@
         <div class="col mb-4">
             <div class="card h-100">
                 <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/pempek.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="2000">
+                    <img src="<?= base_url('assets/image/makanan/pempek.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="1000">
+                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
                         <h5 class="card-title">Card title</h5>
                     </div>
                     <div class="card-body">
@@ -139,12 +139,12 @@
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="<?= base_url('assets/image/join.jpg') ?>" class="gambar_loker card-img-top img-fluid" alt="gambar loker" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">
+                        <img src="<?= base_url('assets/image/join.jpg') ?>" class="gambar_loker card-img-top img-fluid" alt="gambar loker" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     </div>
-                    <div class="col-lg-6" data-aos="fade-down" data-aos-duration="2000" data-aos-easing="ease-in-out" data-aos-delay="1500">
+                    <div class="col-lg-6" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
                         <h1>JADILAH BAGIAN DARI KELUARGA KAMI</h1>
                         <p>Di PT. Surya_Resto, kami lebih dari sekadar bisnis. Kami adalah komunitas tempat Anda berlatih keterampilan hidup dan sebagai wadah untuk mengejar serta mewujudkan impianmu.</p>
-                        <div class="text-center mt-5" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out" data-aos-delay="1700">
+                        <div class="text-center mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="700">
                             <a href="" class="btn btn_merah">LIHAT LOWONGAN</a>
                         </div>
                     </div>
