@@ -133,6 +133,7 @@
 <!-- gsap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
+<script src="<?= base_url('assets/js/script.js') ?>"></script>
 
 <script>
     // halaman menu

@@ -10,7 +10,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
                 <p class="lead"></p>
-                <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
+                <a class="btn btn_carousel_daftar btn-lg" href="#" role="button" data-toggle="modal" data-target="#modal_daftar">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
                 <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.</p>
-                <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
+                <a class="btn btn_carousel_daftar btn-lg" href="#" role="button" data-toggle="modal" data-target="#modal_daftar">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
             </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
                 <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.</p>
-                <a class="btn btn_carousel_daftar btn-lg" href="#" role="button">Daftar</a>
+                <a class="btn btn_carousel_daftar btn-lg" href="#" role="button" data-toggle="modal" data-target="#modal_daftar">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="#" role="button">Masuk</a>
             </div>
         </div>
@@ -42,6 +42,8 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+
+<!-- <div><?= $this->session->flashdata() ?></div> -->
 
 <section id="rekomendasi" class="mb-3">
     <h2 class="text-center">Rekomendasi</h2>
@@ -152,131 +154,7 @@
             </div>
         </div>
     </div>
-
 </section>
-
-<!-- 
-    <section id="hubungi_kami" class="bg-secondary pt-3 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <h3 class="mb-3">SEGERA HUBUNGI KAMI</h3>
-                        </div>
-                        <div class="row" id="hubungi">
-                            <div class="col-12">
-                                <div class="col-6 d-inline">
-                                    <a href="tel:+6289678468651" class="btn btn-dark">
-                                        <i class="fas fa-phone text-light"></i>
-                                        Hubungi Kami
-                                    </a>
-                                </div>
-                                <div class="col-6 d-inline">
-                                    <a href="https://api.whatsapp.com/send?phone=6289678468651" class="btn btn-success">
-                                        <i class="fab fa-whatsapp text-light"></i>
-                                        Hubungi Kami
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h4 class="mt-3">Untuk Layanan Konsultasi Sistem Integrasi & Data Center</h4>
-        </div>
-    </section>
-    <section id="sejarah" class="pt-3">
-        <h2 class="text-center">SEJARAH Surya_Resto</h2>
-        <div class="container pt-3">
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quod minima illo iste cumque eveniet quaerat exercitationem doloremque delectus repudiandae nam necessitatibus obcaecati quo quam odit, rerum nisi illum vitae unde esse, odio id molestias, aut nulla. Ex error dignissimos vel! Ducimus at corrupti architecto vitae quaerat dolorum omnis, dicta assumenda iste eius mollitia. Cum maxime corporis fuga? At numquam accusantium enim recusandae aut incidunt pariatur fugiat, iure beatae sit! Quae omnis consequatur nesciunt beatae quas rerum dolores quisquam dignissimos nostrum? Omnis vitae id nostrum perspiciatis sint, repellendus ipsum iure aliquid possimus excepturi tempore cupiditate, nemo tenetur veniam maxime non vero doloribus laudantium vel, saepe officiis quaerat? Voluptate itaque iusto dolorum sapiente harum cumque minima nulla veritatis quisquam porro aliquam, earum tempora neque nisi laboriosam ratione excepturi possimus. Doloremque libero, possimus provident consequatur nihil, dolores, sed numquam dignissimos vero est minus totam sunt deserunt. Laboriosam, voluptatem? Odit, cupiditate maxime? Nulla suscipit perferendis placeat dolor nostrum eligendi quod dolores fugit deleniti? Reiciendis voluptates ratione odio voluptatem tenetur fugit quos dolores corrupti minima, debitis quod maiores repudiandae blanditiis rerum consequuntur numquam molestiae saepe nesciunt sit consequatur dicta libero? In facere laudantium nam ullam molestiae error exercitationem voluptate delectus placeat ex? Qui explicabo, porro illo, autem voluptate aut velit nam deserunt veniam nostrum, similique quod incidunt saepe atque? Nam ratione repudiandae, corporis dolores nobis sunt nesciunt quidem explicabo veritatis quo ut iusto, odio fugiat exercitationem vitae dolorum nihil praesentium fuga temporibus vero earum nisi quis qui amet. Quia impedit saepe fugiat quod laboriosam possimus voluptas corrupti molestiae assumenda, velit debitis minima? Possimus maiores aliquid, laboriosam cupiditate numquam, totam ipsam consectetur, ea animi similique at autem ipsum? Sunt nemo ex voluptatem doloribus aliquam quia earum laborum atque modi tempora nulla nam similique cumque dolorem non voluptatum minima libero corporis dignissimos, repellendus explicabo nisi necessitatibus?</p>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-light pb-3">
-        <h2 class="text-center pt-3">Contact</h2>
-        <div class="container mt-4">
-            <div class="row text-justify">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-6">
-                            <p>Untuk informasi lebih lanjut mengenai layanan kami, silahkan hubungi contact person kami : <b>Suryadi</b>
-                            </p>
-
-                            <p>Kontak Kami :</p>
-
-                            <p>Telp : (021)-7777777 atau 0896-7846-8651 (WA).</p>
-                            <p> Email: suryadi.hhb@gmail.com</p>
-                            <p>Alamat Kantor & Training Center : Jl. H. Gadung Rt.02/15 no.20 Pondok Ranji, Ciputat Timur, Tangerang Selatan, Banten.</p>
-
-                            <p class="text-danger">JAM OPERASIONAL : SENIN S/D JUMAT 09.00 - 16.00 WIB</p>
-
-                            <p class="text-danger"> Permintaan informasi mengenai layanan, hanya kami layani saat jam operasional kantor. Begitu juga hal-hal yang terkait dengan kegiatan administrasi di layani hanya saat jam kerja perusahaan.</p>
-                        </div>
-                        <div class="col-6">
-                            <div class="card">
-                                <form>
-                                    <div class="container mt-3">
-                                        <div class="form-group row">
-                                            <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="nama">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="email" class="col-sm-2 col-form-label">Email</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="email">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="phone">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="pesan" class="col-sm-2 col-form-label">Pesan</label>
-                                            <div class="col-sm-10">
-                                                <textarea class="form-control" id="pesan" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary float-right mb-3">Kirim Pesan</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col d-flex">
-                        <div class="ml-5 mr-5">
-                            <a href="https://web.facebook.com/suryadi.hobe/" target="_blank">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </div>
-                        <div class="ml-5 mr-5">
-                            <a href="https://github.com/suryadi445/" target="_blank">
-                                <i class="fab fa-github text-dark"></i>
-                            </a>
-                        </div>
-                        <div class="ml-5 mr-5">
-                            <a href="https://www.youtube.com/" target="_blank">
-                                <i class="fab fa-youtube text-danger"></i>
-                            </a>
-                        </div>
-                        <div class="ml-5 mr-5">
-                            <a href="https://www.twitter.com/" target="_blank">
-                                <i class="fab fa-twitter text-info"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -311,6 +189,90 @@
                     <i class="fas fa-shopping-cart"></i>
                     Pesan</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal daftar-->
+<div class="modal fade" id="modal_daftar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg font-weight-bold">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registrasi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="<?= base_url('assets/image/registrasi.jpg') ?>" width="100%" class=" gambar_daftar">
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="card shadow-sm p-3 bg-white rounded">
+                                    <form action="<?= base_url('auth/registrasi') ?>" method="POST">
+                                        <div class="form-group row">
+                                            <label for="nama_daftar" class="col-sm-3 col-form-label">Nama</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control font-weight-bold" placeholder="Masukkan Nama Anda" name="nama" id="nama_daftar">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="email_daftar" class="col-sm-3 col-form-label">Email</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" class="form-control font-weight-bold" placeholder="Masukkan email Anda" name="email" id="email_daftar">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="phone_daftar" class="col-sm-3 col-form-label">Phone</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control font-weight-bold" placeholder="Masukkan No Handphone Anda" name="phone" id="phone_daftar">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="password_daftar" class="col-sm-3 col-form-label">Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control font-weight-bold" placeholder="Masukkan Password Anda" name="password" id="password_daftar">
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <p class="text-left">
+                                                    <input type="checkbox" class="form-checkbox" id="checkbox">
+                                                    Show Password
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <fieldset class="form-group mt-n4">
+                                            <div class="row">
+                                                <legend class="col-form-label col-sm-3 pt-0">Gender</legend>
+                                                <div class="col-sm-9">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="pria" checked>
+                                                        <label class="form-check-label" for="gridRadios1">
+                                                            Male
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="wanita">
+                                                        <label class="form-check-label" for="gridRadios2">
+                                                            Female
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary" id="simpan">Simpan</button>
+            </div>
+            </form>
         </div>
     </div>
 </div>
