@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col text-center mt-3">
-                                            <button type="submit" class="btn btn-primary" id="simpan">Masuk</button>
+                                            <button type="submit" class="btn btn-primary" id="masuk">Masuk</button>
                                         </div>
                                     </div>
                                 </form>

@@ -91,7 +91,11 @@
                                             </div>
                                         </div>
                                     </fieldset>
-                                    <button type="submit" class="btn btn-primary" id="simpan">Simpan</button>
+                                    <div class="row">
+                                        <div class="col text-center mt-3">
+                                            <button type="submit" class="btn btn-primary" id="simpan">Simpan</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
