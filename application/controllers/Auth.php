@@ -72,7 +72,7 @@ class Auth extends CI_Controller
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $user = $this->db->get_where('tbl_users', ['email' => $email])->row_array();
+        $user = $this->Auth_model->getRow($email);
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
@@ -81,7 +81,7 @@ class Auth extends CI_Controller
                     'nama' => $user['nama']
                 ];
 
-                $this->session->set_flashdata('flash', 'Selamat datang ' . $user['nama']);
+                $this->session->set_flashdata('flash', 'Selamat datang ' . $data['nama']);
                 redirect('admin');
             } else {
                 $this->session->set_flashdata('flash', 'Password yang anda masukkan salah');
