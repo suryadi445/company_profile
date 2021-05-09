@@ -125,12 +125,27 @@ ul.navbar-nav a {
 	width: 140px;
 }
 
-/* modal daftar */
-.gambar_daftar {
-	height: 330px;
+/* registrasi */
+#registrasi {
+	margin-top: 80px;
 }
 
-/* akhir modal */
+.gambar_daftar {
+	height: 500px;
+}
+
+/* akhir registrasi */
+
+/* login */
+#login {
+	margin-top: 80px;
+}
+
+.gambar_login {
+	height: auto;
+}
+
+/* akhir login */
 
 /* loker */
 #loker {
