@@ -25,21 +25,15 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
-                            Halaman Utama
+                            Halaman Home
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a href="<?= base_url('admin/home_carousel') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Carousel</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Rekomendasi</p>
                             </a>
                         </li>
                     </ul>
@@ -48,51 +42,15 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tree"></i>
                         <p>
-                            Menu
+                            Halaman Menu
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/UI/general.html" class="nav-link">
+                            <a href="<?= base_url('admin/home_menu') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Carousel</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tambah Menu Makanan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Hapus Menu Makanan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Ganti Menu Makanan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tambah Menu Minuman</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Hapus Menu Minuman</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Ganti Menu Minuman</p>
+                                <p>Menu</p>
                             </a>
                         </li>
                     </ul>
@@ -171,7 +129,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
+                            <a href="<?= base_url('admin/tentang_kami') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tentang Kami</p>
                             </a>
@@ -195,13 +153,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/mailbox/mailbox.html" class="nav-link">
+                            <a href="<?= base_url('admin/ganti_password') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Ganti Password</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
+                            <a href="<?= base_url('admin/jumlah_admin') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Jumlah Admin</p>
                             </a>
