@@ -18,4 +18,11 @@ class Admin_model extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('tbl_users', $data);
     }
+
+    public function delete_admin($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tbl_users');
+        // return $delete;
+    }
 }

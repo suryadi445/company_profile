@@ -1,35 +1,21 @@
 $('document').ready(function(){
-//     $('#simpan').click(function(e){
-//         e.preventDefault
-//         let nama = $('#nama_daftar').val()
-//         let email = $('#email_daftar').val()
-//         let phone = $('#phone_daftar').val()
-//         let password = $('#password_daftar').val()
-//         let gender = $('input[name="gridRadios"]:checked').val()
-
-//         $.ajax({
-//             url: 'auth/registrasi',
-//             type: 'POST',
-//             data: {
-//                 nama: nama,
-//                 email: email,
-//                 phone: phone,
-//                 password: password,
-//                 gender: gender
-//             },success: function(data){
-//                 // $('.toast').toast('show');
-//             }
-//         })
-
-//     })
-
-    $('.ubah_admin').click(function(e) {
+    $('.hapus').click(function(e){
         e.preventDefault()
-        var test = $(".ubah_admin").val($(this).data('id'));
-
-        alert(test);
-
-        // alert('oke');
+        var link = $(this).attr('href')
+        Swal.fire({
+        title: 'Apa Anda Yakin?',
+        text: "Data yang sudah dihapus tidak bisa dikembalikan. Setuju?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: 'silver',
+        confirmButtonText: 'Ya, Hapus',
+        cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = link
+            }
+        })
     })
 })
 

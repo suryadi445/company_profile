@@ -19,8 +19,8 @@ class Auth extends CI_Controller
         $gender = $this->input->post('gridRadios', true);
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
-        $this->form_validation->set_rules('phone', 'Phone', 'required|trim|numeric');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_users.email]');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|trim|numeric|is_unique[tbl_users.phone]');
         $this->form_validation->set_rules(
             'password',
             'Password',

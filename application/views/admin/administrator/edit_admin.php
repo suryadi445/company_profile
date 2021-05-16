@@ -31,39 +31,61 @@
                                     <label for="nama_edit" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="nama_edit" name="nama" value="<?= $all_admin['nama']; ?>">
+                                        <div class="text-danger mb-n4"><?= form_error('nama'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email_edit" class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="email_edit" name="email" value="<?= $all_admin['email']; ?>">
+                                        <div class="text-danger mb-n4"><?= form_error('email'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="nama_edit" class="col-sm-2 col-form-label">Phone</label>
+                                    <label for="phone_edit" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="phone_edit" name="phone" value="<?= $all_admin['phone']; ?>">
+                                        <div class="text-danger mb-n4"><?= form_error('phone'); ?></div>
                                     </div>
                                 </div>
                                 <fieldset class="form-group">
                                     <div class="row font-weight-bold">
                                         <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
                                         <div class="col-sm-10">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Pria" checked>
-                                                <label class="form-check-label" for="gridRadios1">
-                                                    Male <small>(Pria)</small>
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Wanita">
-                                                <label class="form-check-label" for="gridRadios2">
-                                                    Female <small>(Wanita)</small>
-                                                </label>
-                                            </div>
+                                            <?php if ($all_admin['gender'] == 'Pria') : ?>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Pria" checked>
+                                                    <label class="form-check-label" for="gridRadios1">
+                                                        Male <small>(Pria)</small>
+                                                    </label>
+                                                </div>
+                                            <?php else : ?>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Pria">
+                                                    <label class="form-check-label" for="gridRadios1">
+                                                        Male <small>(Pria)</small>
+                                                    </label>
+                                                </div>
+                                            <?php endif ?>
+                                            <?php if ($all_admin['gender'] == 'Wanita') : ?>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Wanita" checked>
+                                                    <label class="form-check-label" for="gridRadios2">
+                                                        Female <small>(Wanita)</small>
+                                                    </label>
+                                                </div>
+                                            <?php else : ?>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Wanita">
+                                                    <label class="form-check-label" for="gridRadios2">
+                                                        Female <small>(Wanita)</small>
+                                                    </label>
+                                                </div>
+                                            <?php endif ?>
                                         </div>
                                     </div>
                                 </fieldset>
+                                <div class="text-danger mb-n4"><?= form_error('gridRadios'); ?></div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">

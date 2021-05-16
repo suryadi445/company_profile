@@ -68,11 +68,11 @@ class Admin extends CI_Controller
 
     public function proses_edit($id = '')
     {
-        $id              = $this->input->post('id');
-        $nama            = $this->input->post('nama');
-        $email           = $this->input->post('email');
-        $phone           = $this->input->post('phone');
-        $gender          = $this->input->post('gridRadios');
+        $id              = htmlspecialchars($this->input->post('id', true));
+        $nama            = htmlspecialchars($this->input->post('nama', true));
+        $email           = htmlspecialchars($this->input->post('email', true));
+        $phone           = htmlspecialchars($this->input->post('phone', true));
+        $gender          = htmlspecialchars($this->input->post('gridRadios', true));
 
         $data = [
             'id'        => $id,
@@ -82,9 +82,10 @@ class Admin extends CI_Controller
             'gender'    => $gender
         ];
 
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('phone', 'Phone', 'required');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|trim|numeric');
+        $this->form_validation->set_rules('gridRadios', 'Jenis Kelamin', 'required');
 
         if ($this->form_validation->run() == false) {
             $data['all_admin']     = $this->Admin_model->get_id($id);
@@ -96,7 +97,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/templates/footer');
         } else {
             $query   = $this->Admin_model->edit_admin($data);
-
+            $this->session->set_flashdata('sukses', 'Data berhasil diubah!!');
             redirect('admin/jumlah_admin');
         }
     }
@@ -113,8 +114,13 @@ class Admin extends CI_Controller
     }
 
 
-    public function hapus_admin()
+    public function hapus_admin($id)
     {
-        echo 'hapus';
+        // echo 'oke';
+        // die;
+        $this->Admin_model->delete_admin($id);
+        $this->session->set_flashdata('sukses', 'User berhasil dihapus!!');
+
+        redirect('admin/jumlah_admin');
     }
 }

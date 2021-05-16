@@ -19,10 +19,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Daftar Admin</h3>
+                            <?php if ($this->session->flashdata()) : ?>
+                                <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
+                            <?php endif ?>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
                                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                                     </div>
@@ -31,7 +33,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap text-center">
+                            <table class="table table-hover text-nowrap text-center text-capitalize">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -52,8 +54,10 @@
                                             <td><?= $result['phone']; ?></td>
                                             <td><?= $result['gender']; ?></td>
                                             <td>
-                                                <a href="<?= base_url(); ?>admin/edit_admin/<?= $result['id']  ?>" class="badge badge-warning">Ubah</a>
-                                                <a href=" <?= base_url(); ?>admin/hapus_admin/<?= $no  ?>" class="badge badge-danger">Hapus</a>
+                                                <div class="row justify-content-around">
+                                                    <a href="<?= base_url(); ?>admin/edit_admin/<?= $result['id']  ?>" class="badge badge-warning">Ubah</a>
+                                                    <a href="<?= base_url(); ?>admin/hapus_admin/<?= $result['id']  ?>" class=" badge badge-danger hapus">Hapus</a>
+                                                </div>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

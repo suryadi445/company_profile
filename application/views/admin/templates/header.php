@@ -28,4 +28,14 @@
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/') ?>plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/') ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/') ?>plugins/toastr/toastr.min.css">
+
+    <style>
+        .swal2-popup .swal2-styled:focus {
+            box-shadow: none !important;
+        }
+    </style>
 </head>

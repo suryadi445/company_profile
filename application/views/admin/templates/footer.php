@@ -36,13 +36,15 @@
 <script src="<?= base_url('assets/adminLTE/') ?>plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/adminLTE/') ?>dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?= base_url('assets/adminLTE/') ?>dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url('assets/adminLTE/') ?>dist/js/demo.js"></script>
+<!-- SweetAlert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Toastr -->
+<script src="<?= base_url('assets/adminLTE/') ?>plugins/toastr/toastr.min.js"></script>
 <!-- js -->
 <script src="<?= base_url('assets/js/') ?>script.js"></script>
-
+<script src="<?= base_url('assets/js/') ?>alert.js"></script>
 </body>
 
 </html>

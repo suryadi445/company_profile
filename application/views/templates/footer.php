@@ -128,12 +128,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 <!-- sweetalert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- Toastr -->
+<script src="<?= base_url('assets/js/script.js') ?>plugins/toastr/toastr.min.js"></script>
 <!-- aos library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <!-- gsap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
 <script src="<?= base_url('assets/js/script.js') ?>"></script>
+<script src="<?= base_url('assets/js/alert.js') ?>"></script>
 
 <script>
     // halaman menu

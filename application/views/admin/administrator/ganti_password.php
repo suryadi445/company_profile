@@ -24,7 +24,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" id="quickForm">
+                        <form role="form" action="<?= base_url('admin/ganti_password'); ?>">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="email">Email address</label>
