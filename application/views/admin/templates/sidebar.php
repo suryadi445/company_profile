@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
         <img src="<?= base_url('assets/adminLTE/') ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">PT. Surya_Resto</span>
+        <span class="brand-text font-weight-light text-white">PT. Surya_Resto</span>
     </a>
 
     <!-- Sidebar -->
@@ -14,7 +14,7 @@
                 <img src="<?= base_url('assets/adminLTE/') ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Suryadi</a>
+                <a href="#" class="d-block text-white">Suryadi</a>
             </div>
         </div>
 
@@ -22,8 +22,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                    <a href="#" class="nav-link text-white">
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
                             Halaman Home
                             <i class="right fas fa-angle-left"></i>
@@ -31,16 +31,16 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/home_carousel') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('admin/home_carousel') ?>" class="nav-link font-weight-bold text-primary">
+                                <i class=" fas fa-angle-right nav-icon"></i>
                                 <p>Carousel</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                    <a href="#" class="nav-link text-white">
+                        <i class="nav-icon fas fa-bars"></i>
                         <p>
                             Halaman Menu
                             <i class="fas fa-angle-left right"></i>
@@ -48,33 +48,33 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/home_menu') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('admin/home_menu') ?>" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Menu</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                    <a href="#" class="nav-link text-white">
+                        <i class="nav-icon fas fa-store"></i>
                         <p>
-                            Outlet
+                            Halaman Outlet
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/forms/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/forms/general.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Add Outlet</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                    <a href="#" class="nav-link text-white">
+                        <i class="nav-icon fas fa-search-dollar"></i>
                         <p>
                             Promo
                             <i class="fas fa-angle-left right"></i>
@@ -82,28 +82,28 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/tables/simple.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Tambah Promo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/tables/data.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Hapus Promo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/tables/jsgrid.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Update Promo</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                    <a href="#" class="nav-link text-white">
+                        <i class="nav-icon fas fa-shoe-prints"></i>
                         <p>
                             Footer
                             <i class="fas fa-angle-left right"></i>
@@ -111,32 +111,32 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/tables/simple.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Hubungi Kami</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/tables/data.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Karir</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/tables/jsgrid.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Layanan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/tentang_kami') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('admin/tentang_kami') ?>" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Tentang Kami</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="pages/tables/jsgrid.html" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>CSR</p>
                             </a>
                         </li>
@@ -144,8 +144,8 @@
                 </li>
                 <li class="nav-header">Admin</li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-envelope"></i>
+                    <a href="#" class="nav-link text-white">
+                        <i class="nav-icon fas fa-users-cog"></i>
                         <p>
                             Admin Control
                             <i class="fas fa-angle-left right"></i>
@@ -153,14 +153,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/ganti_password') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('admin/ganti_password') ?>" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Ganti Password</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('admin/jumlah_admin') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('admin/jumlah_admin') ?>" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Jumlah Admin</p>
                             </a>
                         </li>
@@ -168,8 +168,8 @@
                 </li>
                 <li class="nav-header">Restoran</li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-envelope"></i>
+                    <a href="#" class="nav-link text-white">
+                        <i class="nav-icon fas fa-hotel"></i>
                         <p>
                             Nama Restoran
                             <i class="fas fa-angle-left right"></i>

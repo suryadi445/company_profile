@@ -1,4 +1,4 @@
-// $('document').ready(function(){
+$('document').ready(function(){
 //     $('#simpan').click(function(e){
 //         e.preventDefault
 //         let nama = $('#nama_daftar').val()
@@ -22,4 +22,14 @@
 //         })
 
 //     })
-// })
+
+    $('.ubah_admin').click(function(e) {
+        e.preventDefault()
+        var test = $(".ubah_admin").val($(this).data('id'));
+
+        alert(test);
+
+        // alert('oke');
+    })
+})
+

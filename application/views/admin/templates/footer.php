@@ -40,6 +40,9 @@
 <script src="<?= base_url('assets/adminLTE/') ?>dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url('assets/adminLTE/') ?>dist/js/demo.js"></script>
+<!-- js -->
+<script src="<?= base_url('assets/js/') ?>script.js"></script>
+
 </body>
 
 </html>

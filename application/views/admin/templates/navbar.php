@@ -8,7 +8,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="<?= base_url('admin'); ?>" class="nav-link text-primary">
+                        <i class="fas fa-home mr-1"></i>
+                        Home
+                    </a>
                 </li>
             </ul>
 
@@ -17,12 +20,12 @@
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
+                        <i class="fas fa-sign-out-alt"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> Logout
+                        <a href="<?= base_url('home'); ?>" class="dropdown-item">
+                            <i class="fas fa-door-open mr-2"></i> Logout
                         </a>
                         <div class="dropdown-divider"></div>
                     </div>

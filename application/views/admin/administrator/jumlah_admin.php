@@ -31,27 +31,32 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap">
+                            <table class="table table-hover text-nowrap text-center">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Phone</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Suryadi</td>
-                                        <td>suryadi.hhb@gmail.com</td>
-                                        <td>Pria</td>
-                                        <td>
-                                            <a href="" class="badge badge-warning">Ubah</a>
-                                            <a href="" class="badge badge-danger">Hapus</a>
-                                        </td>
-                                    </tr>
+                                    <?php $no = 1; ?>
+                                    <?php foreach ($all_admin as $result) : ?>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $result['nama']; ?></td>
+                                            <td><?= $result['email']; ?></td>
+                                            <td><?= $result['phone']; ?></td>
+                                            <td><?= $result['gender']; ?></td>
+                                            <td>
+                                                <a href="<?= base_url(); ?>admin/edit_admin/<?= $result['id']  ?>" class="badge badge-warning">Ubah</a>
+                                                <a href=" <?= base_url(); ?>admin/hapus_admin/<?= $no  ?>" class="badge badge-danger">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
                                 </tbody>
                             </table>
                         </div>
