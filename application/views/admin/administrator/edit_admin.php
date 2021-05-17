@@ -52,7 +52,7 @@
                                     <div class="row font-weight-bold">
                                         <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
                                         <div class="col-sm-10">
-                                            <?php if ($all_admin['gender'] == 'Pria') : ?>
+                                            <?php if ($all_admin['gender'] == 'pria') : ?>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Pria" checked>
                                                     <label class="form-check-label" for="gridRadios1">
@@ -67,7 +67,7 @@
                                                     </label>
                                                 </div>
                                             <?php endif ?>
-                                            <?php if ($all_admin['gender'] == 'Wanita') : ?>
+                                            <?php if ($all_admin['gender'] == 'wanita') : ?>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Wanita" checked>
                                                     <label class="form-check-label" for="gridRadios2">

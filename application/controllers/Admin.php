@@ -48,11 +48,46 @@ class Admin extends CI_Controller
 
     public function ganti_password()
     {
-        $this->load->view('admin/templates/header');
-        $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/administrator/ganti_password');
-        $this->load->view('admin/templates/footer');
+        // data dari session
+        $data['session']    = $this->session->userdata('email');
+
+        $this->form_validation->set_rules('password_lama', 'Password', 'required|trim|min_length[6]');
+        $this->form_validation->set_rules('password_baru', 'Password', 'required|trim|min_length[6]');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('admin/templates/header');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/administrator/ganti_password', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $this->reset_password();
+        }
+    }
+
+    public function reset_password()
+    {
+        $id                 = $this->session->userdata('id');
+        $data['session']    = $this->session->userdata('email');
+        $data['row']        = $this->Admin_model->get_id($id);
+
+        $password_lama      = $this->input->post('password_lama');
+        $password_baru      = password_hash($this->input->post('password_baru'), PASSWORD_DEFAULT);
+
+        $password_DB        = $data['row']['password'];
+
+
+        if (password_verify($password_lama, $password_DB)) {
+            // berhasil;
+            $this->Admin_model->update_password($password_baru, $id);
+            $this->session->set_flashdata('sukses', 'Password anda berhasil diUbah');
+
+            redirect('admin/jumlah_admin');
+        } else {
+            // gagal;
+            $this->session->set_flashdata('gagal', 'Masukkan password lama anda dengan benar');
+
+            redirect('admin/ganti_password');
+        }
     }
 
     public function jumlah_admin()
@@ -116,8 +151,6 @@ class Admin extends CI_Controller
 
     public function hapus_admin($id)
     {
-        // echo 'oke';
-        // die;
         $this->Admin_model->delete_admin($id);
         $this->session->set_flashdata('sukses', 'User berhasil dihapus!!');
 

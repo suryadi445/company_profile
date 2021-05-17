@@ -16,6 +16,7 @@ class Auth extends CI_Controller
         $email = htmlspecialchars($this->input->post('email', true));
         $phone = htmlspecialchars($this->input->post('phone', true));
         $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+        $password2 = password_hash($this->input->post('password2'), PASSWORD_DEFAULT);
         $gender = $this->input->post('gridRadios', true);
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -24,8 +25,18 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules(
             'password',
             'Password',
-            'required|trim|min_length[6]',
+            'required|trim|min_length[6]|matches[password2]',
             [
+                'matches'    => 'Password tidak sama',
+                'min_length' => 'Password minimal 6 karakter'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'password2',
+            'Konfirmasi Password',
+            'required|trim|min_length[6]|matches[password]',
+            [
+                'matches'    => 'Password tidak sama',
                 'min_length' => 'Password minimal 6 karakter'
             ]
         );
@@ -77,11 +88,13 @@ class Auth extends CI_Controller
         if ($user) {
             if (password_verify($password, $user['password'])) {
                 $data = [
+                    'id'    =>  $user['id'],
                     'email' => $user['email'],
-                    'nama' => $user['nama']
+                    'nama'  => $user['nama']
                 ];
 
                 $this->session->set_flashdata('flash', 'Selamat datang ' . $data['nama']);
+                $this->session->set_userdata($data);
                 redirect('admin');
             } else {
                 $this->session->set_flashdata('flash', 'Password yang anda masukkan salah');

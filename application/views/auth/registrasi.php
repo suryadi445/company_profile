@@ -79,13 +79,13 @@
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="pria" checked>
                                                     <label class="form-check-label" for="gridRadios1">
-                                                        Male
+                                                        Male <small>(Pria)</small>
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="wanita">
                                                     <label class="form-check-label" for="gridRadios2">
-                                                        Female
+                                                        Female <small>(Wanita)</small>
                                                     </label>
                                                 </div>
                                             </div>

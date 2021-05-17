@@ -24,19 +24,30 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" action="<?= base_url('admin/ganti_password'); ?>">
+                        <form role="form" action="<?= base_url('admin/ganti_password'); ?>" method="post">
                             <div class="card-body">
+                                <!-- alert -->
+                                <?php if ($this->session->flashdata('gagal')) : ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?= $this->session->flashdata('gagal') ?>
+                                    </div>
+                                <?php endif ?>
+                                <!-- akhir alert -->
+
                                 <div class="form-group">
                                     <label for="email">Email address</label>
-                                    <input type="email" name="email" class="form-control" id="email" readonly>
+                                    <input type="email" name="email" class="form-control" id="email" value="<?= $session ?>" readonly>
+                                    <div class="text-danger"><?= form_error('email') ?></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password_lama">Password Lama</label>
-                                    <input type="password" name="password" class="form-control" id="password_lama" placeholder="Password">
+                                    <input type="password" name="password_lama" class="form-control" id="password_lama" placeholder="Masukkan Password Lama Anda">
+                                    <div class="text-danger"><?= form_error('password_lama') ?></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password_baru">Password baru</label>
-                                    <input type="password" name="password2" class="form-control" id="password_baru" placeholder="Password">
+                                    <input type="password" name="password_baru" class="form-control" id="password_baru" placeholder="Masukkan Password Baru Anda">
+                                    <div class="text-danger"><?= form_error('password_baru') ?></div>
                                 </div>
                             </div>
                             <!-- /.card-body -->

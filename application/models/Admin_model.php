@@ -23,6 +23,12 @@ class Admin_model extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->delete('tbl_users');
-        // return $delete;
+    }
+
+    public function update_password($password_baru, $id)
+    {
+        $this->db->set('password', $password_baru);
+        $this->db->where('id', $id);
+        $this->db->update('tbl_users');
     }
 }
