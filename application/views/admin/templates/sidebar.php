@@ -14,7 +14,7 @@
                 <img src="<?= base_url('assets/adminLTE/') ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block text-white">Suryadi</a>
+                <a href="#" class="d-block text-white"><?= $this->session->userdata('nama') ?></a>
             </div>
         </div>
 
@@ -76,27 +76,15 @@
                     <a href="#" class="nav-link text-white">
                         <i class="nav-icon fas fa-search-dollar"></i>
                         <p>
-                            Promo
+                            Halaman Promo
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link font-weight-bold text-primary">
+                            <a href="<?= base_url('admin/semua_promo') ?>" class="nav-link font-weight-bold text-primary">
                                 <i class="fas fa-angle-right nav-icon"></i>
-                                <p>Tambah Promo</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link font-weight-bold text-primary">
-                                <i class="fas fa-angle-right nav-icon"></i>
-                                <p>Hapus Promo</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link font-weight-bold text-primary">
-                                <i class="fas fa-angle-right nav-icon"></i>
-                                <p>Update Promo</p>
+                                <p>Semua Promo</p>
                             </a>
                         </li>
                     </ul>

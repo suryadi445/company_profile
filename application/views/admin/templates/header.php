@@ -34,8 +34,21 @@
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/') ?>plugins/toastr/toastr.min.css">
 
     <style>
+        /* for sweetalert */
         .swal2-popup .swal2-styled:focus {
             box-shadow: none !important;
+        }
+
+        /* for datepicker */
+        .ui-datepicker {
+            background: #333;
+            border: 1px solid #555;
+            color: #EEE;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: -100px;
+            word-spacing: 20px;
         }
     </style>
 </head>

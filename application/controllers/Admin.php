@@ -37,6 +37,26 @@ class Admin extends CI_Controller
         $this->load->view('admin/templates/footer');
     }
 
+    public function semua_promo()
+    {
+        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/promo/semua_promo');
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function tambah_promo()
+    {
+        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/promo/tambah_promo');
+        $this->load->view('admin/templates/footer');
+    }
+
+
+
     public function tentang_kami()
     {
         $this->load->view('admin/templates/header');
