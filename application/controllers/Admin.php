@@ -48,11 +48,54 @@ class Admin extends CI_Controller
 
     public function tambah_promo()
     {
-        $this->load->view('admin/templates/header');
-        $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/promo/tambah_promo');
-        $this->load->view('admin/templates/footer');
+        $this->form_validation->set_rules('promo_awal', 'Promo Awal', 'required|trim');
+        $this->form_validation->set_rules('promo_akhir', 'Promo Akhir', 'required|trim');
+        $this->form_validation->set_rules('menu_promo', 'Menu Promo', 'required|trim');
+        $this->form_validation->set_rules('harga_awal', 'Harga Awal', 'required|trim|numeric');
+        $this->form_validation->set_rules('harga_promo', 'Harga Promo', 'required|trim|numeric');
+        $this->form_validation->set_rules('gambar_promo', 'Gambar Promo', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('admin/templates/header');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/promo/tambah_promo');
+            $this->load->view('admin/templates/footer');
+        } else {
+            // upload file
+            $config['upload_path']      = './assets/upload_image';
+            $config['allowed_types']    = 'jpg|png|jpeg|png';
+            $config['max_size']        = 2000;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            $promo_awal         = $this->input->post('promo_awal');
+            $promo_akhir        = $this->input->post('promo_akhir');
+            $menu_promo         = $this->input->post('menu_promo');
+            $harga_awal         = $this->input->post('harga_awal');
+            $harga_promo        = $this->input->post('harga_promo');
+            $gambar_promo       = $_FILES['gambar_promo']['name'];
+
+            $data               =   [
+                'menu_promo'    => $menu_promo,
+                'harga_promo'   => $harga_promo,
+                'harga_awal'    => $harga_awal,
+                'promo_awal'    => $promo_awal,
+                'promo_akhir'   => $promo_akhir,
+                'gambar_promo'  => $gambar_promo
+            ];
+
+            if (!$this->upload->do_upload('gambar_promo')) {
+                $this->session->set_flashdata('gagal', 'Gambar gagal diupload');
+                // redirect('admin/tambah_barang');
+            } else {
+                $this->upload->data('file_name');
+                $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+                $this->Admin_model->tambah_promo($data);
+                redirect('admin/tambah_promo');
+            }
+        }
     }
 
 

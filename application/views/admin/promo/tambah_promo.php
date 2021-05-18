@@ -25,46 +25,62 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?= base_url('admin/tambah_promo') ?>">
+                        <form class="form-horizontal" action="<?= base_url('admin/tambah_promo') ?>" method="POST" enctype="multipart/form-data">
                             <div class="card-body">
+                                <!-- alert -->
+                                <?php if ($this->session->flashdata('gagal')) : ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?= $this->session->flashdata('gagal') ?>
+                                    </div>
+                                <?php endif ?>
+                                <?php if ($this->session->flashdata()) : ?>
+                                    <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
+                                <?php endif ?>
+                                <!-- akhir alert -->
                                 <div class="form-group row">
                                     <label for="promo_awal" class="col-sm-4 col-form-label">Promo Awal</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control datepicker" name="promo_awal">
+                                        <input type="text" class="form-control datepicker" name="promo_awal" autocomplete="off">
+                                        <div class="text-danger mb-n4"><?= form_error('promo_awal'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="promo_akhir" class="col-sm-4 col-form-label">Promo Akhir</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control datepicker" name="promo_akhir">
+                                        <input type="text" class="form-control datepicker" name="promo_akhir" autocomplete="off">
+                                        <div class="text-danger mb-n4"><?= form_error('promo_akhir'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="menu_promo" class="col-sm-4 col-form-label">Menu Promo</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="menu_promo" name="menu_promo">
+                                        <input type="text" class="form-control" id="menu_promo" name="menu_promo" autocomplete="off">
+                                        <div class="text-danger mb-n4"><?= form_error('menu_promo'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="harga_awal" class="col-sm-4 col-form-label">Harga Awal</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="harga_awal" name="harga_awal">
+                                        <input type="text" class="form-control" id="harga_awal" name="harga_awal" autocomplete="off">
+                                        <div class="text-danger mb-n4"><?= form_error('harga_awal'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="harga_promo" class="col-sm-4 col-form-label">Harga Promo</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="harga_promo" name="harga_promo">
+                                        <input type="text" class="form-control" id="harga_promo" name="harga_promo" autocomplete="off">
+                                        <div class="text-danger mb-n4"><?= form_error('harga_promo'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="gambar_promo" class="col-sm-4 col-form-label">Upload Gambar</label>
                                     <div class="input-group col-sm-8">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="gambar_promo">
+                                            <input type="file" class="custom-file-input" id="gambar_promo" name="gambar_promo" autocomplete="off">
                                             <label class="custom-file-label" for="gambar_promo">Pilih Gambar</label>
                                         </div>
                                     </div>
+                                    <div class="text-danger mb-n4 offset-sm-4 col-sm-8"><?= form_error('gambar_promo'); ?></div>
                                 </div>
                             </div>
                             <!-- /.card-body -->

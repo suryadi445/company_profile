@@ -31,4 +31,9 @@ class Admin_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('tbl_users');
     }
+
+    public function tambah_promo($data)
+    {
+        $this->db->insert('tbl_promo', $data);
+    }
 }
