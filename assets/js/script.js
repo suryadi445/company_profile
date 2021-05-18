@@ -1,10 +1,15 @@
 $('document').ready(function(){
     // date picker
-        $(".datepicker").datepicker({
-                dateFormat:"yy-mm-dd",
-                autoclose: true,
-                todayHighlight: true,
-            })
+    $(".datepicker").datepicker({
+        dateFormat:"yy-mm-dd",
+        autoclose: true,
+        todayHighlight: true,
+    })
+
+    $('.custom-file-input').on('change', function(){
+        let fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName)
+    });
     
     // $('.hapus').click(function(e){
     //     e.preventDefault()
