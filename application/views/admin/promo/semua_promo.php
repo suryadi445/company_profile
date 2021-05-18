@@ -28,9 +28,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Daftar Promo</h3>
-                            <!-- <?php if ($this->session->flashdata()) : ?>
+                            <?php if ($this->session->flashdata()) : ?>
                                 <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
-                            <?php endif ?> -->
+                            <?php endif ?>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
                                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -49,28 +49,40 @@
                                         <th>Menu Promo</th>
                                         <th>Harga Promo</th>
                                         <th>Harga Awal</th>
-                                        <th>Waktu Promo</th>
+                                        <th>Mulai Promo</th>
+                                        <th>Akhir Promo</th>
+                                        <th>Gambar Promo</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <td>1</td>
-                                    <td>Suryadi</td>
-                                    <td>suryadi.hhb@gmail.com</td>
-                                    <td>089678468651</td>
-                                    <td>pria</td>
-                                    <td>
-                                        <div class="row justify-content-around">
-                                            <a href="<?= base_url(); ?>admin/edit_admin/" class="badge badge-warning">Ubah</a>
-                                            <a href="<?= base_url(); ?>admin/hapus_admin/" class=" badge badge-danger hapus">Hapus</a>
-                                        </div>
-                                    </td>
-                                    </tr>
+                                    <?php foreach ($all_promo as $result) :
+                                    ?>
+                                        <tr>
+                                            <td><?= ++$start; ?></td>
+                                            <td><?= $result['menu_promo']; ?></td>
+                                            <td><?= $result['harga_promo']; ?></td>
+                                            <td><?= $result['harga_awal']; ?></td>
+                                            <td><?= $result['promo_awal']; ?></td>
+                                            <td><?= $result['promo_akhir']; ?></td>
+                                            <td>
+                                                <img src="<?= base_url('assets/upload_image/') . $result['gambar_promo']; ?>" width="50px" height="50px">
+                                            </td>
+                                            <td>
+                                                <div class="row justify-content-around">
+                                                    <a href="<?= base_url(); ?>admin/edit_admin/" class="badge badge-warning">Ubah</a>
+                                                    <a href="<?= base_url(); ?>admin/hapus_admin/" class=" badge badge-danger hapus">Hapus</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.card-body -->
                     </div>
+                    <?= $pagination ?>
+
                     <!-- /.card -->
                 </div>
             </div>

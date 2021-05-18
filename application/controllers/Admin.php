@@ -39,10 +39,59 @@ class Admin extends CI_Controller
 
     public function semua_promo()
     {
+        // $data['all_promo']      = $this->Admin_model->get_all_promo();
+
+        // load library
+        $this->load->library('pagination');
+
+        // config
+        $config['base_url'] = 'http://localhost/company_profile/admin/semua_promo/';
+        $config['total_rows'] = $this->Admin_model->count_rows();
+        $config['per_page'] = 2;
+
+        // style pagination
+        $config['full_tag_open']    = '<nav"><ul class="pagination justify-content-center"';
+        $config['full_tag_close']   = '</ul></nav>';
+        // first pagination
+        $config['first_link']       = 'First';
+        $config['first_tag_open']   = '<li class="page-item">';
+        $config['first_tag_close']   = '</li>';
+
+        // last pagination
+        $config['last_link'] = 'Last';
+        $config['last_tag_open']   = '<li class="page-item">';
+        $config['last_tag_close']   = '</li>';
+
+        // next pagination
+        $config['next_link'] = '>>';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']   = '</li>';
+
+        // prev pagination
+        $config['prev_link'] = '<<';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']   = '</li>';
+
+        // link yang aktif
+        $config['cur_tag_open']   = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close']   = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']   = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+        // inisisalisasi
+        $this->pagination->initialize($config);
+
+        $data['pagination']     = $this->pagination->create_links();
+
+        $data['start']        = $this->uri->segment('3');
+        $data['all_promo']    = $this->Admin_model->get_promo($config['per_page'], $data['start']);
+
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/promo/semua_promo');
+        $this->load->view('admin/promo/semua_promo', $data);
         $this->load->view('admin/templates/footer');
     }
 
@@ -53,7 +102,10 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('menu_promo', 'Menu Promo', 'required|trim');
         $this->form_validation->set_rules('harga_awal', 'Harga Awal', 'required|trim|numeric');
         $this->form_validation->set_rules('harga_promo', 'Harga Promo', 'required|trim|numeric');
-        $this->form_validation->set_rules('gambar_promo', 'Gambar Promo', 'required|trim');
+
+        if (empty($_FILES['gambar_promo']['name'])) {
+            $this->form_validation->set_rules('gambar_promo', 'Gambar Promo', 'required');
+        }
 
         if ($this->form_validation->run() == false) {
             $this->load->view('admin/templates/header');
@@ -91,9 +143,9 @@ class Admin extends CI_Controller
                 // redirect('admin/tambah_barang');
             } else {
                 $this->upload->data('file_name');
-                $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+                $this->session->set_flashdata('sukses', 'Promo berhasil ditambahkan');
                 $this->Admin_model->tambah_promo($data);
-                redirect('admin/tambah_promo');
+                redirect('admin/semua_promo');
             }
         }
     }

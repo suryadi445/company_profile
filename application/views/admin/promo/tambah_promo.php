@@ -33,9 +33,6 @@
                                         <?= $this->session->flashdata('gagal') ?>
                                     </div>
                                 <?php endif ?>
-                                <?php if ($this->session->flashdata()) : ?>
-                                    <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
-                                <?php endif ?>
                                 <!-- akhir alert -->
                                 <div class="form-group row">
                                     <label for="promo_awal" class="col-sm-4 col-form-label">Promo Awal</label>

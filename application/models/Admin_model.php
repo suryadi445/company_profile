@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin_model extends CI_Model
 {
+    // query tabel users
     public function get_all()
     {
         return $this->db->get('tbl_users')->result_array();
@@ -31,9 +32,32 @@ class Admin_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('tbl_users');
     }
+    // akhir query table users
 
+
+    // query tabel promo
     public function tambah_promo($data)
     {
         $this->db->insert('tbl_promo', $data);
     }
+
+    public function get_all_promo()
+    {
+        return $this->db->get('tbl_promo')->result_array();
+    }
+
+    public function get_promo($start, $limit)
+    {
+        return $this->db->get('tbl_promo', $start, $limit)->result_array();
+    }
+
+    public function count_rows()
+    {
+        return $this->db->get('tbl_promo')->num_rows();
+    }
+
+
+
+    // akhir query tabel promo
+
 }
