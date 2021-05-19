@@ -56,7 +56,16 @@ class Admin_model extends CI_Model
         return $this->db->get('tbl_promo')->num_rows();
     }
 
+    public function get_row($id)
+    {
+        return $this->db->get_where('tbl_promo', ['id' => $id])->row_array();
+    }
 
+    public function update_promo($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_promo', $data);
+    }
 
     // akhir query tabel promo
 

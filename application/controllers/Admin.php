@@ -12,6 +12,8 @@ class Admin extends CI_Controller
 
     public function index()
     {
+        $data['judul']      = 'Administrator';
+
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
@@ -30,6 +32,7 @@ class Admin extends CI_Controller
 
     public function home_menu()
     {
+
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
@@ -39,22 +42,24 @@ class Admin extends CI_Controller
 
     public function semua_promo()
     {
+        // awal pagination
+
         // load library
         $this->load->library('pagination');
-
         // config
         $config['total_rows'] = $this->Admin_model->count_rows();
         $config['per_page'] = 2;
-
         // inisisalisasi
         $this->pagination->initialize($config);
 
         $data['pagination']     = $this->pagination->create_links();
-
         $data['start']        = $this->uri->segment('3');
         $data['all_promo']    = $this->Admin_model->get_promo($config['per_page'], $data['start']);
+        // akhir pagination
 
-        $this->load->view('admin/templates/header');
+        $data['judul']      = 'Semua Promo';
+
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
         $this->load->view('admin/promo/semua_promo', $data);
@@ -73,8 +78,10 @@ class Admin extends CI_Controller
             $this->form_validation->set_rules('gambar_promo', 'Gambar Promo', 'required');
         }
 
+        $data['judul']      = 'Tambah Promo';
+
         if ($this->form_validation->run() == false) {
-            $this->load->view('admin/templates/header');
+            $this->load->view('admin/templates/header', $data);
             $this->load->view('admin/templates/sidebar');
             $this->load->view('admin/templates/navbar');
             $this->load->view('admin/promo/tambah_promo');
@@ -116,6 +123,95 @@ class Admin extends CI_Controller
         }
     }
 
+    public function update_promo($id)
+    {
+        $data['judul']      = 'Update Promo';
+        $data['row']        = $this->Admin_model->get_row($id);
+
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/promo/update_promo', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function proses_update_promo()
+    {
+        $id                 = $this->input->post('id');
+        $promo_awal         = $this->input->post('promo_awal');
+        $promo_akhir        = $this->input->post('promo_akhir');
+        $menu_promo         = $this->input->post('menu_promo');
+        $harga_awal         = $this->input->post('harga_awal');
+        $harga_promo        = $this->input->post('harga_promo');
+        $gambar_promo       = $_FILES['gambar_promo']['name'];
+
+        $this->form_validation->set_rules('promo_awal', 'Promo Awal', 'required|trim');
+        $this->form_validation->set_rules('promo_akhir', 'Promo Akhir', 'required|trim');
+        $this->form_validation->set_rules('menu_promo', 'Menu Promo', 'required|trim');
+        $this->form_validation->set_rules('harga_awal', 'Harga Awal', 'required|trim|numeric');
+        $this->form_validation->set_rules('harga_promo', 'Harga Promo', 'required|trim|numeric');
+
+        $data['judul']      = 'Update Promo';
+        $data['row']        = $this->Admin_model->get_row($id);
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/promo/update_promo', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+
+            if ($gambar_promo) {
+                // upload file
+                $config['upload_path']      = './assets/upload_image';
+                $config['allowed_types']    = 'jpg|png|jpeg|png';
+                $config['max_size']        = 2000;
+
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('gambar_promo')) {
+                    // berhasil diupload
+                    $foto_lama      = $data['row']['gambar_promo'];
+                    $gambar_baru      = $this->upload->data('file_name');
+
+                    $data               =   [
+                        'id'            => $id,
+                        'menu_promo'    => $menu_promo,
+                        'harga_promo'   => $harga_promo,
+                        'harga_awal'    => $harga_awal,
+                        'promo_awal'    => $promo_awal,
+                        'promo_akhir'   => $promo_akhir,
+                        'gambar_promo'  => $gambar_baru
+                    ];
+
+                    unlink(FCPATH . 'assets/upload_image/' . $foto_lama);
+
+                    $this->session->set_flashdata('sukses', 'Promo berhasil diupdate');
+                    $this->Admin_model->update_promo($id, $data);
+                    redirect('admin/semua_promo');
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            } else {
+                // tidak ada gambar
+                $data               =   [
+                    'id'            => $id,
+                    'menu_promo'    => $menu_promo,
+                    'harga_promo'   => $harga_promo,
+                    'harga_awal'    => $harga_awal,
+                    'promo_awal'    => $promo_awal,
+                    'promo_akhir'   => $promo_akhir,
+                ];
+
+                $this->Admin_model->update_promo($id, $data);
+                $this->session->set_flashdata('sukses', 'Promo berhasil diupdate');
+                redirect('admin/semua_promo');
+            }
+        }
+    }
+
 
 
     public function tentang_kami()
@@ -130,12 +226,13 @@ class Admin extends CI_Controller
     public function ganti_password()
     {
         // data dari session
+        $data['judul']      = 'Ganti Password';
         $data['session']    = $this->session->userdata('email');
 
         $this->form_validation->set_rules('password_lama', 'Password', 'required|trim|min_length[6]');
         $this->form_validation->set_rules('password_baru', 'Password', 'required|trim|min_length[6]');
         if ($this->form_validation->run() == false) {
-            $this->load->view('admin/templates/header');
+            $this->load->view('admin/templates/header', $data);
             $this->load->view('admin/templates/sidebar');
             $this->load->view('admin/templates/navbar');
             $this->load->view('admin/administrator/ganti_password', $data);
@@ -173,9 +270,10 @@ class Admin extends CI_Controller
 
     public function jumlah_admin()
     {
+        $data['judul']      = 'Daftar Admin';
         $data['all_admin']      = $this->Admin_model->get_all();
 
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
         $this->load->view('admin/administrator/jumlah_admin', $data);
@@ -205,8 +303,9 @@ class Admin extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['all_admin']     = $this->Admin_model->get_id($id);
+            $data['judul']      = 'Update Admin';
 
-            $this->load->view('admin/templates/header');
+            $this->load->view('admin/templates/header', $data);
             $this->load->view('admin/templates/sidebar');
             $this->load->view('admin/templates/navbar');
             $this->load->view('admin/administrator/edit_admin', $data);
@@ -220,9 +319,10 @@ class Admin extends CI_Controller
 
     public function edit_admin($id)
     {
+        $data['judul']      = 'Update Admin';
         $data['all_admin']     = $this->Admin_model->get_id($id);
 
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
         $this->load->view('admin/administrator/edit_admin', $data);

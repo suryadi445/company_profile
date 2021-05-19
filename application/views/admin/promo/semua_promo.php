@@ -47,8 +47,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Menu Promo</th>
-                                        <th>Harga Promo</th>
                                         <th>Harga Awal</th>
+                                        <th>Harga Promo</th>
                                         <th>Mulai Promo</th>
                                         <th>Akhir Promo</th>
                                         <th>Gambar Promo</th>
@@ -61,8 +61,8 @@
                                         <tr>
                                             <td><?= ++$start; ?></td>
                                             <td><?= $result['menu_promo']; ?></td>
-                                            <td><?= $result['harga_promo']; ?></td>
-                                            <td><?= $result['harga_awal']; ?></td>
+                                            <td>Rp. <?= $result['harga_awal']; ?></td>
+                                            <td class="text-danger font-weight-bold">Rp. <?= $result['harga_promo']; ?></td>
                                             <td><?= $result['promo_awal']; ?></td>
                                             <td><?= $result['promo_akhir']; ?></td>
                                             <td>
@@ -70,8 +70,8 @@
                                             </td>
                                             <td>
                                                 <div class="row justify-content-around">
-                                                    <a href="<?= base_url(); ?>admin/edit_admin/" class="badge badge-warning">Ubah</a>
-                                                    <a href="<?= base_url(); ?>admin/hapus_admin/" class=" badge badge-danger hapus">Hapus</a>
+                                                    <a href="<?= base_url('admin/update_promo/')  . $result['id']; ?>" class="badge badge-warning">Ubah</a>
+                                                    <a href="<?= base_url('admin/hapus_promo/') . $result['id'] ?>" class=" badge badge-danger hapus">Hapus</a>
                                                 </div>
                                             </td>
                                         </tr>

@@ -6,10 +6,19 @@ $('document').ready(function(){
         todayHighlight: true,
     })
 
+    // manipulasi text pada input file gambar bootstrap
     $('.custom-file-input').on('change', function(){
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName)
     });
+
+    // gambar preview pada input file gambar
+    gambar_promo.onchange = evt => {
+    const [file] = gambar_promo.files
+    if (file) {
+        blah.src = URL.createObjectURL(file)
+    }
+    }
     
     // $('.hapus').click(function(e){
     //     e.preventDefault()
