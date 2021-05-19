@@ -67,6 +67,12 @@ class Admin_model extends CI_Model
         $this->db->update('tbl_promo', $data);
     }
 
+    public function hapus_promo($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tbl_promo');
+    }
+
     // akhir query tabel promo
 
 }

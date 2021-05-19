@@ -174,7 +174,7 @@ class Admin extends CI_Controller
                 if ($this->upload->do_upload('gambar_promo')) {
                     // berhasil diupload
                     $foto_lama      = $data['row']['gambar_promo'];
-                    $gambar_baru      = $this->upload->data('file_name');
+                    $gambar_baru      = $this->upload->data('file_name'); //membuat nama gambar baru
 
                     $data               =   [
                         'id'            => $id,
@@ -186,13 +186,13 @@ class Admin extends CI_Controller
                         'gambar_promo'  => $gambar_baru
                     ];
 
-                    unlink(FCPATH . 'assets/upload_image/' . $foto_lama);
+                    unlink(FCPATH . 'assets/upload_image/' . $foto_lama); // untuk menghapus file yg sudah ada
 
                     $this->session->set_flashdata('sukses', 'Promo berhasil diupdate');
                     $this->Admin_model->update_promo($id, $data);
                     redirect('admin/semua_promo');
                 } else {
-                    echo $this->upload->display_errors();
+                    echo $this->upload->display_errors(); //menampilkan error pada gambar
                 }
             } else {
                 // tidak ada gambar
@@ -212,6 +212,12 @@ class Admin extends CI_Controller
         }
     }
 
+    public function hapus_promo($id)
+    {
+        $this->Admin_model->hapus_promo($id);
+        $this->session->set_flashdata('sukses', 'Promo berhasil dihapus');
+        redirect('admin/semua_promo');
+    }
 
 
     public function tentang_kami()
