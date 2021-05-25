@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Hubungi Kami</h1>
+                    <h1 class="m-0 text-dark">Karir</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -22,9 +22,8 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
-                            <th scope="col">Kategori</th>
-                            <th scope="col">Tanggal Pesan</th>
-                            <th scope="col">Pesan</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Tanggal Mendaftar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,9 +34,6 @@
                             <td>@mdo</td>
                             <td>@mdo</td>
                             <td>@mdo</td>
-                            <td>
-                                <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal_hubungi_kami">Lihat Pesan</a>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,6 +43,11 @@
     </div>
     <!-- /.content -->
 </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_hubungi_kami">
+    Launch demo modal
+</button>
 
 <!-- Modal -->
 <div class="modal fade" id="modal_hubungi_kami" tabindex="-1" aria-labelledby="modal_label" aria-hidden="true">

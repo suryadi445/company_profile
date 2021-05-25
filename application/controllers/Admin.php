@@ -265,6 +265,36 @@ class Admin extends CI_Controller
         $this->load->view('admin/templates/footer');
     }
 
+    public function karir()
+    {
+        $data['judul'] = 'Karir';
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/tentang_kami/karir');
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function layanan()
+    {
+        $data['judul'] = 'Layanan';
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/tentang_kami/layanan');
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function csr()
+    {
+        $data['judul'] = 'CSR';
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/tentang_kami/csr');
+        $this->load->view('admin/templates/footer');
+    }
+
     // admin control
     public function ganti_password()
     {
