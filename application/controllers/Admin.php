@@ -24,13 +24,29 @@ class Admin extends CI_Controller
     // halaman carousel
     public function home_carousel()
     {
+        $this->form_validation->set_rules('text_carousel_akhir', 'Text Carousel', 'required|trim|max_length[1000]');
+
+        $data['text_carousel_awal']       = $this->Admin_model->get_text();
+        $data['text']                     = $data['text_carousel_awal']['keterangan'];
+        $text_carousel_akhir              = $this->input->post('text_carousel_akhir');
+
         $data['judul']      = 'Carousel';
 
-        $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/home/carousel');
-        $this->load->view('admin/templates/footer');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/home/carousel', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $data = [
+                'keterangan' => $text_carousel_akhir
+            ];
+
+            $this->session->set_flashdata('sukses', 'Text carousel berhasil diperbaharui');
+            $this->Admin_model->insert_carousel($data);
+            redirect('admin/home_carousel');
+        }
     }
 
     // halaman menu
@@ -89,8 +105,8 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('harga_awal', 'Harga Awal', 'required|trim|numeric');
         $this->form_validation->set_rules('harga_promo', 'Harga Promo', 'required|trim|numeric');
 
-        if (empty($_FILES['gambar_promo']['name'])) {
-            $this->form_validation->set_rules('gambar_promo', 'Gambar Promo', 'required');
+        if (empty($_FILES['gambar']['name'])) {
+            $this->form_validation->set_rules('gambar', 'Gambar Promo', 'required');
         }
 
         $data['judul']      = 'Tambah Promo';
@@ -116,7 +132,7 @@ class Admin extends CI_Controller
             $harga_awal         = $this->input->post('harga_awal');
             $harga_promo        = $this->input->post('harga_promo');
 
-            if (!$this->upload->do_upload('gambar_promo')) {
+            if (!$this->upload->do_upload('gambar')) {
                 $this->session->set_flashdata('gagal', 'Gambar gagal diupload');
                 // redirect('admin/tambah_barang');
             } else {
@@ -158,7 +174,7 @@ class Admin extends CI_Controller
         $menu_promo         = $this->input->post('menu_promo');
         $harga_awal         = $this->input->post('harga_awal');
         $harga_promo        = $this->input->post('harga_promo');
-        $gambar_promo       = $_FILES['gambar_promo']['name'];
+        $gambar_promo       = $_FILES['gambar']['name'];
 
         $this->form_validation->set_rules('promo_awal', 'Promo Awal', 'required|trim');
         $this->form_validation->set_rules('promo_akhir', 'Promo Akhir', 'required|trim');
@@ -186,9 +202,9 @@ class Admin extends CI_Controller
                 $this->load->library('upload', $config);
                 $this->upload->initialize($config);
 
-                if ($this->upload->do_upload('gambar_promo')) {
+                if ($this->upload->do_upload('gambar')) {
                     // berhasil diupload
-                    $foto_lama      = $data['row']['gambar_promo'];
+                    $foto_lama      = $data['row']['gambar'];
                     $gambar_baru      = $this->upload->data('file_name'); //membuat nama gambar baru
 
                     $data               =   [
@@ -230,7 +246,7 @@ class Admin extends CI_Controller
     public function hapus_promo($id)
     {
         $data['row']        = $this->Admin_model->get_row($id);
-        $foto_lama          = $data['row']['gambar_promo'];
+        $foto_lama          = $data['row']['gambar'];
 
         // var_dump($data['row']);
         // var_dump($foto_lama);

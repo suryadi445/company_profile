@@ -14,13 +14,11 @@ $('document').ready(function(){
 
     // halaman yg ada uploadnya
     // gambar preview pada input file gambar
-    gambar_promo.onchange = evt => {
-        const [file] = gambar_promo.files
+    gambar.onchange = evt => {
+        const [file] = gambar.files
         if (file) {
             blah.src = URL.createObjectURL(file)
         }
     }
-    
-    
 })
 

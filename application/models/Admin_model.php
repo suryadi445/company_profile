@@ -83,4 +83,14 @@ class Admin_model extends CI_Model
 
     // akhir query tabel promo
 
+    // query table carousel
+    public function insert_carousel($data)
+    {
+        return $this->db->insert('carousel', $data);
+    }
+
+    public function get_text()
+    {
+        return $this->db->select("*")->limit(1)->order_by('id', "DESC")->get("carousel")->row_array();
+    }
 }
