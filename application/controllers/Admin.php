@@ -14,38 +14,53 @@ class Admin extends CI_Controller
     {
         $data['judul']      = 'Administrator';
 
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
         $this->load->view('admin/index');
         $this->load->view('admin/templates/footer');
     }
 
+    // halaman carousel
     public function home_carousel()
     {
-        $this->load->view('admin/templates/header');
+        $data['judul']      = 'Carousel';
+
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
         $this->load->view('admin/home/carousel');
         $this->load->view('admin/templates/footer');
     }
 
+    // halaman menu
     public function home_menu()
     {
+        $data['judul']      = 'Menu';
 
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
         $this->load->view('admin/home/menu');
         $this->load->view('admin/templates/footer');
     }
 
+    // halaman promo
     public function semua_promo()
     {
         // awal pagination
 
         // load library
         $this->load->library('pagination');
+
+
+        // search
+        // $keyword = $this->input->post('keyword');
+        if ($this->input->post('submit')) {
+            echo $this->input->post('keyword');
+        }
+
+
         // config
         $config['total_rows'] = $this->Admin_model->count_rows();
         $config['per_page'] = 2;
@@ -100,24 +115,24 @@ class Admin extends CI_Controller
             $menu_promo         = $this->input->post('menu_promo');
             $harga_awal         = $this->input->post('harga_awal');
             $harga_promo        = $this->input->post('harga_promo');
-            $gambar_promo       = $_FILES['gambar_promo']['name'];
-
-            $data               =   [
-                'menu_promo'    => $menu_promo,
-                'harga_promo'   => $harga_promo,
-                'harga_awal'    => $harga_awal,
-                'promo_awal'    => $promo_awal,
-                'promo_akhir'   => $promo_akhir,
-                'gambar_promo'  => $gambar_promo
-            ];
 
             if (!$this->upload->do_upload('gambar_promo')) {
                 $this->session->set_flashdata('gagal', 'Gambar gagal diupload');
                 // redirect('admin/tambah_barang');
             } else {
-                $this->upload->data('file_name');
-                $this->session->set_flashdata('sukses', 'Promo berhasil ditambahkan');
+                $gambar_promo = $this->upload->data('file_name');
+
+                $data               =   [
+                    'menu_promo'    => $menu_promo,
+                    'harga_promo'   => $harga_promo,
+                    'harga_awal'    => $harga_awal,
+                    'promo_awal'    => $promo_awal,
+                    'promo_akhir'   => $promo_akhir,
+                    'gambar_promo'  => $gambar_promo
+                ];
                 $this->Admin_model->tambah_promo($data);
+
+                $this->session->set_flashdata('sukses', 'Promo berhasil ditambahkan');
                 redirect('admin/semua_promo');
             }
         }
@@ -214,12 +229,23 @@ class Admin extends CI_Controller
 
     public function hapus_promo($id)
     {
-        $this->Admin_model->hapus_promo($id);
+        $data['row']        = $this->Admin_model->get_row($id);
+        $foto_lama          = $data['row']['gambar_promo'];
+
+        // var_dump($data['row']);
+        // var_dump($foto_lama);
+        // die;
+        $query = $this->Admin_model->hapus_promo($id);
+
+        if ($query) {
+            unlink(FCPATH . 'assets/upload_image/' . $foto_lama); // untuk menghapus file yg sudah ada
+        }
+
         $this->session->set_flashdata('sukses', 'Promo berhasil dihapus');
         redirect('admin/semua_promo');
     }
 
-
+    // halaman footer
     public function tentang_kami()
     {
         $this->load->view('admin/templates/header');
@@ -229,6 +255,17 @@ class Admin extends CI_Controller
         $this->load->view('admin/templates/footer');
     }
 
+    public function hubungi_kami()
+    {
+        $data['judul'] = 'Hubungi Kami';
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/tentang_kami/hubungi_kami');
+        $this->load->view('admin/templates/footer');
+    }
+
+    // admin control
     public function ganti_password()
     {
         // data dari session
@@ -335,7 +372,6 @@ class Admin extends CI_Controller
         $this->load->view('admin/templates/footer');
     }
 
-
     public function hapus_admin($id)
     {
         $this->Admin_model->delete_admin($id);
@@ -343,4 +379,5 @@ class Admin extends CI_Controller
 
         redirect('admin/jumlah_admin');
     }
+    // akhir admin control
 }

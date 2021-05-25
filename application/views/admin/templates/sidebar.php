@@ -99,19 +99,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link font-weight-bold text-primary">
+                            <a href="<?= base_url('admin/hubungi_kami') ?>" class="nav-link font-weight-bold text-primary">
                                 <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Hubungi Kami</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link font-weight-bold text-primary">
+                            <a href="<?= base_url('admin/karir') ?>" class="nav-link font-weight-bold text-primary">
                                 <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Karir</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link font-weight-bold text-primary">
+                            <a href="<?= base_url('admin/layanan') ?>" class="nav-link font-weight-bold text-primary">
                                 <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Layanan</p>
                             </a>
@@ -123,7 +123,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link font-weight-bold text-primary">
+                            <a href="<?= base_url('admin/csr') ?>" class="nav-link font-weight-bold text-primary">
                                 <i class="fas fa-angle-right nav-icon"></i>
                                 <p>CSR</p>
                             </a>

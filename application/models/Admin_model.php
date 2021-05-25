@@ -70,7 +70,15 @@ class Admin_model extends CI_Model
     public function hapus_promo($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('tbl_promo');
+        return $this->db->delete('tbl_promo');
+    }
+
+    public function cari_promo()
+    {
+        $cari_barang = $this->input->post('cari_barang');
+
+        $this->db->like('menu_promo', $cari_barang);
+        return $this->db->get('tbl_promo')->result_array();
     }
 
     // akhir query tabel promo
