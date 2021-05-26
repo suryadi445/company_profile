@@ -14,10 +14,10 @@ class Menu extends CI_Controller
     {
         $data['judul'] = 'Menu';
         $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/navbar', $data);
-        $this->load->view('admin/templates/sidebar', $data);
-        $this->load->view('admin/menu/menu', $data);
-        $this->load->view('admin/templates/footer', $data);
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/menu/tambah_menu', $data);
+        $this->load->view('admin/templates/footer');
     }
 
     public function insert_makanan()
@@ -55,7 +55,7 @@ class Menu extends CI_Controller
             if (!$this->upload->do_upload('gambar')) {
                 $this->session->set_flashdata('gagal', 'Gambar gagal diupload');
                 // echo 'gagal';
-                redirect('menu');
+                redirect('tambah_menu');
             } else {
                 $gambar = $this->upload->data('file_name');
 
@@ -85,5 +85,55 @@ class Menu extends CI_Controller
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/menu/semua_menu', $data);
         $this->load->view('admin/templates/footer');
+    }
+
+    public function update_menu($id)
+    {
+        $data['judul']  = 'Menu';
+        $data['row']    = $this->Admin_model->row_menu($id);
+
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/menu/update_menu', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function proses_update()
+    {
+        $this->form_validation->set_rules('jenis_makanan', 'Jenis Makanan', 'required|trim');
+        $this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required|trim');
+        $this->form_validation->set_rules('harga_menu', 'Harga Menu', 'required|trim');
+        $this->form_validation->set_rules('keterangan_menu', 'Keterangan', 'required|trim');
+
+        $id             = $this->input->post('id');
+        $jenis_makanan  = $this->input->post('jenis_makanan');
+        $nama_menu      = $this->input->post('nama_menu');
+        $harga_menu     = $this->input->post('harga_menu');
+        $keterangan     = $this->input->post('keterangan_menu');
+        // $gambar         = $_FILES['gambar']['name'];
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']  = 'Menu';
+            $data['row']    = $this->Admin_model->row_menu($id);
+
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/menu/update_menu', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $data = [
+                'nama_menu'     => $nama_menu,
+                'jenis_makanan' => $jenis_makanan,
+                'harga_menu'    => $harga_menu,
+                'keterangan'    => $keterangan,
+                // 'gambar'        => $gambar
+            ];
+
+            $this->Admin_model->update_menu($id, $data);
+            $this->session->flashdata('flash', 'Menu berhasil diubah');
+            redirect('menu/semua_menu');
+        }
     }
 }

@@ -54,8 +54,8 @@
                                             <td><?= $result['jenis_makanan'] ?></td>
                                             <td><img src="<?= base_url('assets/upload_menu/') . $result['gambar'] ?>" alt="No Image" width="30px"></td>
                                             <td class="text-center">
-                                                <a href="" class="btn btn-warning">Ubah</a>
-                                                <a href="" class="btn btn-danger">Hapus</a>
+                                                <a href="<?= base_url('menu/update_menu/') . $result['id'] ?>" class="btn btn-warning">Ubah</a>
+                                                <a href="<?= base_url('menu/delete/') . $result['id'] ?>" class="btn btn-danger">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

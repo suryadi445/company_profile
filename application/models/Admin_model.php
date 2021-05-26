@@ -80,7 +80,6 @@ class Admin_model extends CI_Model
         $this->db->like('menu_promo', $cari_barang);
         return $this->db->get('tbl_promo')->result_array();
     }
-
     // akhir query tabel promo
 
     // query table carousel
@@ -104,6 +103,17 @@ class Admin_model extends CI_Model
     public function insert_menu($data)
     {
         $this->db->insert('menu_makanan', $data);
+    }
+
+    public function row_menu($id)
+    {
+        return $this->db->get_where('menu_makanan', ['id' => $id])->row_array();
+    }
+
+    public function update_menu($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('menu_makanan', $data);
     }
     // akhir tabel menu
 
