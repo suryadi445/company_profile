@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Semua Promo</h1>
+                    <h1 class="m-0 text-dark">Semua Menu</h1>
                 </div><!-- /.col -->
                 <!-- </div>/.row -->
                 <!-- <div class="row"> -->
@@ -20,7 +20,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Daftar Promo</h3>
+                            <h3 class="card-title">Daftar Menu</h3>
                             <!-- alert -->
                             <?php if ($this->session->flashdata()) : ?>
                                 <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
@@ -29,11 +29,11 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap text-center text-capitalize">
+                            <table class="table table-hover text-nowrap text-center text-capitalize" id="table">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Mwnu</th>
+                                        <th>Nama Menu</th>
                                         <th>Harga Menu</th>
                                         <th>Keterangan</th>
                                         <th>Jenis Makanan</th>

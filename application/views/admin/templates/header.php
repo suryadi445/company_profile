@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/') ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- Toastr -->
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/') ?>plugins/toastr/toastr.min.css">
+    <!-- datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
 
     <style>
         /* for sweetalert */

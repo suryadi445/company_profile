@@ -44,6 +44,8 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Toastr -->
 <script src="<?= base_url('assets/adminLTE/') ?>plugins/toastr/toastr.min.js"></script>
+<!-- datatable -->
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <!-- js -->
 <script src="<?= base_url('assets/js/') ?>script.js"></script>
 <script src="<?= base_url('assets/js/') ?>alert.js"></script>

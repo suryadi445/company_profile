@@ -12,6 +12,16 @@ $('document').ready(function(){
         $(this).next('.custom-file-label').addClass("selected").html(fileName)
     });
 
+    // datatable
+    $('#table').dataTable({
+        "processing": true, 
+        // "searching": false, 
+        "ordering": false,
+        "lengthChange": false,
+        "bFilter": true,
+        "bInfo": false,
+    });
+
     // halaman yg ada uploadnya
     // gambar preview pada input file gambar
     gambar.onchange = evt => {
