@@ -93,4 +93,19 @@ class Admin_model extends CI_Model
     {
         return $this->db->select("*")->limit(1)->order_by('id', "DESC")->get("carousel")->row_array();
     }
+    // akhir table carousel
+
+    // query tabel menu
+    public function all_menu()
+    {
+        return $this->db->get('menu_makanan')->result_array();
+    }
+
+    public function insert_menu($data)
+    {
+        $this->db->insert('menu_makanan', $data);
+    }
+    // akhir tabel menu
+
+
 }

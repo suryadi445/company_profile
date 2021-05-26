@@ -26,9 +26,10 @@ class Admin extends CI_Controller
     {
         $this->form_validation->set_rules('text_carousel_akhir', 'Text Carousel', 'required|trim|max_length[1000]');
 
+        // mengambil baris terakhir dari database
         $data['text_carousel_awal']       = $this->Admin_model->get_text();
         $data['text']                     = $data['text_carousel_awal']['keterangan'];
-        $text_carousel_akhir              = $this->input->post('text_carousel_akhir');
+
 
         $data['judul']      = 'Carousel';
 
@@ -39,6 +40,8 @@ class Admin extends CI_Controller
             $this->load->view('admin/home/carousel', $data);
             $this->load->view('admin/templates/footer');
         } else {
+
+            $text_carousel_akhir   = $this->input->post('text_carousel_akhir');
             $data = [
                 'keterangan' => $text_carousel_akhir
             ];

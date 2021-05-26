@@ -9,7 +9,7 @@
             <img src="<?= base_url('assets/image/makanan/bakso.jpg') ?>" class="d-block w-100 img-fluid">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
-                <p class="lead"></p>
+                <p class="lead"><?= $text ?></p>
                 <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
             </div>
@@ -18,7 +18,7 @@
             <img src="<?= base_url('assets/image/makanan/sate_ayam.jpg') ?>" class="d-block w-100 img-fluid">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
-                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.</p>
+                <p class="lead"><?= $text ?></p>
                 <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
             </div>
@@ -27,7 +27,7 @@
             <img src="<?= base_url('assets/image/makanan/martabak_manis.jpg') ?>" class="d-block w-100 img-fluid">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
-                <p class="lead">Berdiri Sejak Tahun 2010 serta Memiliki Banyak Pengalaman di bidang kuliner yang akan memberikan citarasa khas lidah masyarakat Indonesia.</p>
+                <p class="lead"><?= $text ?></p>
                 <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
                 <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
             </div>

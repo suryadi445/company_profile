@@ -1,9 +1,12 @@
 $('document').ready(function(){
     // toast
     var flash = $('.flash').attr("data-id")
+    var flash2 = $('.flash2').attr("data-id")
     
     if(flash){
         toastr.success(flash)
+    }else if (flash2){
+    toastr.error(flash2)
     }
 
 
