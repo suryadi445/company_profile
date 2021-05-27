@@ -23,7 +23,7 @@ class Admin_model extends CI_Model
     public function delete_admin($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('tbl_users');
+        return $this->db->delete('tbl_users');
     }
 
     public function update_password($password_baru, $id)
@@ -114,6 +114,12 @@ class Admin_model extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->update('menu_makanan', $data);
+    }
+
+    public function delete_menu($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->delete('menu_makanan');
     }
     // akhir tabel menu
 

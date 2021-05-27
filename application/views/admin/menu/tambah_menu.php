@@ -37,7 +37,7 @@
                                     <div class="col-sm-8">
                                         <select class="custom-select" name="jenis_makanan" value="<?= set_value('jenis_makanan') ?>">
                                             <option disabled selected value <?php echo set_select('jenis_makanan', '', TRUE); ?>>Pilih jenis makanan</option>
-                                            <option value=" makanan" <?php echo set_select('jenis_makanan', 'makanan'); ?>>Makanan</option>
+                                            <option value="makanan" <?php echo set_select('jenis_makanan', 'makanan'); ?>>Makanan</option>
                                             <option value="minuman" <?php echo set_select('jenis_makanan', 'minuman'); ?>>Minuman</option>
                                         </select>
                                         <div class="text-danger mb-n4"><?= form_error('jenis_makanan'); ?></div>

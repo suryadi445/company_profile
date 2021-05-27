@@ -26,10 +26,7 @@ class Menu extends CI_Controller
         $this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required|trim');
         $this->form_validation->set_rules('harga_menu', 'Harga Menu', 'required|trim|numeric');
         $this->form_validation->set_rules('keterangan_menu', 'Keterangan', 'required|trim');
-
-        if (empty($_FILES['gambar']['name'])) {
-            $this->form_validation->set_rules('gambar', 'Gambar Promo', 'required');
-        }
+        $this->form_validation->set_rules('gambar', 'Gambar Promo', 'required|trim');
 
         $nama_menu          = $this->input->post('nama_menu');
         $harga_menu         = $this->input->post('harga_menu');
@@ -41,7 +38,7 @@ class Menu extends CI_Controller
             $this->load->view('admin/templates/header', $data);
             $this->load->view('admin/templates/navbar');
             $this->load->view('admin/templates/sidebar');
-            $this->load->view('admin/menu/menu', $data);
+            $this->load->view('admin/menu/tambah_menu', $data);
             $this->load->view('admin/templates/footer');
         } else {
             // upload file
@@ -107,16 +104,14 @@ class Menu extends CI_Controller
         $this->form_validation->set_rules('harga_menu', 'Harga Menu', 'required|trim');
         $this->form_validation->set_rules('keterangan_menu', 'Keterangan', 'required|trim');
 
-
         $id             = $this->input->post('id');
-        $jenis_makanan  = $this->input->post('jenis_makanan');
-        $nama_menu      = $this->input->post('nama_menu');
-        $harga_menu     = $this->input->post('harga_menu');
-        $keterangan     = $this->input->post('keterangan_menu');
-        $gambar         = $_FILES['gambar']['name'];
-        $data['row']    = $this->Admin_model->row_menu($id);
-        $gambar_lama    = $data['row']['gambar'];
-
+        $jenis_makanan      = $this->input->post('jenis_makanan');
+        $nama_menu          = $this->input->post('nama_menu');
+        $harga_menu         = $this->input->post('harga_menu');
+        $keterangan         = $this->input->post('keterangan_menu');
+        $gambar             = $_FILES['gambar']['name'];
+        $data['row']        = $this->Admin_model->row_menu($id);
+        $gambar_lama        = $data['row']['gambar'];
 
         if ($this->form_validation->run() == false) {
             $data['judul']  = 'Menu';
@@ -129,9 +124,9 @@ class Menu extends CI_Controller
         } else {
 
             if ($gambar) {
-                $config['upload_path'] = './assets/upload_menu/';
-                $config['allowed_types'] = 'jpeg|jpg|png|png';
-                $config['max_size']     = '2000';
+                $config['upload_path']      = './assets/upload_menu/';
+                $config['allowed_types']    = 'jpeg|jpg|png|png';
+                $config['max_size']         = '2000';
 
                 $this->load->library('upload', $config);
 
@@ -145,18 +140,14 @@ class Menu extends CI_Controller
                 } else {
                     // berhasil upload
                     $data       = array('gambar' => $this->upload->data('file_name'));
+
                     unlink(FCPATH . 'assets/upload_menu/' . $gambar_lama); // untuk menghapus file yg sudah ada
 
-
-                    $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
                     $this->Admin_model->update_menu($id, $data);
                 }
             } else {
                 // tidakada gambarnya
-
                 $data           = array('gambar' => $gambar_lama);
-
-                $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
                 $this->Admin_model->update_menu($id, $data);
             }
 
@@ -171,5 +162,17 @@ class Menu extends CI_Controller
             $this->Admin_model->update_menu($id, $data);
             redirect('menu/semua_menu');
         }
+    }
+
+    public function delete_menu($id)
+    {
+        $data['row']        = $this->Admin_model->row_menu($id);
+        $gambar_lama        = $data['row']['gambar'];
+
+        unlink(FCPATH . 'assets/upload_menu/' . $gambar_lama); // untuk menghapus file/gambar yg sudah ada
+
+        $this->Admin_model->delete_menu($id);
+        $this->session->set_flashdata('sukses', 'data berhasil dihapus');
+        redirect('menu/semua_menu');
     }
 }
