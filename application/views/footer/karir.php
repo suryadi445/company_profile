@@ -132,13 +132,13 @@
                             <legend class="col-form-label col-sm-2 pt-0 font-weight-bold">Gender</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gridRadios" id="gridRadios1" value="pria" checked>
                                     <label class="form-check-label" for="gridRadios1">
                                         Male
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gridRadios" id="gridRadios2" value="wanita">
                                     <label class="form-check-label" for="gridRadios2">
                                         Female
                                     </label>

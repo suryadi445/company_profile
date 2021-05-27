@@ -276,7 +276,7 @@ class Admin extends CI_Controller
 
     public function hubungi_kami()
     {
-        $data['result'] = $this->Admin_model->get_email();
+        $data['result'] = $this->Admin_model->get_data('email');
 
         $data['judul'] = 'Hubungi Kami';
         $this->load->view('admin/templates/header', $data);
@@ -288,11 +288,13 @@ class Admin extends CI_Controller
 
     public function karir()
     {
+        $data['result'] = $this->Admin_model->get_data('karir');
+
         $data['judul'] = 'Karir';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/footer/karir');
+        $this->load->view('admin/footer/karir', $data);
         $this->load->view('admin/templates/footer');
     }
 
