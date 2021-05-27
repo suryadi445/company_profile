@@ -53,10 +53,11 @@ class Menu extends CI_Controller
             $this->upload->initialize($config);
 
             if (!$this->upload->do_upload('gambar')) {
+                // gagal upload
                 $this->session->set_flashdata('gagal', 'Gambar gagal diupload');
-                // echo 'gagal';
                 redirect('tambah_menu');
             } else {
+                // berhasil upload
                 $gambar = $this->upload->data('file_name');
 
                 $data   = [
@@ -106,16 +107,19 @@ class Menu extends CI_Controller
         $this->form_validation->set_rules('harga_menu', 'Harga Menu', 'required|trim');
         $this->form_validation->set_rules('keterangan_menu', 'Keterangan', 'required|trim');
 
+
         $id             = $this->input->post('id');
         $jenis_makanan  = $this->input->post('jenis_makanan');
         $nama_menu      = $this->input->post('nama_menu');
         $harga_menu     = $this->input->post('harga_menu');
         $keterangan     = $this->input->post('keterangan_menu');
-        // $gambar         = $_FILES['gambar']['name'];
+        $gambar         = $_FILES['gambar']['name'];
+        $data['row']    = $this->Admin_model->row_menu($id);
+        $gambar_lama    = $data['row']['gambar'];
+
 
         if ($this->form_validation->run() == false) {
             $data['judul']  = 'Menu';
-            $data['row']    = $this->Admin_model->row_menu($id);
 
             $this->load->view('admin/templates/header', $data);
             $this->load->view('admin/templates/navbar');
@@ -123,16 +127,48 @@ class Menu extends CI_Controller
             $this->load->view('admin/menu/update_menu', $data);
             $this->load->view('admin/templates/footer');
         } else {
+
+            if ($gambar) {
+                $config['upload_path'] = './assets/upload_menu/';
+                $config['allowed_types'] = 'jpeg|jpg|png|png';
+                $config['max_size']     = '2000';
+
+                $this->load->library('upload', $config);
+
+                $this->upload->initialize($config);
+
+                if (!$this->upload->do_upload('gambar')) {
+                    // gagal upload
+                    $this->session->set_flashdata('gagal',);
+                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . $this->upload->display_errors());
+                    redirect('menu/update_menu/' . $id);
+                } else {
+                    // berhasil upload
+                    $data       = array('gambar' => $this->upload->data('file_name'));
+                    unlink(FCPATH . 'assets/upload_menu/' . $gambar_lama); // untuk menghapus file yg sudah ada
+
+
+                    $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
+                    $this->Admin_model->update_menu($id, $data);
+                }
+            } else {
+                // tidakada gambarnya
+
+                $data           = array('gambar' => $gambar_lama);
+
+                $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
+                $this->Admin_model->update_menu($id, $data);
+            }
+
             $data = [
                 'nama_menu'     => $nama_menu,
                 'jenis_makanan' => $jenis_makanan,
                 'harga_menu'    => $harga_menu,
                 'keterangan'    => $keterangan,
-                // 'gambar'        => $gambar
             ];
 
+            $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
             $this->Admin_model->update_menu($id, $data);
-            $this->session->flashdata('flash', 'Menu berhasil diubah');
             redirect('menu/semua_menu');
         }
     }

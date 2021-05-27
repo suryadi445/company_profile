@@ -86,7 +86,7 @@
                                 <div class="input-group offset-sm-4 col-sm-8">
                                     <div class="row justify-content-end">
                                         <div class="col-sm-6">
-                                            <img src="<?= base_url('assets/upload_image/') . $row['gambar'] ?>" width="100px" height="100px">
+                                            <img src="<?= base_url('assets/upload_menu/') . $row['gambar'] ?>" width="100px" height="100px">
                                             <div>Gambar Lama</div>
                                         </div>
                                         <div class="col-sm-6">
