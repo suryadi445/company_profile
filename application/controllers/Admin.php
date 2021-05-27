@@ -300,12 +300,163 @@ class Admin extends CI_Controller
 
     public function layanan()
     {
+        $data['result'] = $this->Admin_model->get_data('layanan');
+
         $data['judul'] = 'Layanan';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/footer/layanan');
+        $this->load->view('admin/footer/layanan', $data);
         $this->load->view('admin/templates/footer');
+    }
+
+    public function insert_layanan()
+    {
+        $this->form_validation->set_rules('jenis_layanan', 'Jenis LAyanan', 'required|trim');
+        $this->form_validation->set_rules('link', 'Link', 'required|trim');
+
+        if (empty($_FILES['gambar']['name'])) {
+            $this->form_validation->set_rules('gambar', 'Gambar Promo', 'required');
+        }
+
+        $jenis_layanan          = $this->input->post('jenis_layanan');
+        $link                   = $this->input->post('link');
+
+        if ($this->form_validation->run() == false) {
+            $data['judul'] = 'Layanan';
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/footer/tambah_layanan', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            // upload file
+            $config['upload_path']      = './assets/upload_layanan';
+            $config['allowed_types']    = 'jpg|png|jpeg|png';
+            $config['max_size']         = 2000;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('gambar')) {
+                // gagal upload
+                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . $this->upload->display_errors());
+                $data['judul'] = 'Layanan';
+                $this->load->view('admin/templates/header', $data);
+                $this->load->view('admin/templates/navbar');
+                $this->load->view('admin/templates/sidebar');
+                $this->load->view('admin/footer/tambah_layanan', $data);
+                $this->load->view('admin/templates/footer');
+            } else {
+                // berhasil upload
+                $gambar = $this->upload->data('file_name');
+
+                $data   = [
+                    'jenis_layanan'     => $jenis_layanan,
+                    'link'              => $link,
+                    'gambar'            => $gambar
+                ];
+
+                $this->session->set_flashdata('sukses', 'Jenis layanan berhasil ditambahkan');
+                $this->Admin_model->insert('layanan', $data);
+                redirect('admin/layanan');
+            }
+        }
+    }
+
+    public function update_layanan($id)
+    {
+        $data['judul']  = 'Update Layanan';
+        $data['row']    = $this->Admin_model->row('layanan', $id);
+
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/footer/update_layanan', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function proses_update_layanan()
+    {
+        $this->form_validation->set_rules('jenis_layanan', 'Jenis Layanan', 'required|trim');
+        $this->form_validation->set_rules('link', 'Link', 'required|trim');
+
+        $id                 = $this->input->post('id');
+        $jenis_layanan      = $this->input->post('jenis_layanan');
+        $link               = $this->input->post('link');
+        $gambar             = $_FILES['gambar']['name'];
+        $data['row']        = $this->Admin_model->row('layanan', $id);
+        $gambar_lama        = $data['row']['gambar'];
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']  = 'Menu';
+
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/footer/update_layanan', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+
+            if ($gambar) {
+                $config['upload_path']      = './assets/upload_layanan/';
+                $config['allowed_types']    = 'jpeg|jpg|png|png';
+                $config['max_size']         = '2000';
+
+                $this->load->library('upload', $config);
+
+                $this->upload->initialize($config);
+
+                if (!$this->upload->do_upload('gambar')) {
+                    // gagal upload
+                    $this->session->set_flashdata('gagal',);
+                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . $this->upload->display_errors());
+                    $this->load->view('admin/templates/header', $data);
+                    $this->load->view('admin/templates/navbar');
+                    $this->load->view('admin/templates/sidebar');
+                    $this->load->view('admin/footer/update_layanan', $data);
+                    $this->load->view('admin/templates/footer');
+                } else {
+                    // berhasil upload
+                    $gambar_baru       = $this->upload->data('file_name');
+
+                    unlink(FCPATH . 'assets/upload_layanan/' . $gambar_lama); // untuk menghapus file yg sudah ada
+
+                    $data = [
+                        'jenis_layanan'     => $jenis_layanan,
+                        'link'              => $link,
+                        'gambar'            => $gambar_baru
+                    ];
+
+                    $this->Admin_model->update_menu($id, 'layanan', $data);
+                    $this->session->set_flashdata('sukses', 'Layanan berhasil diubah');
+                    redirect('admin/layanan');
+                }
+            } else {
+                // tidakada gambarnya
+                $data = [
+                    'jenis_layanan'     => $jenis_layanan,
+                    'link'              => $link,
+                    'gambar'            => $gambar_lama
+                ];
+
+                $this->Admin_model->update_menu($id, 'layanan', $data);
+                $this->session->set_flashdata('sukses', 'Layanan berhasil diubah');
+                redirect('admin/layanan');
+            }
+        }
+    }
+
+    public function delete_layanan($id)
+    {
+        $data['row']        = $this->Admin_model->row('layanan', $id);
+        $gambar_lama        = $data['row']['gambar'];
+
+        unlink(FCPATH . 'assets/upload_layanan/' . $gambar_lama); // untuk menghapus file/gambar yg sudah ada
+
+        $this->Admin_model->delete($id, 'layanan');
+        $this->session->set_flashdata('sukses', 'data berhasil dihapus');
+        redirect('admin/layanan');
     }
 
     public function csr()
@@ -489,7 +640,7 @@ class Admin extends CI_Controller
                 ];
 
                 $this->session->set_flashdata('sukses', 'Menu makanan berhasil ditambahkan');
-                $this->Admin_model->insert_menu($data);
+                $this->Admin_model->insert('menu_makanan', $data);
                 redirect('admin/semua_menu');
             }
         }
@@ -511,7 +662,7 @@ class Admin extends CI_Controller
     public function update_menu($id)
     {
         $data['judul']  = 'Menu';
-        $data['row']    = $this->Admin_model->row_menu($id);
+        $data['row']    = $this->Admin_model->row('menu_makanan', $id);
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/navbar');
@@ -602,12 +753,12 @@ class Admin extends CI_Controller
 
     public function delete_menu($id)
     {
-        $data['row']        = $this->Admin_model->row_menu($id);
+        $data['row']        = $this->Admin_model->row('menu_makanan', $id);
         $gambar_lama        = $data['row']['gambar'];
 
         unlink(FCPATH . 'assets/upload_menu/' . $gambar_lama); // untuk menghapus file/gambar yg sudah ada
 
-        $this->Admin_model->delete_menu($id);
+        $this->Admin_model->delete($id, 'menu_makanan');
         $this->session->set_flashdata('sukses', 'data berhasil dihapus');
         redirect('admin/semua_menu');
     }

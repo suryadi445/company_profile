@@ -100,36 +100,31 @@ class Admin_model extends CI_Model
         return $this->db->get('menu_makanan')->result_array();
     }
 
-    public function insert_menu($data)
+    public function insert($tabel, $data)
     {
-        $this->db->insert('menu_makanan', $data);
+        return $this->db->insert($tabel, $data);
     }
 
-    public function row_menu($id)
+    public function row($tabel, $id)
     {
-        return $this->db->get_where('menu_makanan', ['id' => $id])->row_array();
+        return $this->db->get_where($tabel, ['id' => $id])->row_array();
     }
 
-    public function update_menu($id, $data)
+    public function update_menu($id, $tabel, $data)
     {
         $this->db->where('id', $id);
-        $this->db->update('menu_makanan', $data);
+        $this->db->update($tabel, $data);
     }
 
-    public function delete_menu($id)
+    public function delete($id, $tabel)
     {
         $this->db->where('id', $id);
-        return $this->db->delete('menu_makanan');
+        return $this->db->delete($tabel);
     }
     // akhir tabel menu
 
-    // table email
     public function get_data($table)
     {
         return $this->db->get($table)->result_array();
     }
-
-    // akhir tabel email
-
-
 }
