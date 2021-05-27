@@ -123,5 +123,13 @@ class Admin_model extends CI_Model
     }
     // akhir tabel menu
 
+    // table email
+    public function get_email()
+    {
+        return $this->db->get('email')->result_array();
+    }
+
+    // akhir tabel email
+
 
 }

@@ -48,13 +48,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('menu/index') ?>" class="nav-link font-weight-bold text-primary">
-                                <i class="fas fa-angle-right nav-icon"></i>
-                                <p>Tambah Menu</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('menu/semua_menu') ?>" class="nav-link font-weight-bold text-primary">
+                            <a href="<?= base_url('admin/semua_menu') ?>" class="nav-link font-weight-bold text-primary">
                                 <i class="fas fa-angle-right nav-icon"></i>
                                 <p>Semua Menu</p>
                             </a>

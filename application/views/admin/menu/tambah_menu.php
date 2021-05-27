@@ -30,13 +30,13 @@
                         <?php endif ?>
                         <!-- akhir alert -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?= base_url('menu/insert_makanan') ?>" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="<?= base_url('admin/insert_makanan') ?>" method="POST" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">Jenis Makanan</label>
                                     <div class="col-sm-8">
                                         <select class="custom-select" name="jenis_makanan" value="<?= set_value('jenis_makanan') ?>">
-                                            <option disabled selected value <?php echo set_select('jenis_makanan', '', TRUE); ?>>Pilih jenis makanan</option>
+                                            <option disabled selected value <?php echo set_select('jenis_makanan', '', TRUE); ?>>Pilih Jenis Menu</option>
                                             <option value="makanan" <?php echo set_select('jenis_makanan', 'makanan'); ?>>Makanan</option>
                                             <option value="minuman" <?php echo set_select('jenis_makanan', 'minuman'); ?>>Minuman</option>
                                         </select>

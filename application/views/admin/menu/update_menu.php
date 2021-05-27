@@ -30,7 +30,7 @@
                         <?php endif ?>
                         <!-- akhir alert -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?= base_url('menu/proses_update') ?>" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="<?= base_url('admin/proses_update') ?>" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="<?= $row['id'] ?>">
                             <div class="card-body">
                                 <div class="form-group row">
