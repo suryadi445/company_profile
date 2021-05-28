@@ -27,9 +27,8 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('text_carousel_akhir', 'Text Carousel', 'required|trim|max_length[1000]');
 
         // mengambil baris terakhir dari database
-        $data['text_carousel_awal']       = $this->Admin_model->get_text();
+        $data['text_carousel_awal']       = $this->Admin_model->get_text('carousel');
         $data['text']                     = $data['text_carousel_awal']['keterangan'];
-
 
         $data['judul']      = 'Carousel';
 
@@ -267,12 +266,102 @@ class Admin extends CI_Controller
     // halaman footer
     public function tentang_kami()
     {
-        $this->load->view('admin/templates/header');
+        $data['judul']      = 'About Us';
+        $data['visi']       = $this->Admin_model->last_field('visi', 'visi !=');
+        $data['misi']       = $this->Admin_model->last_field('misi', 'misi !=');
+        $data['sejarah']    = $this->Admin_model->last_field('sejarah', 'sejarah !=');
+
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/footer/about-us');
+        $this->load->view('admin/footer/about-us', $data);
         $this->load->view('admin/templates/footer');
     }
+
+    public function insert_visi()
+    {
+        $visi           = $this->input->post('visi');
+
+        $this->form_validation->set_rules('visi', 'Visi', 'required|trim|max_length[1000]');
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']      = 'About Us';
+            $data['visi']       = $this->Admin_model->last_field('visi', 'visi !=');
+            $data['misi']       = $this->Admin_model->last_field('misi', 'misi !=');
+            $data['sejarah']    = $this->Admin_model->last_field('sejarah', 'sejarah !=');
+
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/footer/about-us', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $data   = [
+                'visi' => $visi
+            ];
+
+            $this->Admin_model->insert('tentang_kami', $data);
+            $this->session->set_flashdata('sukses', 'Visi berhasil ditambahkan');
+            redirect('admin/tentang_kami');
+        }
+    }
+
+    public function insert_misi()
+    {
+        $misi           = $this->input->post('misi');
+
+        $this->form_validation->set_rules('misi', 'misi', 'required|trim|max_length[1000]');
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']      = 'About Us';
+            $data['visi']       = $this->Admin_model->last_field('visi', 'visi !=');
+            $data['misi']       = $this->Admin_model->last_field('misi', 'misi !=');
+            $data['sejarah']    = $this->Admin_model->last_field('sejarah', 'sejarah !=');
+
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/footer/about-us', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $data   = [
+                'misi' => $misi
+            ];
+
+            $this->Admin_model->insert('tentang_kami', $data);
+            $this->session->set_flashdata('sukses', 'Misi berhasil ditambahkan');
+            redirect('admin/tentang_kami');
+        }
+    }
+
+    public function insert_sejarah()
+    {
+        $sejarah           = $this->input->post('sejarah');
+
+        $this->form_validation->set_rules('sejarah', 'Sejarah', 'required|trim|max_length[1000]');
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']      = 'About Us';
+            $data['visi']       = $this->Admin_model->last_field('visi', 'visi !=');
+            $data['misi']       = $this->Admin_model->last_field('misi', 'misi !=');
+            $data['sejarah']    = $this->Admin_model->last_field('sejarah', 'sejarah !=');
+
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/footer/about-us', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $data   = [
+                'sejarah' => $sejarah
+            ];
+
+            $this->Admin_model->insert('tentang_kami', $data);
+            $this->session->set_flashdata('sukses', 'Sejarah berhasil ditambahkan');
+            redirect('admin/tentang_kami');
+        }
+    }
+
 
     public function hubungi_kami()
     {

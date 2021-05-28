@@ -88,9 +88,9 @@ class Admin_model extends CI_Model
         return $this->db->insert('carousel', $data);
     }
 
-    public function get_text()
+    public function get_text($tabel)
     {
-        return $this->db->select("*")->limit(1)->order_by('id', "DESC")->get("carousel")->row_array();
+        return $this->db->select("*")->limit(1)->order_by('id', "DESC")->get($tabel)->row_array();
     }
     // akhir table carousel
 
@@ -99,6 +99,8 @@ class Admin_model extends CI_Model
     {
         return $this->db->get('menu_makanan')->result_array();
     }
+
+    // dinamis
 
     public function insert($tabel, $data)
     {
@@ -121,10 +123,20 @@ class Admin_model extends CI_Model
         $this->db->where('id', $id);
         return $this->db->delete($tabel);
     }
-    // akhir tabel menu
 
-    public function get_data($table)
+    public function last_field($field, $where)
     {
-        return $this->db->get($table)->result_array();
+        // SELECT id, visi from tentang_kami WHERE visi!='' order by id DESC limit 1
+        // SELECT id, misi from tentang_kami WHERE misi !='' order by id DESC LIMIT 1
+        // SELECT id, sejarah from tentang_kami WHERE sejarah !='' order by id DESC LIMIT 1
+
+        return $this->db
+            ->select('id')
+            ->select($field)
+            ->from('tentang_kami')
+            ->where($where, '')
+            ->order_by('id', 'desc')
+            ->limit(1)
+            ->get()->row_array();
     }
 }
