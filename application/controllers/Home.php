@@ -14,7 +14,7 @@ class Home extends CI_Controller
     public function index()
     {
         // mengambil baris terakhir dari database
-        $data['text_carousel_awal']       = $this->Admin_model->get_text();
+        $data['text_carousel_awal']       = $this->Admin_model->get_text('carousel');
         $data['text']                     = $data['text_carousel_awal']['keterangan'];
 
         $data['judul'] = 'Home';

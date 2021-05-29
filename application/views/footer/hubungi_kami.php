@@ -18,15 +18,14 @@
                                 <div class="row ml-2">
                                     <div class="col">
                                         <h2>Kepuasan Anda selalu menjadi prioritas Kami</h2>
-                                        <p>Untuk pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami menggunakan formulir yang tersedia disisi kanan. Kami akan menghubungi Anda sesegera mungkin.</p>
+                                        <p>Untuk pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami menggunakan formulir yang tersedia. Kami akan menghubungi Anda sesegera mungkin.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-6">
-                        <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                        <div class="card shadow-sm p-3 mb-5 bg-white rounded" id="card_hub_kami">
                             <form>
                                 <div class="container mt-3">
                                     <div class="form-group row">

@@ -10,13 +10,13 @@ class Menu extends CI_Controller
         $this->load->model('Admin_model');
     }
 
+
     public function index()
     {
         $data['judul'] = 'Menu';
-        $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/menu/tambah_menu', $data);
-        $this->load->view('admin/templates/footer');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar');
+        $this->load->view('menu/index', $data);
+        $this->load->view('templates/footer');
     }
 }

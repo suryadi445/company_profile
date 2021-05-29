@@ -40,8 +40,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -54,8 +54,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -68,8 +68,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -82,8 +82,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -96,8 +96,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -110,8 +110,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -124,8 +124,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -138,8 +138,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -152,8 +152,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -166,8 +166,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -180,8 +180,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -194,8 +194,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -214,8 +214,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -228,8 +228,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -242,8 +242,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -256,8 +256,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -270,8 +270,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -284,8 +284,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -298,8 +298,8 @@
                         <h5 class="card-title nama_menu">Card title</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
+                        <a href="#" class="btn btn_menu mb-3">Pesan</a>
                     </div>
                 </div>
             </div>

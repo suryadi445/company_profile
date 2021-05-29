@@ -43,57 +43,50 @@
                     <div class="col-lg-4">
                         <div class="container">
                             <h3 class="text-center mb-3" id="ikuti_kami">Ikuti Kami</h3>
-                            <div class="row" id="row_logo">
-                                <div class="col-lg-3 text-center">
-                                    <a href="https://facebook.com/suryadi.hobe/">
+                            <div class="row d-flex justify-content-between" id="row_logo">
+                                <div class="col-sm-12 text-center">
+                                    <a href="https://facebook.com/suryadi.hobe/" class="mr-5">
                                         <i class="fab fa-facebook-f logo" id="facebook"></i>
                                     </a>
-                                </div>
-                                <div class="col-lg-3 text-center">
-                                    <a href="https://www.instagram.com/suryadi_moksc/">
+                                    <a href="https://www.instagram.com/suryadi_moksc/" class="mr-5">
                                         <i class="fab fa-instagram logo" id="instagram"></i>
                                     </a>
-                                </div>
-                                <div class="col-lg-3 text-center">
-                                    <a href="https://www.twitter.com/">
-                                        <i class="fab fa-twitter logo" id="twitter"></i>
+                                    <a href="https://www.twitter.com/" class="mr-5">
+                                        <i class=" fab fa-twitter logo" id="twitter"></i>
                                     </a>
-                                </div>
-                                <div class="col-lg-3 text-center">
-                                    <a href="https://www.youtube.com/">
+                                    <a href=" https://www.youtube.com/">
                                         <i class="fab fa-youtube logo" id="youtube"></i>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="row" id="text_sosmed">
-                                <div class="col-lg-3 text-center" for="facebook">
-                                    <p>Facebook</p>
+                                <!-- <div class="row" id="text_sosmed">
+                                    <div class="col-lg-3 text-center" for="facebook">
+                                        <p>Facebook</p>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <p>Instagram</p>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <p>Twitter</p>
+                                    </div>
+                                    <div class="col-lg-3 text-center">
+                                        <p>Youtube</p>
+                                    </div>
+                                </div> -->
+                                <div class="col-lg-12 text-center mt-3" id="wrap_email">
+                                    <a href="">
+                                        <i class="fas fa-envelope text-center logo" id="email">
+                                        </i>
+                                    </a>
                                 </div>
-                                <div class="col-lg-3 text-center">
-                                    <p>Instagram</p>
+                                <div class="col-lg-12 text-center">
+                                    <p>Suryadi.hhb@gmail.com</p>
                                 </div>
-                                <div class="col-lg-3 text-center">
-                                    <p>Twitter</p>
-                                </div>
-                                <div class="col-lg-3 text-center">
-                                    <p>Youtube</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 text-center mt-3" id="wrap_email">
-                                <a href="">
-                                    <i class="fas fa-envelope text-center logo" id="email">
-                                    </i>
-                                </a>
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <p>Suryadi.hhb@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <footer>
@@ -129,7 +122,7 @@
 <!-- sweetalert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- Toastr -->
-<script src="<?= base_url('assets/js/script.js') ?>plugins/toastr/toastr.min.js"></script>
+<script src="<?= base_url('assets/adminLTE/') ?>plugins/toastr/toastr.min.js"></script>
 <!-- aos library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <!-- gsap -->
