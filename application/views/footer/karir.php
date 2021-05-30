@@ -23,7 +23,7 @@
 </section>
 
 <section id="karir_body">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card-deck">
@@ -70,7 +70,7 @@
 </section>
 
 <section id="karir_footer">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">

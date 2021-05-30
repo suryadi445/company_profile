@@ -8,16 +8,16 @@
                             <h3 class="text-center" id="text_jumbotron">NIKMATI MENU PILIHAN TERBAIK DARI KAMI</h3>
                         </div>
                         <div class="col-lg-8">
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div id="slider_menu" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="<?= base_url('assets/image/makanan/bakso.jpg') ?>" class="card-img-top gambar_jumbotron img-fluid" alt="bakso">
+                                        <img src="<?= base_url('assets/image/makanan/bakso.jpg') ?>" class="card-img-top gambar_jumbotron">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="card-img-top gambar_jumbotron img-fluid" alt="bakso">
+                                        <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="card-img-top gambar_jumbotron">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="<?= base_url('assets/image/makanan/sate_ayam.jpg') ?>" class="card-img-top gambar_jumbotron img-fluid" alt="bakso">
+                                        <img src="<?= base_url('assets/image/makanan/sate_ayam.jpg') ?>" class="card-img-top gambar_jumbotron">
                                     </div>
                                 </div>
                             </div>
