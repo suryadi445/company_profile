@@ -34,7 +34,7 @@ class Hubungi_kami extends CI_Controller
         ];
 
         if ($this->form_validation->run() == false) {
-            $data['judul'] = 'Hubungi Kami';
+            $data['judul']   = 'Hubungi Kami';
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('footer/hubungi_kami', $data);
@@ -43,7 +43,79 @@ class Hubungi_kami extends CI_Controller
             // $this->Admin_model->insert('email', $data);
             $this->session->set_flashdata('sukses', 'Terima kasih, pesan Anda sudah terkirim');
 
+            $this->_sendEmail();
+            $this->_sendEmailToMe();
+
             redirect('hubungi_kami');
+        }
+    }
+
+    private function _sendEmail()
+    {
+        // konfigurasi untuk library email CI
+        $config = [
+            'protocol'      => 'smtp',
+            'smtp_host'     => 'ssl://smtp.googlemail.com',
+            'smtp_user'     => 'suryadi.sender@gmail.com',
+            'smtp_pass'     => 'mahasiwa',
+            'smtp_port'     => 465,
+            'mailtype'      => 'html',
+            'charset'       => 'utf-8',
+            'newline'       => "\r\n",
+            'starttls'      => TRUE
+        ];
+        // load library email
+        $this->load->library('email', $config);
+        // email pengirimnya
+        $this->email->from('suryadi.sender@gmail.com', 'Suryadi');
+        // email penerima atau email yg digunakan untuk registrasi
+        $this->email->to($this->input->post('email'));
+        $this->email->subject('Thanks for your comment');
+        $this->email->message('Terima kasih telah berkontribusi untuk mengisi komentar pada website kami. Semoga ini menjadi masukkan yang baik untuk perkembangan kami.' . '<br>' . 'Salam hangat' . '<br>' . 'Suryadi');
+
+
+        // jika email terkirim
+        if ($this->email->send()) {
+            // mengembalikan jika nilainya benar
+            return true;
+        } else {
+            // menghentikan program dan menampilkan pesan kesalahan jika email tidak terkirim
+            echo $this->email->print_debugger();
+            die;
+        }
+    }
+
+    private function _sendEmailToMe()
+    {
+        // konfigurasi untuk library email CI
+        $config = [
+            'protocol'      => 'smtp',
+            'smtp_host'     => 'ssl://smtp.googlemail.com',
+            'smtp_user'     => 'suryadi.sender@gmail.com',
+            'smtp_pass'     => 'mahasiwa',
+            'smtp_port'     => 465,
+            'mailtype'      => 'html',
+            'charset'       => 'utf-8',
+            'newline'       => "\r\n"
+        ];
+        // load library email
+        $this->load->library('email', $config);
+        // email pengirimnya
+        $this->email->from('suryadi.sender@gmail.com', 'Suryadi');
+        // email penerima atau email yg digunakan untuk registrasi
+        $this->email->to('Suryadi_fb@yahoo.com');
+        $this->email->subject('Komentar Baru');
+        $this->email->message('Nama : ' . $this->input->post('nama') . '<br>' . 'Email : ' . $this->input->post('email') . '<br>'  . 'Phone : ' . $this->input->post('phone') . '<br>'  . 'Pesan : ' . $this->input->post('pesan'));
+
+
+        // jika email terkirim
+        if ($this->email->send()) {
+            // mengembalikan jika nilainya benar
+            return true;
+        } else {
+            // menghentikan program dan menampilkan pesan kesalahan jika email tidak terkirim
+            echo $this->email->print_debugger();
+            die;
         }
     }
 }

@@ -78,7 +78,6 @@ class Admin extends CI_Controller
             echo $this->input->post('keyword');
         }
 
-
         // config
         $config['total_rows'] = $this->Admin_model->count_rows();
         $config['per_page'] = 2;
@@ -280,7 +279,7 @@ class Admin extends CI_Controller
 
     public function insert_visi()
     {
-        $visi           = $this->input->post('visi');
+        $visi                   = $this->input->post('visi');
 
         $this->form_validation->set_rules('visi', 'Visi', 'required|trim|max_length[1000]');
 

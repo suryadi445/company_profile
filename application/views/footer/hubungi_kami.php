@@ -1,13 +1,13 @@
 <section id="contact" class="bg-white pb-3">
-    <h2 class="text-center pt-3">Contact</h2>
-    <div class="container-fluid  mt-4">
-        <div class="row ml-2">
+    <div class="container-fluid pt-5">
+        <div class="row ml-2 pt-2">
             <div class="col-lg-12">
                 <h1 id="promo_title">Hubungi Kami</h1>
             </div>
         </div>
         <?php if ($this->session->flashdata()) : ?>
             <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
+            <div class="flash2" data-id="<?= $this->session->flashdata('gagal') ?>"></div>
         <?php endif ?>
         <div class="row text-justify" id="gambar_contact">
             <div class="col-12">
@@ -55,15 +55,15 @@
                                     <div class="form-group row">
                                         <label for="phone" class="col-sm-2 col-form-label font-weight-bold">Kategori</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control font-weight-bold" name="kategori">
-                                                <option class="font-weight-bold">Pilih Kategori</option>
-                                                <option value="keluhan" class="font-weight-bold">Keluhan</option>
-                                                <option value="saran" class="font-weight-bold">Saran</option>
-                                                <option value="pertanyaan" class="font-weight-bold">Pertanyaan</option>
-                                                <option value="sponsorship" class="font-weight-bold">Sponsorship</option>
-                                                <option value="lain-lain" class="font-weight-bold">Lain-lain</option>
-                                                <div class="text-danger mb-n4"><?= form_error('kategori') ?></div>
+                                            <select class="form-control font-weight-bold" name="kategori" value="<?= set_value('kategori') ?>">
+                                                <option class="font-weight-bold" disabled selected value <?php echo set_select('kategori', '', TRUE); ?>>Pilih Kategori</option>
+                                                <option value="keluhan" class="font-weight-bold" <?php echo set_select('kategori', 'keluhan'); ?>>Keluhan</option>
+                                                <option value="saran" class="font-weight-bold" <?php echo set_select('kategori', 'saran'); ?>>Saran</option>
+                                                <option value="pertanyaan" class="font-weight-bold" <?php echo set_select('kategori', 'pertanyaan'); ?>>Pertanyaan</option>
+                                                <option value="sponsorship" class="font-weight-bold" <?php echo set_select('kategori', 'sponsorship'); ?>>Sponsorship</option>
+                                                <option value="lain-lain" class="font-weight-bold" <?php echo set_select('kategori', 'lain-lain'); ?>>Lain-lain</option>
                                             </select>
+                                            <div class="text-danger mb-n4"><?= form_error('kategori') ?></div>
                                         </div>
                                     </div>
                                     <div class="form-group row">

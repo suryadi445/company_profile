@@ -147,7 +147,7 @@
     // akhir halaman menu
 
     // halaman hubungi kami
-    gsap.from("#contact", {
+    gsap.from("#contact #gambar_contact .col-5", {
         y: -100,
         opacity: 0,
         ease: 'slow',
