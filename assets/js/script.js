@@ -1,4 +1,4 @@
-$('document').ready(function(){
+$(document).ready(function(){
     // date picker
     $(".datepicker").datepicker({
         dateFormat:"yy-mm-dd",
@@ -32,8 +32,6 @@ $('document').ready(function(){
     }
 })
 
-
-
 // halaman admin tentang kami
 $(document).ready(function(){
     $('#tab-visi').show()
@@ -58,6 +56,45 @@ $(document).ready(function(){
         $('#tab-visi').hide()
         $('#tab-misi').hide()
         $('#tab-sejarah').show()
+    })
+
+    $('#modal_karir').click(function(){
+
+        let nama = $('#nama').val()
+        let email = $('#email').val()
+        let phone = $('#phone').val()
+        let gender = $('input[name="gender"]:checked').val()
+
+        $.ajax({
+            url     : 'karir/insert_karir',
+            type    : 'post',
+            data    : {
+                nama    : nama,
+                email   : email,
+                phone   : phone,
+                gender  : gender
+            },
+            success: function (data) {
+
+                let obj= $.parseJSON(data)
+
+                if(obj == true){
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'sukses',
+                        text: 'Customer berhasil ditambah',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
+                    $('#daftar_karir').modal('hide')
+                    $('#nama').val('')
+                    $('#email').val('')
+                    $('#phone').val('')
+                }
+            }
+        })
     })
 })
 

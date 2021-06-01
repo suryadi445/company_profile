@@ -112,19 +112,19 @@
                     <div class="form-group row">
                         <label for="nama" class="col-sm-2 col-form-label font-weight-bold">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nama Anda" id="nama">
+                            <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nama Anda" name="nama" id="nama">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label font-weight-bold">Email</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan email Anda" id="email">
+                            <input type="email" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan email Anda" name="email" id="email">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-sm-2 col-form-label font-weight-bold">Phone</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nomor telepon Anda" id="phone">
+                            <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nomor telepon Anda" name="phone" id="phone">
                         </div>
                     </div>
                     <fieldset class="form-group">
@@ -132,13 +132,13 @@
                             <legend class="col-form-label col-sm-2 pt-0 font-weight-bold">Gender</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gridRadios" id="gridRadios1" value="pria" checked>
+                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gender" id="gridRadios1" value="pria" checked>
                                     <label class="form-check-label" for="gridRadios1">
                                         Male
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gridRadios" id="gridRadios2" value="wanita">
+                                    <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gender" id="gridRadios2" value="wanita">
                                     <label class="form-check-label" for="gridRadios2">
                                         Female
                                     </label>
@@ -150,7 +150,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Kirim</button>
+                <button type="button" id="modal_karir" class="btn btn-success">Kirim</button>
             </div>
         </div>
     </div>
