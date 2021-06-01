@@ -40,11 +40,16 @@ class Hubungi_kami extends CI_Controller
             $this->load->view('footer/hubungi_kami', $data);
             $this->load->view('templates/footer');
         } else {
-            // $this->Admin_model->insert('email', $data);
-            $this->session->set_flashdata('sukses', 'Terima kasih, pesan Anda sudah terkirim');
+            $this->Admin_model->insert('email', $data);
 
             $this->_sendEmail();
             $this->_sendEmailToMe();
+
+            if ($this->_sendEmail() == false) {
+                $this->session->set_flashdata('gagal', 'Email gagal dikirim, mohon ulangi kembali');
+            } else {
+                $this->session->set_flashdata('sukses', 'Terima kasih, pesan Anda sudah terkirim');
+            }
 
             redirect('hubungi_kami');
         }
@@ -62,7 +67,10 @@ class Hubungi_kami extends CI_Controller
             'mailtype'      => 'html',
             'charset'       => 'utf-8',
             'newline'       => "\r\n",
-            'starttls'      => TRUE
+            'starttls'      => TRUE,
+            '_smtp_auth'    => TRUE,
+            'send_multipart' => FALSE,
+            'wordwrap'      => TRUE
         ];
         // load library email
         $this->load->library('email', $config);
@@ -76,12 +84,12 @@ class Hubungi_kami extends CI_Controller
 
         // jika email terkirim
         if ($this->email->send()) {
-            // mengembalikan jika nilainya benar
+            // mengembalikan jika nilainya benar / email terkirim
             return true;
         } else {
+            // email tidak terkirim
             // menghentikan program dan menampilkan pesan kesalahan jika email tidak terkirim
-            echo $this->email->print_debugger();
-            die;
+            return false;
         }
     }
 
@@ -114,8 +122,7 @@ class Hubungi_kami extends CI_Controller
             return true;
         } else {
             // menghentikan program dan menampilkan pesan kesalahan jika email tidak terkirim
-            echo $this->email->print_debugger();
-            die;
+            $this->session->set_flashdata('gagal', 'Email gagal dikirim, mohon ulangi kembali');
         }
     }
 }
