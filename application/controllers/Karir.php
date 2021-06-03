@@ -33,7 +33,13 @@ class Karir extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             // gagal validasi
-            $data = array('error_message' => validation_errors());
+            $error = [
+                'nama'    => (form_error('nama', '<p>', '</p>')),
+                'email'   => (form_error('email', '<p>', '</p>')),
+                'phone'   => (form_error('phone', '<p>', '</p>')),
+                'gender'  => (form_error('gender', '<p>', '</p>')),
+            ];
+            echo json_encode($error);
         } else {
             // validasi berhasil
             $data   = [

@@ -114,18 +114,21 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nama Anda" name="nama" id="nama">
                         </div>
+                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10" id="error_nama"></div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label font-weight-bold">Email</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan email Anda" name="email" id="email">
                         </div>
+                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10 error" id="error_email"></div>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-sm-2 col-form-label font-weight-bold">Phone</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nomor telepon Anda" name="phone" id="phone">
                         </div>
+                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10 error" id="error_phone"></div>
                     </div>
                     <fieldset class="form-group">
                         <div class="row">
@@ -134,13 +137,13 @@
                                 <div class="form-check">
                                     <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gender" id="gridRadios1" value="pria" checked>
                                     <label class="form-check-label" for="gridRadios1">
-                                        Male
+                                        Male <small>(pria)</small>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input shadow-sm p-3 bg-white rounded" type="radio" name="gender" id="gridRadios2" value="wanita">
                                     <label class="form-check-label" for="gridRadios2">
-                                        Female
+                                        Female <small>(wanita)</small>
                                     </label>
                                 </div>
                             </div>

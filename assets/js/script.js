@@ -75,24 +75,29 @@ $(document).ready(function(){
                 gender  : gender
             },
             success: function (data) {
-
-                let obj= $.parseJSON(data)
-
-                if(obj == true){
-
+                // let obj= $.parseJSON(data)
+                let error = $.parseJSON(data)
+                console.log(error);
+                
+                if(error != true){
+                    $('#error_nama').html(error.nama)
+                    $('#error_email').html(error.email)
+                    $('#error_phone').html(error.phone)
+                } else {
                     Swal.fire({
-                        icon: 'success',
-                        title: 'sukses',
-                        text: 'Customer berhasil ditambah',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                            icon: 'success',
+                            title: 'sukses',
+                            text: 'Customer berhasil ditambah',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
 
                     $('#daftar_karir').modal('hide')
                     $('#nama').val('')
                     $('#email').val('')
                     $('#phone').val('')
-                }
+                    $('.error').hide()
+                    $("#gridRadios1").prop("checked", true);                }
             }
         })
     })
