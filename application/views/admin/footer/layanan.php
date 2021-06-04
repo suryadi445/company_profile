@@ -43,9 +43,9 @@
                                     <?php $no = 1;
                                     foreach ($result as $hasil) : ?>
                                         <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $hasil['jenis_layanan'] ?></td>
-                                            <td><?= $hasil['link'] ?></td>
+                                            <td><?php cetak($no++) ?></td>
+                                            <td><?php cetak($hasil['jenis_layanan']) ?></td>
+                                            <td><?php cetak($hasil['link']) ?></td>
                                             <td><img src="<?= base_url('assets/upload_layanan/') . $hasil['gambar'] ?>" alt="No Image" width="30px" height="30px"></td>
                                             <td class="text-center">
                                                 <a href="<?= base_url('admin/update_layanan/') . $hasil['id'] ?>" class="btn btn-warning">Ubah</a>

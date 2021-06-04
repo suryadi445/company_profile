@@ -30,7 +30,7 @@ class Admin extends CI_Controller
         $data['text_carousel_awal']       = $this->Admin_model->get_text('carousel');
         $data['text']                     = $data['text_carousel_awal']['keterangan'];
 
-        $data['judul']      = 'Carousel';
+        $data['judul']                    = 'Carousel';
 
         if ($this->form_validation->run() == false) {
             $this->load->view('admin/templates/header', $data);
@@ -40,9 +40,9 @@ class Admin extends CI_Controller
             $this->load->view('admin/templates/footer');
         } else {
 
-            $text_carousel_akhir   = $this->input->post('text_carousel_akhir');
+            $text_carousel_akhir    = htmlspecialchars($this->input->post('text_carousel_akhir', true));
             $data = [
-                'keterangan' => $text_carousel_akhir
+                'keterangan'        => $text_carousel_akhir
             ];
 
             $this->session->set_flashdata('sukses', 'Text carousel berhasil diperbaharui');
@@ -79,17 +79,17 @@ class Admin extends CI_Controller
         }
 
         // config
-        $config['total_rows'] = $this->Admin_model->count_rows();
-        $config['per_page'] = 2;
+        $config['total_rows']   = $this->Admin_model->count_rows();
+        $config['per_page']     = 2;
         // inisisalisasi
         $this->pagination->initialize($config);
 
         $data['pagination']     = $this->pagination->create_links();
-        $data['start']        = $this->uri->segment('3');
-        $data['all_promo']    = $this->Admin_model->get_promo($config['per_page'], $data['start']);
+        $data['start']          = $this->uri->segment('3');
+        $data['all_promo']      = $this->Admin_model->get_promo($config['per_page'], $data['start']);
         // akhir pagination
 
-        $data['judul']      = 'Semua Promo';
+        $data['judul']          = 'Semua Promo';
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
@@ -122,16 +122,16 @@ class Admin extends CI_Controller
             // upload file
             $config['upload_path']      = './assets/upload_image';
             $config['allowed_types']    = 'jpg|png|jpeg|png';
-            $config['max_size']        = 2000;
+            $config['max_size']         = 2000;
 
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
 
-            $promo_awal         = $this->input->post('promo_awal');
-            $promo_akhir        = $this->input->post('promo_akhir');
-            $menu_promo         = $this->input->post('menu_promo');
-            $harga_awal         = $this->input->post('harga_awal');
-            $harga_promo        = $this->input->post('harga_promo');
+            $promo_awal         = htmlspecialchars($this->input->post('promo_awal', true));
+            $promo_akhir        = htmlspecialchars($this->input->post('promo_akhir', true));
+            $menu_promo         = htmlspecialchars($this->input->post('menu_promo', true));
+            $harga_awal         = htmlspecialchars($this->input->post('harga_awal', true));
+            $harga_promo        = htmlspecialchars($this->input->post('harga_promo', true));
 
             if (!$this->upload->do_upload('gambar')) {
                 $this->session->set_flashdata('gagal', 'Gambar gagal diupload');
@@ -169,12 +169,12 @@ class Admin extends CI_Controller
 
     public function proses_update_promo()
     {
-        $id                 = $this->input->post('id');
-        $promo_awal         = $this->input->post('promo_awal');
-        $promo_akhir        = $this->input->post('promo_akhir');
-        $menu_promo         = $this->input->post('menu_promo');
-        $harga_awal         = $this->input->post('harga_awal');
-        $harga_promo        = $this->input->post('harga_promo');
+        $id                 = htmlspecialchars($this->input->post('id', true));
+        $promo_awal         = htmlspecialchars($this->input->post('promo_awal', true));
+        $promo_akhir        = htmlspecialchars($this->input->post('promo_akhir', true));
+        $menu_promo         = htmlspecialchars($this->input->post('menu_promo', true));
+        $harga_awal         = htmlspecialchars($this->input->post('harga_awal', true));
+        $harga_promo        = htmlspecialchars($this->input->post('harga_promo', true));
         $gambar_promo       = $_FILES['gambar']['name'];
 
         $this->form_validation->set_rules('promo_awal', 'Promo Awal', 'required|trim');
@@ -198,15 +198,15 @@ class Admin extends CI_Controller
                 // upload file
                 $config['upload_path']      = './assets/upload_image';
                 $config['allowed_types']    = 'jpg|png|jpeg|png';
-                $config['max_size']        = 2000;
+                $config['max_size']         = 2000;
 
                 $this->load->library('upload', $config);
                 $this->upload->initialize($config);
 
                 if ($this->upload->do_upload('gambar')) {
                     // berhasil diupload
-                    $foto_lama      = $data['row']['gambar'];
-                    $gambar_baru      = $this->upload->data('file_name'); //membuat nama gambar baru
+                    $foto_lama          = $data['row']['gambar'];
+                    $gambar_baru        = $this->upload->data('file_name'); //membuat nama gambar baru
 
                     $data               =   [
                         'id'            => $id,
@@ -249,9 +249,6 @@ class Admin extends CI_Controller
         $data['row']        = $this->Admin_model->get_row($id);
         $foto_lama          = $data['row']['gambar'];
 
-        // var_dump($data['row']);
-        // var_dump($foto_lama);
-        // die;
         $query = $this->Admin_model->hapus_promo($id);
 
         if ($query) {
@@ -279,7 +276,7 @@ class Admin extends CI_Controller
 
     public function insert_visi()
     {
-        $visi                   = $this->input->post('visi');
+        $visi                   = htmlspecialchars($this->input->post('visi', true));
 
         $this->form_validation->set_rules('visi', 'Visi', 'required|trim|max_length[1000]');
 
@@ -307,7 +304,7 @@ class Admin extends CI_Controller
 
     public function insert_misi()
     {
-        $misi           = $this->input->post('misi');
+        $misi                   = htmlspecialchars($this->input->post('misi', true));
 
         $this->form_validation->set_rules('misi', 'misi', 'required|trim|max_length[1000]');
 
@@ -335,7 +332,7 @@ class Admin extends CI_Controller
 
     public function insert_sejarah()
     {
-        $sejarah           = $this->input->post('sejarah');
+        $sejarah                = htmlspecialchars($this->input->post('sejarah', true));
 
         $this->form_validation->set_rules('sejarah', 'Sejarah', 'required|trim|max_length[1000]');
 
@@ -364,7 +361,7 @@ class Admin extends CI_Controller
 
     public function hubungi_kami()
     {
-        $data['result'] = $this->Admin_model->get_data('email');
+        $data['result'] = $this->Admin_model->get('email');
 
         $data['judul'] = 'Hubungi Kami';
         $this->load->view('admin/templates/header', $data);
@@ -376,7 +373,7 @@ class Admin extends CI_Controller
 
     public function karir()
     {
-        $data['result'] = $this->Admin_model->get_data('karir');
+        $data['result'] = $this->Admin_model->get('karir');
 
         $data['judul'] = 'Karir';
         $this->load->view('admin/templates/header', $data);
@@ -388,9 +385,9 @@ class Admin extends CI_Controller
 
     public function layanan()
     {
-        $data['result'] = $this->Admin_model->get_data('layanan');
+        $data['result'] = $this->Admin_model->get('layanan');
 
-        $data['judul'] = 'Layanan';
+        $data['judul']  = 'Layanan';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
@@ -407,8 +404,8 @@ class Admin extends CI_Controller
             $this->form_validation->set_rules('gambar', 'Gambar Promo', 'required');
         }
 
-        $jenis_layanan          = $this->input->post('jenis_layanan');
-        $link                   = $this->input->post('link');
+        $jenis_layanan          = htmlspecialchars($this->input->post('jenis_layanan', true));
+        $link                   = htmlspecialchars($this->input->post('link', true));
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Layanan';
@@ -469,9 +466,9 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('jenis_layanan', 'Jenis Layanan', 'required|trim');
         $this->form_validation->set_rules('link', 'Link', 'required|trim');
 
-        $id                 = $this->input->post('id');
-        $jenis_layanan      = $this->input->post('jenis_layanan');
-        $link               = $this->input->post('link');
+        $id                 = htmlspecialchars($this->input->post('id', true));
+        $jenis_layanan      = htmlspecialchars($this->input->post('jenis_layanan', true));
+        $link               = htmlspecialchars($this->input->post('link', true));
         $gambar             = $_FILES['gambar']['name'];
         $data['row']        = $this->Admin_model->row('layanan', $id);
         $gambar_lama        = $data['row']['gambar'];
@@ -583,7 +580,7 @@ class Admin extends CI_Controller
         $data['session']    = $this->session->userdata('email');
         $data['row']        = $this->Admin_model->get_id($id);
 
-        $password_lama      = $this->input->post('password_lama');
+        $password_lama      = htmlspecialchars($this->input->post('password_lama', true));
         $password_baru      = password_hash($this->input->post('password_baru'), PASSWORD_DEFAULT);
 
         $password_DB        = $data['row']['password'];
@@ -605,7 +602,7 @@ class Admin extends CI_Controller
 
     public function jumlah_admin()
     {
-        $data['judul']      = 'Daftar Admin';
+        $data['judul']          = 'Daftar Admin';
         $data['all_admin']      = $this->Admin_model->get_all();
 
         $this->load->view('admin/templates/header', $data);
@@ -638,7 +635,7 @@ class Admin extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['all_admin']     = $this->Admin_model->get_id($id);
-            $data['judul']      = 'Update Admin';
+            $data['judul']         = 'Update Admin';
 
             $this->load->view('admin/templates/header', $data);
             $this->load->view('admin/templates/sidebar');
@@ -654,7 +651,7 @@ class Admin extends CI_Controller
 
     public function edit_admin($id)
     {
-        $data['judul']      = 'Update Admin';
+        $data['judul']         = 'Update Admin';
         $data['all_admin']     = $this->Admin_model->get_id($id);
 
         $this->load->view('admin/templates/header', $data);
@@ -685,10 +682,10 @@ class Admin extends CI_Controller
             $this->form_validation->set_rules('gambar', 'Gambar Promo', 'required');
         }
 
-        $nama_menu          = $this->input->post('nama_menu');
-        $harga_menu         = $this->input->post('harga_menu');
-        $keterangan_menu    = $this->input->post('keterangan_menu');
-        $jenis_makanan      = $this->input->post('jenis_makanan');
+        $nama_menu          = htmlspecialchars($this->input->post('nama_menu', true));
+        $harga_menu         = htmlspecialchars($this->input->post('harga_menu', true));
+        $keterangan_menu    = htmlspecialchars($this->input->post('keterangan_menu', true));
+        $jenis_makanan      = htmlspecialchars($this->input->post('jenis_makanan', true));
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Menu';
@@ -736,7 +733,6 @@ class Admin extends CI_Controller
 
     public function semua_menu()
     {
-
         $data['all_menu'] = $this->Admin_model->all_menu();
 
         $data['judul'] = 'Semua Menu';
@@ -766,11 +762,11 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('harga_menu', 'Harga Menu', 'required|trim');
         $this->form_validation->set_rules('keterangan_menu', 'Keterangan', 'required|trim');
 
-        $id                 = $this->input->post('id');
-        $jenis_makanan      = $this->input->post('jenis_makanan');
-        $nama_menu          = $this->input->post('nama_menu');
-        $harga_menu         = $this->input->post('harga_menu');
-        $keterangan         = $this->input->post('keterangan_menu');
+        $id                 = htmlspecialchars($this->input->post('id', true));
+        $jenis_makanan      = htmlspecialchars($this->input->post('jenis_makanan', true));
+        $nama_menu          = htmlspecialchars($this->input->post('nama_menu', true));
+        $harga_menu         = htmlspecialchars($this->input->post('harga_menu', true));
+        $keterangan         = htmlspecialchars($this->input->post('keterangan_menu', true));
         $gambar             = $_FILES['gambar']['name'];
         $data['row']        = $this->Admin_model->row_menu($id);
         $gambar_lama        = $data['row']['gambar'];

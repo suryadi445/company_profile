@@ -21,10 +21,10 @@ class Karir extends CI_Controller
 
     public function insert_karir()
     {
-        $nama       = $this->input->post('nama');
-        $email      = $this->input->post('email');
-        $phone      = $this->input->post('phone');
-        $gender     = $this->input->post('gender');
+        $nama       = htmlspecialchars($this->input->post('nama', true));
+        $email      = htmlspecialchars($this->input->post('email', true));
+        $phone      = htmlspecialchars($this->input->post('phone', true));
+        $gender     = htmlspecialchars($this->input->post('gender', true));
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');

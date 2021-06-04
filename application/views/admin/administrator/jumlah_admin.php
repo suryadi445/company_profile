@@ -49,10 +49,10 @@
                                     <?php foreach ($all_admin as $result) : ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
-                                            <td><?= $result['nama']; ?></td>
-                                            <td><?= $result['email']; ?></td>
-                                            <td><?= $result['phone']; ?></td>
-                                            <td><?= $result['gender']; ?></td>
+                                            <td><?php cetak($result['nama']); ?></td>
+                                            <td><?php cetak($result['email']); ?></td>
+                                            <td><?php cetak($result['phone']); ?></td>
+                                            <td><?php cetak($result['gender']); ?></td>
                                             <td>
                                                 <div class="row justify-content-around">
                                                     <a href="<?= base_url(); ?>admin/edit_admin/<?= $result['id']  ?>" class="badge badge-warning">Ubah</a>

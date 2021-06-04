@@ -102,6 +102,11 @@ class Admin_model extends CI_Model
 
     // dinamis
 
+    public function get($tabel)
+    {
+        return $this->db->get($tabel)->result_array();
+    }
+
     public function insert($tabel, $data)
     {
         return $this->db->insert($tabel, $data);

@@ -31,12 +31,12 @@
                             <?php $no = 1;
                             foreach ($result as $hasil) : ?>
                                 <tr>
-                                    <th scope="row"><?= $no++ ?></th>
-                                    <td><?= $hasil['nama'] ?></td>
-                                    <td><?= $hasil['email'] ?></td>
-                                    <td><?= $hasil['phone'] ?></td>
-                                    <td><?= $hasil['gender'] ?></td>
-                                    <td><?= $hasil['tanggal_input'] ?></td>
+                                    <th scope="row"><?php cetak($no++) ?></th>
+                                    <td><?php cetak($hasil['nama']) ?></td>
+                                    <td><?php cetak($hasil['email']) ?></td>
+                                    <td><?php cetak($hasil['phone']) ?></td>
+                                    <td><?php cetak($hasil['gender']) ?></td>
+                                    <td><?php cetak($hasil['tanggal_input']) ?></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>

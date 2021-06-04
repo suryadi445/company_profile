@@ -75,9 +75,8 @@ $(document).ready(function(){
                 gender  : gender
             },
             success: function (data) {
-                // let obj= $.parseJSON(data)
+
                 let error = $.parseJSON(data)
-                console.log(error);
                 
                 if(error != true){
                     $('#error_nama').html(error.nama)
@@ -87,9 +86,9 @@ $(document).ready(function(){
                     Swal.fire({
                             icon: 'success',
                             title: 'sukses',
-                            text: 'Customer berhasil ditambah',
+                            text: 'Terima kasih, pendaftaran berhasil dilakukan',
                             showConfirmButton: false,
-                            timer: 1500
+                            timer: 2000
                         })
 
                     $('#daftar_karir').modal('hide')

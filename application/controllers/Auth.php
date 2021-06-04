@@ -80,8 +80,8 @@ class Auth extends CI_Controller
 
     private function _login()
     {
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
+        $email = htmlspecialchars($this->input->post('email', true));
+        $password = htmlspecialchars($this->input->post('password', true));
 
         $user = $this->Auth_model->getRow($email);
 

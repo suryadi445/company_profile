@@ -32,14 +32,14 @@
                             <?php $no = 1;
                             foreach ($result as $hasil) : ?>
                                 <tr>
-                                    <th scope="row"><?= $no++ ?></th>
-                                    <td><?= $hasil['nama'] ?></td>
-                                    <td><?= $hasil['email'] ?></td>
-                                    <td><?= $hasil['phone'] ?></td>
-                                    <td><?= $hasil['kategori'] ?></td>
-                                    <td><?= $hasil['tanggal_pesan'] ?></td>
+                                    <th scope="row"><?php cetak($no++) ?></th>
+                                    <td><?php cetak($hasil['nama']) ?></td>
+                                    <td><?php cetak($hasil['email']) ?></td>
+                                    <td><?php cetak($hasil['phone']) ?></td>
+                                    <td><?php cetak($hasil['kategori']) ?></td>
+                                    <td><?php cetak($hasil['tanggal_pesan']) ?></td>
                                     <td>
-                                        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal_hubungi_kami<?= $hasil['id'] ?>">Lihat Pesan</a>
+                                        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal_hubungi_kami<?php cetak($hasil['id']) ?>">Lihat Pesan</a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>
@@ -55,7 +55,7 @@
 
 <!-- Modal -->
 <?php foreach ($result as $hasil) : ?>
-    <div class="modal fade" id="modal_hubungi_kami<?= $hasil['id'] ?>" tabindex="-1" aria-labelledby="modal_label" aria-hidden="true">
+    <div class="modal fade" id="modal_hubungi_kami<?php cetak($hasil['id']) ?>" tabindex="-1" aria-labelledby="modal_label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -67,11 +67,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="<?= $hasil['email'] ?>" aria-describedby="emailHelp" readonly>
+                        <input type="email" class="form-control" id="exampleInputEmail1" value="<?php cetak($hasil['email']) ?>" aria-describedby="emailHelp" readonly>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Pesan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $hasil['pesan'] ?></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"><?php cetak($hasil['pesan']) ?></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

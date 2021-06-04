@@ -18,11 +18,11 @@ class Hubungi_kami extends CI_Controller
         $this->form_validation->set_rules('kategori', 'Kategori', 'trim|required');
         $this->form_validation->set_rules('pesan', 'Pesan', 'trim|required|max_length[1000]');
 
-        $nama           = $this->input->post('nama');
-        $email          = $this->input->post('email');
-        $phone          = $this->input->post('phone');
-        $kategori       = $this->input->post('kategori');
-        $pesan          = $this->input->post('pesan');
+        $nama           = htmlspecialchars($this->input->post('nama', true));
+        $email          = htmlspecialchars($this->input->post('email', true));
+        $phone          = htmlspecialchars($this->input->post('phone', true));
+        $kategori       = htmlspecialchars($this->input->post('kategori', true));
+        $pesan          = htmlspecialchars($this->input->post('pesan', true));
 
         $data               = [
             'nama'          => $nama,
