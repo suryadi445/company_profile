@@ -58,6 +58,14 @@ $(document).ready(function(){
         $('#tab-sejarah').show()
     })
 
+    $('.show_password').click(function(){
+        if($(this).is(':checked')){
+            $('.password').attr('type', 'text')
+        }else{
+            $('.password').attr('type', 'password')
+        }
+    })
+
     $('#modal_karir').click(function(){
 
         let nama = $('#nama').val()

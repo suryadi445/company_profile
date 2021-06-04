@@ -45,14 +45,14 @@
                                     <div class="form-group row">
                                         <label for="password_daftar" class="col-sm-3 col-form-label font-weight-bold">Password</label>
                                         <div class="col-sm-9">
-                                            <input type="password" class="form-control font-weight-bold" placeholder="Masukkan Password Anda" name="password" id="password_daftar">
+                                            <input type="password" class="form-control font-weight-bold password" placeholder="Masukkan Password Anda" name="password" id="password_daftar">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
                                             <span class="text-danger"><?php echo form_error('password'); ?></span>
                                         </div>
                                         <div class="col-sm-6 offset-sm-3 mb-n4">
                                             <p class="mt-1">
-                                                <input type="checkbox" class="form-checkbox" id="checkbox">
+                                                <input type="checkbox" class="form-checkbox show_password" id="checkbox">
                                                 Show Password
                                             </p>
                                         </div>
@@ -60,14 +60,14 @@
                                     <div class="form-group row">
                                         <label for="password_daftar" class="col-sm-3 col-form-label font-weight-bold">Confirm Password</label>
                                         <div class="col-sm-9">
-                                            <input type="password" class="form-control font-weight-bold" placeholder="Masukkan Ulang Password Anda" name="password2" id="password_daftar2">
+                                            <input type="password" class="form-control font-weight-bold password" placeholder="Masukkan Ulang Password Anda" name="password2" id="password_daftar2">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
                                             <span class="text-danger"><?php echo form_error('password'); ?></span>
                                         </div>
                                         <div class="col-sm-6 offset-sm-3">
                                             <p class="mt-1">
-                                                <input type="checkbox" class="form-checkbox" id="checkbox2">
+                                                <input type="checkbox" class="form-checkbox show_password" id="checkbox2">
                                                 Show Password
                                             </p>
                                         </div>
