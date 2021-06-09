@@ -58,20 +58,6 @@
                                         <i class="fab fa-youtube logo" id="youtube"></i>
                                     </a>
                                 </div>
-                                <!-- <div class="row" id="text_sosmed">
-                                    <div class="col-lg-3 text-center" for="facebook">
-                                        <p>Facebook</p>
-                                    </div>
-                                    <div class="col-lg-3 text-center">
-                                        <p>Instagram</p>
-                                    </div>
-                                    <div class="col-lg-3 text-center">
-                                        <p>Twitter</p>
-                                    </div>
-                                    <div class="col-lg-3 text-center">
-                                        <p>Youtube</p>
-                                    </div>
-                                </div> -->
                                 <div class="col-lg-12 text-center mt-3" id="wrap_email">
                                     <a href="">
                                         <i class="fas fa-envelope text-center logo" id="email">
@@ -79,7 +65,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-12 text-center">
-                                    <p>Suryadi.hhb@gmail.com</p>
+                                    <p class="text_email">Suryadi.hhb@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +75,7 @@
         </div>
 </section>
 
-<footer>
+<footer class="mt-auto">
     <div class="container-fluid">
         <div class="row ml-1 mt-1 pb-1">
             <div class="col-lg-12 text-left">

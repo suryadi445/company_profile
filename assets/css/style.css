@@ -173,7 +173,8 @@ ul.navbar-nav a {
 
 /* Atas footer */
 #atas_footer {
-	height: 300px;
+	margin-top: 60px;
+	height: 180px;
 }
 
 .list_about {
@@ -224,10 +225,18 @@ ul.navbar-nav a {
 footer {
 	color: rgb(82, 82, 82);
 	padding-top: 3px;
-	padding-bottom: 3px;
 	font-size: 14px;
 	background-color: rgb(240, 240, 240);
+	clear: both;
+	position: relative;
+	height: 38px;
+	top: 60px;
+
 }
+
+/* akkhir footer */
+
+
 
 #kebijakan,
 #syarat {
@@ -244,369 +253,14 @@ footer {
 }
 
 
-
-/* media query home */
-
-/* smartphone */
-@media (max-width:575.98px) {
-	.garis_vertikal {
-		visibility: hidden;
-	}
-
-	.carousel-item img {
-		height: 600px;
-	}
-
-	ol li {
-		margin-top: -110px;
-	}
-
-	#rekomendasi {
-		margin-top: -100px;
-	}
-
-	.btn_rekomendasi {
-		display: inline;
-		width: 110px;
-		font-size: 14px;
-	}
-
-	.btn_menu {
-		text-align: center;
-		margin-left: 50px;
-	}
-
-	#atas_footer {
-		margin-top: 250px;
-	}
-
-	#row_logo .col-lg-3 {
-		margin-top: 3px;
-	}
-
-	#text_sosmed {
-		visibility: hidden;
-		margin-bottom: -165px;
-	}
-
-	#email {
-		position: relative;
-	}
-
-	footer {
-		margin-top: 320px;
-		padding-bottom: 15px;
-	}
-
-	#pt_suryadi {
-		text-align: center;
-	}
-
-	/* halaman menu */
-	#jumbotron_menu h3 {
-		margin-top: 30px;
-	}
-
-	#jumbotron_menu #slider_menu img {
-		height: 430px;
-	}
-
-	#minuman {
-		margin-bottom: -200px;
-	}
-
-	/* halaman hubungi kami */
-	#contact {
-		margin-bottom: -340px;
-	}
-
-	#contact img {
-		background-size: cover;
-		width: 330px;
-	}
-
-	#contact h2,
-	p {
-		width: 300px;
-		padding-right: 20px;
-	}
-
-	#card_hub_kami {
-		margin-top: 800px;
-		width: 280px;
-		margin-left: -160px;
-	}
-
-	#card_hub_kami input {
-		font-size: 12px;
-	}
-
-	#card_hub_kami select {
-		font-size: 12px;
-	}
-
-	#card_hub_kami textarea {
-		font-size: 12px;
-	}
-
-	/* halaman karir */
-	#jumbotron_karir {
-		margin-bottom: -70px;
-	}
-
-	#jumbotron_karir img {
-		margin-top: 20px;
-		width: 100%;
-		height: 447px;
-	}
-
-	#karir_body {
-		padding-left: 20px;
-	}
-
-	#karir_body .card-deck .card {
-		margin-right: 20px;
-	}
-
-	#karir_body .card-deck .card p {
-		padding-right: 80px;
-	}
-
-	#karir_footer {
-		margin-bottom: 300px;
-	}
-
-	#karir_footer img {
-		margin-bottom: -90px;
-	}
-
-	#daftar_karir {
-		width: 360px;
-	}
-
-	/* akhir halaman karir */
-
-	/* halaman layanan */
-	#layanan_body h1 {
-		margin-top: -20px;
-	}
-
-	#layanan_body .card-deck {
-		margin-top: 30px;
-	}
-
-	#layanan_body {
-		margin-bottom: -300px;
-	}
-
-	/* akhir halaman layanan */
-
-	#visi p {
-		width: 350px;
-	}
-
-	#misi p {
-		width: 350px;
-	}
-
-	#sejarah p {
-		width: 350px;
-	}
-
-	#sejarah {
-		margin-bottom: -270px;
-	}
-
-	/* akhir halaman sejarah */
-
-	/* halaman login */
-	#login {
-		margin-bottom: -270px;
-	}
-
-	/* akhir halaman login */
-
-	/* halaman registrasi */
-	#registrasi {
-		margin-bottom: -270px;
-	}
-
-	/* akhir halaman registrasi */
-
-	/* akhir media query smartphone */
-}
-
-/* tab */
-@media (min-width: 576px) and (max-width: 991.98px) {
-	.garis_vertikal {
-		visibility: hidden;
-	}
-
-	.carousel-item img {
-		height: 600px;
-	}
-
-	.btn_carousel_daftar {
-		margin-left: -10px;
-		margin-bottom: 100px;
-	}
-
-	.btn_carousel_masuk {
-		margin-bottom: 100px;
-	}
-
-
-	ol li {
-		margin-top: -120px;
-	}
-
-	#rekomendasi {
-		margin-top: -90px;
-	}
-
-	.btn_rekomendasi {
-		display: block;
-		width: 140px;
-		font-size: 14px;
-		margin-right: 4px;
-	}
-
-	.btn_menu {
-		background-color: red;
-		display: block;
-		width: 140px;
-		font-size: 14px;
-		margin-right: 5px;
-	}
-
-	.card-body h5 {
-		text-align: center;
-	}
-
-	#atas_footer {
-		margin-top: 150px;
-	}
-
-	#row_logo .col-lg-3 {
-		margin-top: 3px;
-	}
-
-	#text_sosmed {
-		visibility: hidden;
-		margin-bottom: -165px;
-	}
-
-	footer {
-		margin-top: 330px;
-		padding-bottom: 20px;
-	}
-
-	#pt_suryadi {
-		text-align: center;
-		margin-top: 5px;
-		margin-bottom: 5px;
-	}
-
-	/* halaman menu */
-	#minuman {
-		margin-bottom: -200px;
-	}
-
-	/* halaman hubungi kami */
-	#contact {
-		margin-bottom: -220px;
-	}
-
-	#contact img {
-		background-size: cover;
-		width: 780px;
-	}
-
-	#contact h2,
-	p {
-		width: 700px;
-		padding-right: 50px;
-	}
-
-	#card_hub_kami {
-		margin-top: 670px;
-		width: 660px;
-		margin-left: -360px;
-	}
-
-	/* akhir hubungi kami */
-
-	/* halaman karir */
-	#jumbotron_karir img {
-		height: 530px;
-	}
-
-	#karir_body {
-		margin-top: -500px;
-	}
-
-	#karir_body .card-deck .card {
-		width: 80px;
-	}
-
-	#karir_body .card-deck .card p {
-		width: 200px;
-	}
-
-	#karir_footer {
-		margin-bottom: 300px;
-	}
-
-	/* akhir halaman karir */
-
-	/* awal halaman layanan kami */
-	#layanan_body .card-deck {
-		margin-top: 100px;
-		margin-bottom: -200px;
-	}
-
-	/* akhir layanan kami */
-
-	/* awal halaman tentang_kammi */
-	#visi p {
-		width: 740px;
-	}
-
-	#misi p {
-		width: 740px;
-	}
-
-	#sejarah p {
-		width: 740px;
-	}
-
-	#sejarah {
-		margin-bottom: -170px;
-	}
-
-	/* akhir halaman tentang kami */
-
-	/* halaman login */
-	#login {
-		margin-bottom: -170px;
-	}
-
-	/* akhir halaman login */
-
-	/* halaman registrasi */
-	#registrasi {
-		margin-bottom: -170px;
-	}
-
-	/* akhir halaman registrasi */
-
-	/* akhir media query tab */
-}
-
-
 /* halaman menu */
 #jumbotron_menu img {
 	height: 525px;
+}
+
+#jumbotron_menu #text_jumbotron {
+	position: relative;
+	top: 150px;
 }
 
 .jumbotron {
@@ -640,6 +294,7 @@ footer {
 	width: 150px;
 	color: white;
 	outline: none;
+	margin-left: 15px;
 }
 
 .btn_menu:hover {
@@ -671,7 +326,8 @@ footer {
 /* halaman promo */
 #promo {
 	margin-left: 8px;
-	margin-top: 100px;
+	margin-top: 60px;
+	height: 257px;
 }
 
 #promo_title {
@@ -883,3 +539,386 @@ h3 {
 }
 
 /* akhir halaman snk */
+
+
+
+/* media query home */
+
+/* smartphone */
+@media (max-width:575.98px) {
+	.garis_vertikal {
+		visibility: hidden;
+	}
+
+	.carousel-item img {
+		height: 600px;
+	}
+
+	ol li {
+		margin-top: -110px;
+	}
+
+	#rekomendasi {
+		margin-top: -100px;
+	}
+
+	.btn_rekomendasi {
+		display: inline;
+		width: 110px;
+		font-size: 14px;
+	}
+
+	.btn_menu {
+		text-align: center;
+		margin-left: 25%;
+	}
+
+	#atas_footer {
+		margin-top: 250px;
+	}
+
+	#row_logo .col-lg-3 {
+		margin-top: 3px;
+	}
+
+	#text_sosmed {
+		visibility: hidden;
+		margin-bottom: -165px;
+	}
+
+	#email {
+		position: relative;
+	}
+
+	footer {
+		height: 60px;
+		position: relative;
+		top: 430px
+	}
+
+	.text_email {
+		margin-left: 44px;
+	}
+
+	#pt_suryadi {
+		text-align: center;
+	}
+
+	/* halaman menu */
+	#jumbotron_menu h3 {
+		margin-top: -120px;
+		font-size: 24px;
+	}
+
+	#jumbotron_menu #slider_menu img {
+		margin-top: 100px;
+		height: 360px;
+	}
+
+	#minuman {
+		margin-bottom: -200px;
+	}
+
+	/* halaman hubungi kami */
+	#contact {
+		margin-bottom: -340px;
+	}
+
+	#contact img {
+		background-size: cover;
+		width: 330px;
+	}
+
+	#contact h2,
+	p {
+		width: 300px;
+		padding-right: 20px;
+	}
+
+	#card_hub_kami {
+		margin-top: 800px;
+		width: 280px;
+		margin-left: -160px;
+	}
+
+	#card_hub_kami input {
+		font-size: 12px;
+	}
+
+	#card_hub_kami select {
+		font-size: 12px;
+	}
+
+	#card_hub_kami textarea {
+		font-size: 12px;
+	}
+
+	/* halaman karir */
+	#jumbotron_karir {
+		margin-bottom: -70px;
+	}
+
+	#jumbotron_karir img {
+		margin-top: 20px;
+		width: 100%;
+		height: 447px;
+	}
+
+	#karir_body {
+		padding-left: 20px;
+	}
+
+	#karir_body .card-deck .card {
+		margin-right: 20px;
+	}
+
+	#karir_body .card-deck .card p {
+		padding-right: 80px;
+	}
+
+	#karir_footer {
+		margin-bottom: 300px;
+	}
+
+	#karir_footer img {
+		margin-bottom: -90px;
+	}
+
+	#daftar_karir {
+		width: 360px;
+	}
+
+	/* akhir halaman karir */
+
+	/* halaman layanan */
+	#layanan_body h1 {
+		margin-top: -20px;
+	}
+
+	#layanan_body .card-deck {
+		margin-top: 30px;
+	}
+
+	#layanan_body {
+		margin-bottom: -300px;
+	}
+
+	/* akhir halaman layanan */
+
+	#visi p {
+		width: 350px;
+	}
+
+	#misi p {
+		width: 350px;
+	}
+
+	#sejarah p {
+		width: 350px;
+	}
+
+	#sejarah {
+		margin-bottom: -270px;
+	}
+
+	/* akhir halaman sejarah */
+
+	/* halaman login */
+	#login {
+		margin-bottom: -270px;
+	}
+
+	/* akhir halaman login */
+
+	/* halaman registrasi */
+	#registrasi {
+		margin-bottom: -270px;
+	}
+
+	/* akhir halaman registrasi */
+
+	/* akhir media query smartphone */
+}
+
+/* tab */
+@media (min-width: 576px) and (max-width: 991.98px) {
+	.garis_vertikal {
+		visibility: hidden;
+	}
+
+	.carousel-item img {
+		height: 600px;
+	}
+
+	.btn_carousel_daftar {
+		margin-left: -10px;
+		margin-bottom: 100px;
+	}
+
+	.btn_carousel_masuk {
+		margin-bottom: 100px;
+	}
+
+	ol li {
+		margin-top: -120px;
+	}
+
+	#rekomendasi {
+		margin-top: -90px;
+	}
+
+	.btn_rekomendasi {
+		display: block;
+		width: 140px;
+		font-size: 14px;
+		margin-right: 4px;
+	}
+
+	.btn_menu {
+		background-color: red;
+		display: block;
+		width: 140px;
+		font-size: 14px;
+		margin-right: 5px;
+	}
+
+	.card-body h5 {
+		text-align: center;
+	}
+
+	#atas_footer {
+		margin-top: 150px;
+	}
+
+	#row_logo .col-lg-3 {
+		margin-top: 3px;
+	}
+
+	#text_sosmed {
+		visibility: hidden;
+		margin-bottom: -165px;
+	}
+
+	footer {
+		height: 70px;
+		position: relative;
+		top: 430px;
+	}
+
+	.text_email {
+		margin-left: 30px;
+	}
+
+	#pt_suryadi {
+		text-align: center;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	/* halaman menu */
+	#jumbotron_menu h3 {
+		margin-top: -140px;
+		font-size: 28px;
+	}
+
+	#jumbotron_menu #slider_menu img {
+		margin-top: 60px;
+		height: 360px;
+	}
+
+	#minuman {
+		margin-bottom: -200px;
+	}
+
+	/* halaman hubungi kami */
+	#contact {
+		margin-bottom: -220px;
+	}
+
+	#contact img {
+		background-size: cover;
+		width: 780px;
+	}
+
+	#contact h2,
+	p {
+		width: 700px;
+		padding-right: 50px;
+	}
+
+	#card_hub_kami {
+		margin-top: 670px;
+		width: 660px;
+		margin-left: -360px;
+	}
+
+	/* akhir hubungi kami */
+
+	/* halaman karir */
+	#jumbotron_karir img {
+		height: 530px;
+	}
+
+	#karir_body {
+		margin-top: -500px;
+	}
+
+	#karir_body .card-deck .card {
+		width: 80px;
+	}
+
+	#karir_body .card-deck .card p {
+		width: 200px;
+	}
+
+	#karir_footer {
+		margin-bottom: 300px;
+	}
+
+	/* akhir halaman karir */
+
+	/* awal halaman layanan kami */
+	#layanan_body .card-deck {
+		margin-top: 100px;
+		margin-bottom: -200px;
+	}
+
+	/* akhir layanan kami */
+
+	/* awal halaman tentang_kammi */
+	#visi p {
+		width: 740px;
+	}
+
+	#misi p {
+		width: 740px;
+	}
+
+	#sejarah p {
+		width: 740px;
+	}
+
+	#sejarah {
+		margin-bottom: -170px;
+	}
+
+	/* akhir halaman tentang kami */
+
+	/* halaman login */
+	#login {
+		/* margin-bottom: -170px; */
+		height: 650px;
+	}
+
+	/* akhir halaman login */
+
+	/* halaman registrasi */
+	#registrasi {
+		/* margin-bottom: -170px; */
+		height: 650px;
+	}
+
+	/* akhir halaman registrasi */
+
+	/* akhir media query tab */
+}
