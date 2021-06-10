@@ -66,6 +66,7 @@ $(document).ready(function(){
         }
     })
 
+    // ajax pada modal halaman karir
     $('#modal_karir').click(function(){
 
         let nama = $('#nama').val()
@@ -104,7 +105,61 @@ $(document).ready(function(){
                     $('#email').val('')
                     $('#phone').val('')
                     $('.error').hide()
-                    $("#gridRadios1").prop("checked", true);                }
+                    $("#gridRadios1").prop("checked", true);
+                }
+            }
+        })
+    })
+
+    // date time picker
+    $(".datetimepicker").datetimepicker({
+        format: 'Y-m-d / H:i'
+    });
+
+    // ajax pada modal pesan menu
+    $('#pesan_menu').click(function(){
+        let nama     = $('#nama').val()
+        let phone    = $('#phone').val()
+        let email    = $('#email').val()
+        let gender   = $('input[name="gender"]:checked').val()
+        let waktuPengambilan    = $('.datetimepicker').val()
+
+        $.ajax({
+            url     : 'home/pesan_menu',
+            type    : 'post',
+            data    : {
+                nama                : nama,
+                phone               : phone,
+                email               : email,
+                gender              : gender,
+                waktuPengambilan    : waktuPengambilan
+            },
+            success: function(data){
+                console.log(data);
+                let error = $.parseJSON(data)
+                console.log(error);
+
+                if(error != true){
+                    $('#error_nama').html(error.nama)
+                    $('#error_phone').html(error.phone)
+                    $('#error_email').html(error.email)
+                    $('#error_waktu').html(error.waktuPengambilan)
+                }else{
+                    Swal.fire({
+                            icon: 'success',
+                            title: 'Sukses',
+                            text: 'Pemesanan berhasil dilakukan. Mohon datang sesuai waktu yang sudah ditentukan. Terima kasih',
+                            showConfirmButton: true,
+                        })
+
+                    $('#modalpesan').modal('hide')
+                    $('#nama').val('')
+                    $('#email').val('')
+                    $('#phone').val('')
+                    $('.datetimepicker').val('')
+                    $('.error').hide()
+                    $("#gridRadios1").prop("checked", true);
+                }
             }
         })
     })
