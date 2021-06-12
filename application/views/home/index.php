@@ -42,6 +42,12 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+
+<!-- alert -->
+<?php if ($this->session->flashdata()) : ?>
+    <div class="flash2" data-id="<?= $this->session->flashdata('gagal') ?>"></div>
+<?php endif ?>
+
 <section id="rekomendasi" class="mb-3">
     <h2 class="text-center">Rekomendasi</h2>
     <div class="row row-cols-1 row-cols-md-3">
@@ -50,7 +56,7 @@
                 <div class="container mt-3">
                     <img src="<?= base_url('assets/image/makanan/martabak_telor.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Martabak Telor</h5>
                     </div>
                     <div class="card-body">
                         <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
@@ -64,11 +70,11 @@
                 <div class="container mt-3">
                     <img src="<?= base_url('assets/image/makanan/soto_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
                     <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Soto Ayam</h5>
                     </div>
                     <div class="card-body">
                         <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -78,11 +84,11 @@
                 <div class="container mt-3">
                     <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="1000">
                     <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Mie Ayam</h5>
                     </div>
                     <div class="card-body">
                         <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -92,11 +98,11 @@
                 <div class="container mt-3">
                     <img src="<?= base_url('assets/image/makanan/somay.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Siomay</h5>
                     </div>
                     <div class="card-body">
                         <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -106,11 +112,11 @@
                 <div class="container mt-3">
                     <img src="<?= base_url('assets/image/makanan/jus_alpukat.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
                     <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Jus Alpukat</h5>
                     </div>
                     <div class="card-body">
                         <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -120,11 +126,11 @@
                 <div class="container mt-3">
                     <img src="<?= base_url('assets/image/makanan/pempek.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="1000">
                     <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Pempek</h5>
                     </div>
                     <div class="card-body">
                         <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right">Pesan</a>
+                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -144,7 +150,7 @@
                         <h1>JADILAH BAGIAN DARI KELUARGA KAMI</h1>
                         <p>Di PT. Surya_Resto, kami lebih dari sekadar bisnis. Kami adalah komunitas tempat Anda berlatih keterampilan hidup dan sebagai wadah untuk mengejar serta mewujudkan impianmu.</p>
                         <div class="text-center mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="700">
-                            <a href="" class="btn btn_merah">LIHAT LOWONGAN</a>
+                            <a href="<?= base_url('karir') ?>" class="btn btn_merah">Gabung Bersama Kami</a>
                         </div>
                     </div>
                 </div>

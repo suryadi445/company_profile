@@ -135,9 +135,7 @@ $(document).ready(function(){
                 waktuPengambilan    : waktuPengambilan
             },
             success: function(data){
-                console.log(data);
                 let error = $.parseJSON(data)
-                console.log(error);
 
                 if(error != true){
                     $('#error_nama').html(error.nama)

@@ -29,5 +29,9 @@
         .swal2-popup .swal2-styled:focus {
             box-shadow: none !important;
         }
+
+        .btn {
+            box-shadow: none !important;
+        }
     </style>
 </head>
