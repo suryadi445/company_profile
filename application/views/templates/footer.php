@@ -122,9 +122,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="<?= base_url('assets/js/script.js') ?>"></script>
+<script src="<?= base_url('assets/js/script_gsap.js') ?>"></script>
 <script src="<?= base_url('assets/js/alert.js') ?>"></script>
 
-<script>
+<!-- <script>
     // halaman menu
     const gambar_menu = document.querySelectorAll('.gambar_menu');
 
@@ -231,9 +232,9 @@
     // akhir halaman snk
 
     AOS.init();
-</script>
+</script> -->
 
-<script>
+<!-- <script>
     gsap.from("nav", {
         duration: 1,
         y: -100,
@@ -282,7 +283,7 @@
         opacity: 0,
     });
     // akhir halaman menu
-</script>
+</script> -->
 
 
 </body>

@@ -12,12 +12,12 @@ class Auth extends CI_Controller
 
     public function registrasi()
     {
-        $nama = htmlspecialchars($this->input->post('nama', true));
-        $email = htmlspecialchars($this->input->post('email', true));
-        $phone = htmlspecialchars($this->input->post('phone', true));
-        $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-        $password2 = password_hash($this->input->post('password2'), PASSWORD_DEFAULT);
-        $gender = $this->input->post('gridRadios', true);
+        $nama           = htmlspecialchars($this->input->post('nama', true));
+        $email          = htmlspecialchars($this->input->post('email', true));
+        $phone          = htmlspecialchars($this->input->post('phone', true));
+        $password       = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+        $password2      = password_hash($this->input->post('password2'), PASSWORD_DEFAULT);
+        $gender         = $this->input->post('gridRadios', true);
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_users.email]');
@@ -80,10 +80,10 @@ class Auth extends CI_Controller
 
     private function _login()
     {
-        $email = htmlspecialchars($this->input->post('email', true));
-        $password = htmlspecialchars($this->input->post('password', true));
+        $email       = htmlspecialchars($this->input->post('email', true));
+        $password    = htmlspecialchars($this->input->post('password', true));
 
-        $user = $this->Auth_model->getRow($email);
+        $user        = $this->Auth_model->getRow($email);
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
