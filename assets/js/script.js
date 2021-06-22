@@ -1,37 +1,3 @@
-// $(document).ready(function(){
-//     // date picker
-//     $(".datepicker").datepicker({
-//         dateFormat:"yy-mm-dd",
-//         autoclose: true,
-//         todayHighlight: true,
-//     })
-
-//     // manipulasi text pada input file gambar bootstrap
-//     $('.custom-file-input').on('change', function(){
-//         let fileName = $(this).val().split('\\').pop();
-//         $(this).next('.custom-file-label').addClass("selected").html(fileName)
-//     });
-
-//     // datatable
-//     $('#table').dataTable({
-//         "processing": true, 
-//         // "searching": false, 
-//         "ordering": false,
-//         "lengthChange": false,
-//         "bFilter": true,
-//         "bInfo": false,
-//     });
-
-//     // halaman yg ada uploadnya
-//     // gambar preview pada input file gambar
-//     gambar.onchange = evt => {
-//         const [file] = gambar.files
-//         if (file) {
-//             blah.src = URL.createObjectURL(file)
-//         }
-//     }
-// })
-
 // halaman admin tentang kami
 $(document).ready(function(){
     $('#tab-visi').show()
@@ -112,17 +78,26 @@ $(document).ready(function(){
     })
 
     // date time picker
-    $(".datetimepicker").datetimepicker({
-        format: 'Y-m-d / H:i'
+    $(".datetimepicker").datetimepicker({ 
+        format: 'd-m-Y H:i' 
     });
 
     // ajax pada modal pesan menu
     $('#pesan_menu').click(function(){
-        let nama     = $('#nama').val()
-        let phone    = $('#phone').val()
-        let email    = $('#email').val()
-        let gender   = $('input[name="gender"]:checked').val()
+        let nama                = $('#nama').val()
+        let phone               = $('#phone').val()
+        let email               = $('#email').val()
+        let gender              = $('input[name="gender"]:checked').val()
         let waktuPengambilan    = $('.datetimepicker').val()
+        let pesan_menu          = $('#pesan_menu')
+        let btn_loading         = $('#btn-loading')
+        let btn_cancel          = $('.btn-cancel')
+
+        if(nama != '' && phone != '' && email !='' && waktuPengambilan != '' ){
+            pesan_menu.hide()
+            btn_cancel.hide()
+            btn_loading.removeClass('d-none')
+        }
 
         $.ajax({
             url     : 'home/pesan_menu',
@@ -135,6 +110,7 @@ $(document).ready(function(){
                 waktuPengambilan    : waktuPengambilan
             },
             success: function(data){
+                console.log(data);
                 let error = $.parseJSON(data)
 
                 if(error != true){

@@ -198,7 +198,7 @@
 
 
 <!-- modal pesan -->
-<div class="modal fade" id="modalpesan" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
+<div class="modal fade" id="modalpesan" data-backdrop="static" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -259,8 +259,13 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Batal</button>
                     <button type="button" class="btn btn-primary" id="pesan_menu">Pesan</button>
+                    <!-- button loading -->
+                    <button class="btn btn-primary d-none" id="btn-loading" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Loading...
+                    </button>
                 </div>
             </form>
         </div>

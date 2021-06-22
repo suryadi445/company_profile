@@ -49,15 +49,6 @@ class Home extends CI_Controller
             ];
             echo json_encode($error);
         } else {
-            // $data   = [
-            //     'nama'          => $nama,
-            //     'email'         => $email,
-            //     'phone'         => $phone,
-            //     'gender'        => $gender,
-            //     'tgl_input'     => $waktu
-            // ];
-            // $query  = $this->Admin_model->insert('tbl_pesanan', $data);
-            // echo json_encode($query);
 
             $this->_sendEmail();
             $this->_sendEmailToMe();
