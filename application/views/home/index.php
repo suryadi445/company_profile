@@ -269,12 +269,12 @@
                                 <div class="form-group row">
                                     <label for="menu" class="col-sm-4 col-form-label">Menu</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="menu" autocomplete="off" value="<?= set_value('menu') ?>" id=",menu">
+                                        <input type="text" class="form-control" name="menu" autocomplete="off" value="<?= set_value('menu') ?>" id="menu" readonly>
                                         <div class="text-danger mb-n4 error" id="error_menu"><?= form_error('menu'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="waktuPengambilan" class="col-sm-4 col-form-label">Jumlah Menu</label>
+                                    <label for="qty-input" class="col-sm-4 col-form-label">Jumlah Menu</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <div class="input-group-prepend">

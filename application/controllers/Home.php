@@ -32,6 +32,9 @@ class Home extends CI_Controller
         $phone      = $this->input->post('phone');
         $gender     = $this->input->post('gender');
         $waktu      = $this->input->post('waktuPengambilan');
+        $menu       = $this->input->post('menu');
+        $jumlah     = $this->input->post('jumlah_menu');
+        $harga      = $this->input->post('harga_total');
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
@@ -65,7 +68,10 @@ class Home extends CI_Controller
                     'email'         => $email,
                     'phone'         => $phone,
                     'gender'        => $gender,
-                    'tgl_input'     => $waktu
+                    'tgl_input'     => $waktu,
+                    'menu'          => $menu,
+                    'jumlah_menu'   => $jumlah,
+                    'harga_total'   => $harga
                 ];
                 $query  = $this->Admin_model->insert('tbl_pesanan', $data);
                 echo json_encode($query);
@@ -97,7 +103,7 @@ class Home extends CI_Controller
         // email penerima atau email yg digunakan untuk registrasi
         $this->email->to($this->input->post('email'));
         $this->email->subject('Thanks for your order');
-        $this->email->message('Terima kasih telah memesan di restoran kami. Mohon datang sesuai jam yang sudah Anda tentukan' . '(' . $this->input->post('waktuPengambilan') . ')' . '<br>' . 'Salam hangat' . '<br>' . 'Suryadi');
+        $this->email->message('Terima kasih telah memesan di restoran kami. Mohon datang sesuai jam yang sudah Anda tentukan' . '(' . $this->input->post('waktuPengambilan') . ')' . '<br>' . 'Menu :' . $this->input->post('menu') . '<br>' . 'Total Harga :' . $this->input->post('harga_total') . '<br>' . 'Jumlah Pesanan :' . $this->input->post('jumlah_menu') . '<br>' . 'Salam hangat' . '<br>' . 'Suryadi');
 
 
         // jika email terkirim
@@ -131,7 +137,7 @@ class Home extends CI_Controller
         // email penerima atau email yg digunakan untuk registrasi
         $this->email->to('Suryadi_fb@yahoo.com');
         $this->email->subject('Pesanan Baru');
-        $this->email->message('Nama : ' . $this->input->post('nama') . '<br>' . 'Email : ' . $this->input->post('email') . '<br>'  . 'Phone : ' . $this->input->post('phone') . '<br>'  . 'Gender : ' . $this->input->post('gender') . '<br>' . 'Waktu Pengambilan : ' . $this->input->post('waktuPengambilan'));
+        $this->email->message('Nama : ' . $this->input->post('nama') . '<br>' . 'Email : ' . $this->input->post('email') . '<br>'  . 'Phone : ' . $this->input->post('phone') . '<br>'  . 'Gender : ' . $this->input->post('gender') . '<br>' . 'Waktu Pengambilan : ' . $this->input->post('waktuPengambilan') . '<br>' . 'Jumlah Pesanan : ' . $this->input->post('jumlah_pesanan') . '<br>' . 'Menu : ' . $this->input->post('menu') . '<br>' . 'Total Harga : ' . $this->input->post('harga_total'));
 
         // jika email terkirim
         if ($this->email->send()) {

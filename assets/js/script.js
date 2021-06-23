@@ -92,6 +92,9 @@ $(document).ready(function(){
         let pesan_menu          = $('#pesan_menu')
         let btn_loading         = $('#btn-loading')
         let btn_cancel          = $('.btn-cancel')
+        let jumlah_menu         = $('#qty-input').val()
+        let harga_total         = $('#harga_total').val()
+        let menu                = $('#menu').val()
 
         if(nama != '' && phone != '' && email !='' && waktuPengambilan != '' ){
             pesan_menu.hide()
@@ -107,6 +110,9 @@ $(document).ready(function(){
                 phone               : phone,
                 email               : email,
                 gender              : gender,
+                jumlah_menu         : jumlah_menu,
+                harga_total         : harga_total,
+                menu                : menu,
                 waktuPengambilan    : waktuPengambilan
             },
             success: function(data){
@@ -124,7 +130,12 @@ $(document).ready(function(){
                             title: 'Sukses',
                             text: 'Pemesanan berhasil dilakukan. Mohon datang sesuai waktu yang sudah ditentukan. Terima kasih',
                             showConfirmButton: true,
-                        })
+                        }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            location.reload();
+                        }
+                    })
 
                     $('#modalpesan').modal('hide')
                     $('#nama').val('')
@@ -133,12 +144,18 @@ $(document).ready(function(){
                     $('.datetimepicker').val('')
                     $('.error').hide()
                     $("#gridRadios1").prop("checked", true);
+                    $('#harga_total').val('')
+                    btn_loading.addClass('d-none')
+                    pesan_menu.show()
+                    pesan_menu.addClass('d-none')
+                    btn_cancel.show()
                 }
             }
         })
     })
 
     // ajax update quantity
+    // update untuk kurang qty menu
     $('#btn-kurang').click(function(){
         let qty_input = $('#qty-input').val()
 
@@ -154,6 +171,7 @@ $(document).ready(function(){
         })
     })
     
+    // update untuk tambah qty menu
     $('#btn-tambah').click(function(){
         let qty_input = $('#qty-input').val()
 
