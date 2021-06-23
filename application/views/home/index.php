@@ -199,7 +199,7 @@
 
 <!-- modal pesan -->
 <div class="modal fade" id="modalpesan" data-backdrop="static" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalPesanLabel">Pesan Menu</h5>
@@ -207,67 +207,136 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form>
-                <div class="modal-body">
-                    <div class="form-group row">
-                        <label for="nama" class="col-sm-3 col-form-label">Nama</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nama" id="nama" value="<?= set_value('nama') ?>">
-                        </div>
-                        <div class=" text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_nama"><?= form_error('nama'); ?>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="phone" class="col-sm-3 col-form-label">Phone</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="phone" id="phone" value="<?= set_value('phone') ?>">
-                        </div>
-                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_phone"><?= form_error('phone'); ?></div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="email" class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control" name="email" id="email" value="<?= set_value('email') ?>">
-                        </div>
-                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_email"><?= form_error('email'); ?></div>
-                    </div>
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <legend class="col-form-label col-sm-3 pt-0">Jenis Kelamin</legend>
-                            <div class="col-sm-9">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="pria" checked>
-                                    <label class="form-check-label" for="gridRadios1">
-                                        Pria
-                                    </label>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <label for="nama" class="col-sm-3 col-form-label">Nama</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="nama" id="nama" value="<?= set_value('nama') ?>">
+                                        </div>
+                                        <div class=" text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_nama"><?= form_error('nama'); ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="phone" id="phone" value="<?= set_value('phone') ?>">
+                                        </div>
+                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_phone"><?= form_error('phone'); ?></div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email" class="col-sm-3 col-form-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" name="email" id="email" value="<?= set_value('email') ?>">
+                                        </div>
+                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_email"><?= form_error('email'); ?></div>
+                                    </div>
+                                    <fieldset class="form-group">
+                                        <div class="row">
+                                            <legend class="col-form-label col-sm-3 pt-0">Jenis Kelamin</legend>
+                                            <div class="col-sm-9">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="pria" checked>
+                                                    <label class="form-check-label" for="gridRadios1">
+                                                        Pria
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="wanita">
+                                                    <label class="form-check-label" for="gridRadios2">
+                                                        Wanita
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-group row">
+                                        <label for="waktuPengambilan" class="col-sm-3 col-form-label">Waktu</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
+                                            <small class="text-dark">*Waktu pengambilan pesanan</small>
+                                            <div class="text-danger mb-n4 error" id="error_waktu"><?= form_error('waktuPengambilan'); ?></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="wanita">
-                                    <label class="form-check-label" for="gridRadios2">
-                                        Wanita
-                                    </label>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <div class="container">
+                                <div class="form-group row">
+                                    <label for="menu" class="col-sm-4 col-form-label">Menu</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="menu" autocomplete="off" value="<?= set_value('menu') ?>" id=",menu">
+                                        <div class="text-danger mb-n4 error" id="error_menu"><?= form_error('menu'); ?></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="waktuPengambilan" class="col-sm-4 col-form-label">Jumlah Menu</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="input-group-text" id="btn-kurang">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" class="form-control text-center" id="qty-input" value="1">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="input-group-text" id="btn-tambah">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="waktuPengambilan" class="col-sm-4 col-form-label">Harga Satuan</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">RP</span>
+                                            </div>
+                                            <input type="text" class="form-control text-center" name="harga" id="harga" value="10000">
+                                            <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_hraga"><?= form_error('harga'); ?></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="waktuPengambilan" class="col-sm-4 col-form-label">Harga Total</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">RP</span>
+                                            </div>
+                                            <input type="text" class="form-control text-center text-danger font-weight-bold" name="harga_total" id="harga_total" value="">
+                                            <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_hraga"><?= form_error('harga_total'); ?></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mt-3">
+                                        <button type="button" class="btn btn-success text-center col-sm-12" id="btn-hitung">
+                                            Hitung Harga
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
-                    <div class="form-group row">
-                        <label for="waktuPengambilan" class="col-sm-3 col-form-label">Waktu Pengambilan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
-                            <div class="text-danger mb-n4 error" id="error_waktu"><?= form_error('waktuPengambilan'); ?></div>
-                        </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-primary d-none" id="pesan_menu">Pesan</button>
+                        <!-- button loading -->
+                        <button class="btn btn-primary d-none" id="btn-loading" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-primary" id="pesan_menu">Pesan</button>
-                    <!-- button loading -->
-                    <button class="btn btn-primary d-none" id="btn-loading" type="button" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        Loading...
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

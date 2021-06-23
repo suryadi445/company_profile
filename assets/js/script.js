@@ -137,6 +137,61 @@ $(document).ready(function(){
             }
         })
     })
+
+    // ajax update quantity
+    $('#btn-kurang').click(function(){
+        let qty_input = $('#qty-input').val()
+
+        $.ajax({
+            url: 'home/kurang_qty',
+            type: 'post',
+            data: {
+                qty_input: qty_input,
+            },
+            success: function (data) {
+                $('#qty-input').val(data)
+            }
+        })
+    })
+    
+    $('#btn-tambah').click(function(){
+        let qty_input = $('#qty-input').val()
+
+        $.ajax({
+            url: 'home/tambah_qty',
+            type: 'post',
+            data: {
+                qty_input: qty_input,
+            },
+            success: function (data) {
+                $('#qty-input').val(data)
+            }
+        })
+    })
+
+    // hitung harga
+    $('#btn-hitung').click(function(){
+        
+        let btn_pesan = $('#pesan_menu')
+        let qty_input = $('#qty-input').val()
+        let harga     = $('#harga').val()
+
+        $.ajax({
+            url: 'home/harga_total',
+            type: 'post',
+            data: {
+                qty_input: qty_input,
+                harga: harga
+            },
+            success: function(data){
+                console.log(data);
+                $('#harga_total').val(data)
+                btn_pesan.removeClass('d-none')
+            }
+        })
+    })
+
+
 })
 
 

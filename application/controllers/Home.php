@@ -142,4 +142,45 @@ class Home extends CI_Controller
             $this->session->set_flashdata('gagal', 'Email gagal dikirim, mohon ulangi kembali');
         }
     }
+
+    public function kurang_qty()
+    {
+        $qty_input = $this->input->post('qty_input');
+
+        if ($qty_input == 1) {
+            echo 1;
+            die;
+        }
+
+        $qty_number = intval($qty_input);
+
+        $result = $qty_number - 1;
+
+        echo $result;
+    }
+
+    public function tambah_qty()
+    {
+        $qty_input = $this->input->post('qty_input');
+
+        // merubah string menjadi angka
+        $qty_number = intval($qty_input);
+
+        $result = $qty_number + 1;
+
+        echo $result;
+    }
+
+    public function harga_total()
+    {
+        $qty_input = $this->input->post('qty_input');
+        $harga     = $this->input->post('harga');
+
+        $qty_number     = intval($qty_input);
+        $harga_number   = intval($harga);
+
+        $result         = $qty_number * $harga_number;
+
+        echo number_format($result, "0", ",", ".");
+    }
 }
