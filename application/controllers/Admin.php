@@ -121,7 +121,7 @@ class Admin extends CI_Controller
         } else {
             // upload file
             $config['upload_path']      = './assets/upload_image';
-            $config['allowed_types']    = 'jpg|png|jpeg|png';
+            $config['allowed_types']    = 'jpg|png|jpeg';
             $config['max_size']         = 2000;
 
             $this->load->library('upload', $config);
@@ -357,7 +357,6 @@ class Admin extends CI_Controller
             redirect('admin/tentang_kami');
         }
     }
-
 
     public function hubungi_kami()
     {
@@ -697,7 +696,7 @@ class Admin extends CI_Controller
         } else {
             // upload file
             $config['upload_path']      = './assets/upload_menu';
-            $config['allowed_types']    = 'jpg|png|jpeg|png';
+            $config['allowed_types']    = 'jpg|png|jpeg';
             $config['max_size']         = 2000;
 
             $this->load->library('upload', $config);
@@ -768,8 +767,11 @@ class Admin extends CI_Controller
         $harga_menu         = htmlspecialchars($this->input->post('harga_menu', true));
         $keterangan         = htmlspecialchars($this->input->post('keterangan_menu', true));
         $gambar             = $_FILES['gambar']['name'];
-        $data['row']        = $this->Admin_model->row_menu($id);
+        $data['row']        = $this->Admin_model->row('menu_makanan', $id);
         $gambar_lama        = $data['row']['gambar'];
+
+        // echo 'oke';
+        // die;
 
         if ($this->form_validation->run() == false) {
             $data['judul']  = 'Menu';
@@ -783,7 +785,7 @@ class Admin extends CI_Controller
 
             if ($gambar) {
                 $config['upload_path']      = './assets/upload_menu/';
-                $config['allowed_types']    = 'jpeg|jpg|png|png';
+                $config['allowed_types']    = 'jpeg|jpg|png';
                 $config['max_size']         = '2000';
 
                 $this->load->library('upload', $config);
@@ -814,7 +816,7 @@ class Admin extends CI_Controller
                         'gambar'        => $gambar_baru
                     ];
 
-                    $this->Admin_model->update_menu($id, $data);
+                    $this->Admin_model->update_menu($id, 'menu_makanan', $data);
                     $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
                     redirect('admin/semua_menu');
                 }
@@ -828,7 +830,7 @@ class Admin extends CI_Controller
                     'gambar'        => $gambar_lama
                 ];
 
-                $this->Admin_model->update_menu($id, $data);
+                $this->Admin_model->update_menu($id, 'menu_makanan', $data);
                 $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
                 redirect('admin/semua_menu');
             }

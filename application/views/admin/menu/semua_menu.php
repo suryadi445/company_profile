@@ -87,7 +87,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <textarea cols="60" rows="10" name="user_name" id="user_name"><?= $result['keterangan'] ?></textarea>
+                        <textarea cols="60" rows="10" name="user_name" id="user_name" class="container text-justify p-2"><?= $result['keterangan'] ?></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

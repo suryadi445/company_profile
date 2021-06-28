@@ -310,7 +310,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">RP</span>
                                             </div>
-                                            <input type="text" class="form-control text-center text-danger font-weight-bold" name="harga_total" id="harga_total" value="">
+                                            <input type="text" class="form-control text-center text-danger font-weight-bold" name="harga_total" id="harga_total" value="" readonly>
                                             <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_hraga"><?= form_error('harga_total'); ?></div>
                                         </div>
                                     </div>

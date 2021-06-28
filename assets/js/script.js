@@ -83,18 +83,18 @@ $(document).ready(function(){
     });
 
     // ajax pada modal pesan menu
-    $('#pesan_menu').click(function(){
+    $('.pesan_menu').click(function(){
         let nama                = $('#nama').val()
         let phone               = $('#phone').val()
         let email               = $('#email').val()
         let gender              = $('input[name="gender"]:checked').val()
         let waktuPengambilan    = $('.datetimepicker').val()
-        let pesan_menu          = $('#pesan_menu')
+        let pesan_menu          = $('.pesan_menu')
         let btn_loading         = $('#btn-loading')
         let btn_cancel          = $('.btn-cancel')
-        let jumlah_menu         = $('#qty-input').val()
-        let harga_total         = $('#harga_total').val()
-        let menu                = $('#menu').val()
+        let jumlah_menu         = $('.qty_input').val()
+        let harga_total         = $('.harga_total').val()
+        let menu                = $('.menu').val()
 
         if(nama != '' && phone != '' && email !='' && waktuPengambilan != '' ){
             pesan_menu.hide()
@@ -116,28 +116,23 @@ $(document).ready(function(){
                 waktuPengambilan    : waktuPengambilan
             },
             success: function(data){
-                console.log(data);
+                // console.log(data);
                 let error = $.parseJSON(data)
 
                 if(error != true){
-                    $('#error_nama').html(error.nama)
-                    $('#error_phone').html(error.phone)
-                    $('#error_email').html(error.email)
-                    $('#error_waktu').html(error.waktuPengambilan)
+                    $('.error_nama').html(error.nama)
+                    $('.error_phone').html(error.phone)
+                    $('.error_email').html(error.email)
+                    $('.error_waktu').html(error.waktuPengambilan)
                 }else{
                     Swal.fire({
                             icon: 'success',
                             title: 'Sukses',
                             text: 'Pemesanan berhasil dilakukan. Mohon datang sesuai waktu yang sudah ditentukan. Terima kasih',
                             showConfirmButton: true,
-                        }).then((result) => {
-                        /* Read more about isConfirmed, isDenied below */
-                        if (result.isConfirmed) {
-                            location.reload();
-                        }
-                    })
+                        })
 
-                    $('#modalpesan').modal('hide')
+                    $('#modalpesan_makanan').modal('hide')
                     $('#nama').val('')
                     $('#email').val('')
                     $('#phone').val('')
@@ -156,8 +151,8 @@ $(document).ready(function(){
 
     // ajax update quantity
     // update untuk kurang qty menu
-    $('#btn-kurang').click(function(){
-        let qty_input = $('#qty-input').val()
+    $('.btn-kurang').click(function(){
+        let qty_input = $('.qty_input').val()
 
         $.ajax({
             url: 'home/kurang_qty',
@@ -166,14 +161,15 @@ $(document).ready(function(){
                 qty_input: qty_input,
             },
             success: function (data) {
-                $('#qty-input').val(data)
+                $('.qty_input').val(data)
+                $('.harga_total').val('')
             }
         })
     })
     
     // update untuk tambah qty menu
-    $('#btn-tambah').click(function(){
-        let qty_input = $('#qty-input').val()
+    $('.btn-tambah').click(function(){
+        let qty_input = $('.qty_input').val()
 
         $.ajax({
             url: 'home/tambah_qty',
@@ -182,51 +178,95 @@ $(document).ready(function(){
                 qty_input: qty_input,
             },
             success: function (data) {
-                $('#qty-input').val(data)
+                $('.qty_input').val(data)
+                $('.harga_total').val('')
             }
         })
     })
 
     // hitung harga
-    $('#btn-hitung').click(function(){
-        
-        let btn_pesan = $('#pesan_menu')
-        let qty_input = $('#qty-input').val()
-        let harga     = $('#harga').val()
+    $('.btn-hitung').click(function(){
 
-        $.ajax({
-            url: 'home/harga_total',
+        let btn_pesan           = $('.pesan_menu') 
+        let qty_input           = $('.qty_input').val()
+        let harga               = $('#harga').val()
+        var nama                = $('#nama').val();
+        let phone               = $('#phone').val()
+        let email               = $('#email').val()
+        let waktuPengambilan    = $('.datetimepicker').val()
+        // let jumlah_menu         = $('.qty-input').val()
+        // let harga_total         = $('.harga_total').val()
+        // let menu                = $('#menu').val()
+        // let pesan_menu          = $('.pesan_menu')
+    
+        if(nama == '' && phone == '' && email =='' && waktuPengambilan == '' ){
+
+            $.ajax({
+            url: 'home/pesan_menu',
             type: 'post',
             data: {
-                qty_input: qty_input,
-                harga: harga
+                nama: nama,
+                email: email,
+                phone: phone,
+                waktuPengambilan: waktuPengambilan
             },
-            success: function(data){
-                console.log(data);
-                $('#harga_total').val(data)
-                btn_pesan.removeClass('d-none')
+            success: function (data) {
+                var obj= $.parseJSON(data)
+                $('.error_nama').html(obj.nama)
+                $('.error_email').html(obj.email)
+                $('.error_phone').html(obj.nama)
+                $('.error_waktu').html(obj.waktuPengambilan)
             }
-        })
+            })
+            return false
+        }
+        
+        if(nama != '' && phone != '' && email !='' && waktuPengambilan != '' ){
+            $.ajax({
+                url: 'home/harga_total',
+                type: 'post',
+                data: {
+                    qty_input: qty_input,
+                    harga: harga
+                },
+                success: function(data){
+                    $('.harga_total').val(data)
+                    btn_pesan.removeClass('d-none')
+                }
+            })
+        }
     })
 
+    $('#nama').click(function(){
+        $('.error_nama').html('')
+        $('.error_email').html('')
+        $('.error_phone').html('')
+        $('.error_waktu').html('')
+    })
 
+    // button cancel
+    $('.btn-cancel').click(function(){
+        let btn_pesan   = $('.pesan_menu')
+
+        btn_pesan.addClass('d-none')
+        $('.harga_total').val('')
+        $('.qty-input').val(1)
+        $('.error_nama').html('')
+        $('.error_email').html('')
+        $('.error_phone').html('')
+        $('.error_waktu').html('')
+        $('#nama').val('')
+        $('#email').val('')
+        $('#phone').val('')
+        $('.datetimepicker').val('')
+    })
+
+    // memanggil modal pesan
+    $('.buka_modal').click(function(){
+        var data_menu= $(this).data('menu')
+        var data_harga= $(this).data('harga')
+
+        $("#menu").val(data_menu);
+        $("#harga").val(data_harga);
+    })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

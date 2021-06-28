@@ -14,6 +14,9 @@ class Menu extends CI_Controller
     public function index()
     {
         $data['judul'] = 'Menu';
+        $data['makanan']    = $this->Admin_model->get_where('menu_makanan', 'makanan');
+        $data['minuman']    = $this->Admin_model->get_where('menu_makanan', 'minuman');
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar');
         $this->load->view('menu/index', $data);

@@ -32,323 +32,129 @@
 <section class="container-fluid" id="makanan">
     <h2 class="text-center mb-4">MAKANAN</h2>
     <div class="row row-cols-1 row-cols-md-3 justify-content-center">
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/bakso.jpg') ?>" class="gambar_menu card-img-top" alt="bakso">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Bakso</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="gambar_menu card-img-top" alt="mie ayam">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Mie Ayam</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
+        <?php foreach ($makanan as $food) : ?>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/upload_menu/') ?><?= $food['gambar']; ?>" class="gambar_menu card-img-top" alt="bakso">
+                        <div class="card-body">
+                            <h5 class="card-title nama_menu"><?= $food['nama_menu'] ?></h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_makanan<?= $food['id'] ?>">Detail Menu</a>
+                            <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $food['id']; ?>" data-menu="<?= $food['nama_menu']; ?>" data-harga="<?= $food['harga_menu']; ?>">Pesan</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/nasi_goreng.jpg') ?>" class="gambar_menu card-img-top" alt="nasi goreng">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Nasi Goreng</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/mie_kuah.jpg') ?>" class="gambar_menu card-img-top" alt="mie kuah">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Mie Kuah</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/mie_goreng.jpg') ?>" class="gambar_menu card-img-top" alt="mie goreng">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Mie Goreng</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/sate_ayam.jpg') ?>" class="gambar_menu card-img-top" alt="sate ayam">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Sate Ayam</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/sate_kambing.jpg') ?>" class="gambar_menu card-img-top" alt="sate kambing">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Sate Kambing</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/tongseng_kambing.jpg') ?>" class="gambar_menu card-img-top" alt="tongseng kambing">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Tongseng Kambing</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/soto_ayam.jpg') ?>" class="gambar_menu card-img-top" alt="soto ayam">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Soto Ayam</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/soto_betawi.jpg') ?>" class="gambar_menu card-img-top" alt="soto betawi">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Soto Betawi</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/martabak_manis.jpg') ?>" class="gambar_menu card-img-top" alt="martabak manis">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Martabak Manis</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/martabak_telor.jpg') ?>" class="gambar_menu card-img-top" alt="martabak telor">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Martabak Telor</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endforeach ?>
     </div>
 </section>
 
 <section class="container-fluid" id="minuman">
     <h2 class="text-center mb-4">MINUMAN</h2>
     <div class="row row-cols-1 row-cols-md-3 justify-content-center">
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/aqua.png') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Aqua</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/teh_manis.jpg') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Teh Manis</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/teh_panas.jpg') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Teh Panas</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/kopi.jpg') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Kopi</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/jus_mangga.jpg') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Jus Mangga</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/jus_menlon.png') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Jus Melon</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/jus_alpukat.jpg') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                    <div class="card-body">
-                        <h5 class="card-title nama_menu">Jus Alpukat</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_menu">Detail Menu</a>
-                        <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Modal -->
-<div class="modal fade" id="modal_menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">PAKET ABC</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <img src="<?= base_url('assets/image/hello.jpg') ?>" class="gambar_menu card-img-top" alt="gambar minuman">
-                            </div>
-                            <div class="col-lg-6 ml-auto">
-                                <h3 id="harga_modal">Rp. 30.000,-</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sapiente libero at est commodi voluptates hic fugit omnis? Voluptatum dolorem saepe placeat tempora eveniet repellendus rem cumque voluptatibus dignissimos temporibus.</p>
-                            </div>
+        <?php foreach ($minuman as $drink) : ?>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/upload_menu/') ?><?= $drink['gambar']; ?>" class="gambar_menu card-img-top" alt="gambar minuman">
+                        <div class="card-body">
+                            <h5 class="card-title nama_menu"><?= $drink['nama_menu']; ?></h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_minuman<?= $drink['id']; ?>">Detail Menu</a>
+                            <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan_minuman<?= $drink['id']; ?>">Pesan</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                    <i class="fas fa-times"></i>
-                    Kembali</button>
-                <button type="button" class="btn btn-primary">
-                    <i class="fas fa-shopping-cart"></i>
-                    Pesan</button>
+        <?php endforeach ?>
+    </div>
+</section>
+
+<!-- Modal -->
+<!-- modal makanan -->
+<?php foreach ($makanan as $food) : ?>
+    <div class="modal fade" id="modal_makanan<?= $food['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><?= $food['nama_menu']; ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="<?= base_url('assets/upload_menu/') ?><?= $food['gambar']; ?>" class="gambar_menu card-img-top img-fluid">
+                                </div>
+                                <div class="col-lg-6 ml-auto">
+                                    <h3 id="harga_modal">Rp. <?= $food['harga_menu']; ?></h3>
+                                    <p><?= $food['keterangan']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                        Kembali</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                        Pesan</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<?php endforeach ?>
 
+<!-- modal_minuman -->
+<?php foreach ($minuman as $drink) : ?>
+    <div class="modal fade" id="modal_minuman<?= $drink['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><?= $drink['nama_menu']; ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="<?= base_url('assets/upload_menu/') ?><?= $drink['gambar']; ?>" class="gambar_menu card-img-top img-fluid">
+                                </div>
+                                <div class="col-lg-6 ml-auto">
+                                    <h3 id="harga_modal">Rp. <?= $drink['harga_menu']; ?></h3>
+                                    <p><?= $drink['keterangan']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                        Kembali</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                        Pesan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach ?>
 
-<!-- modal pesan -->
-<div class="modal fade" id="modalpesan" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<!-- modal percobaan -->
+<div class="modal fade" id="modalpesan_makanan" data-backdrop="static" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalPesanLabel">Pesan Menu</h5>
@@ -356,62 +162,134 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form>
-                <div class="modal-body">
-                    <div class="form-group row">
-                        <label for="nama" class="col-sm-3 col-form-label">Nama</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nama" id="nama" value="<?= set_value('nama') ?>">
-                        </div>
-                        <div class=" text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_nama"><?= form_error('nama'); ?>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="phone" class="col-sm-3 col-form-label">Phone</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="phone" id="phone" value="<?= set_value('phone') ?>">
-                        </div>
-                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_phone"><?= form_error('phone'); ?></div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="email" class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control" name="email" id="email" value="<?= set_value('email') ?>">
-                        </div>
-                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_email"><?= form_error('email'); ?></div>
-                    </div>
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <legend class="col-form-label col-sm-3 pt-0">Jenis Kelamin</legend>
-                            <div class="col-sm-9">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="pria" checked>
-                                    <label class="form-check-label" for="gridRadios1">
-                                        Pria
-                                    </label>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <label for="nama" class="col-sm-3 col-form-label">Nama</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="nama" name="nama">
+                                        </div>
+                                        <div class=" text-danger mb-n4 error offset-sm-3 col-sm-9 error_nama"><?= form_error('nama'); ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="phone" name="phone" value="<?= set_value('phone') ?>">
+                                        </div>
+                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9 error_phone"><?= form_error('phone'); ?></div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email" class="col-sm-3 col-form-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="email" name="email" value="<?= set_value('email') ?>" placeholder="Masukkan Email yang aktif">
+                                        </div>
+                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9 error_email"><?= form_error('email'); ?></div>
+                                    </div>
+                                    <fieldset class="form-group">
+                                        <div class="row">
+                                            <legend class="col-form-label col-sm-3 pt-0">Jenis Kelamin</legend>
+                                            <div class="col-sm-9">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="pria" checked>
+                                                    <label class="form-check-label" for="gridRadios1">
+                                                        Pria
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="wanita">
+                                                    <label class="form-check-label" for="gridRadios2">
+                                                        Wanita
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-group row">
+                                        <label for="waktuPengambilan" class="col-sm-3 col-form-label">Waktu</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
+                                            <small class="text-dark">*Waktu pengambilan pesanan</small>
+                                            <div class="text-danger mb-n4 error error_waktu"><?= form_error('waktuPengambilan'); ?></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="wanita">
-                                    <label class="form-check-label" for="gridRadios2">
-                                        Wanita
-                                    </label>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <div class="container">
+                                <div class="form-group row">
+                                    <label for="menu" class="col-sm-4 col-form-label">Menu</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control text-center text-capitalize font-weight-bold menu" id="menu" name="menu" autocomplete="off" value="abc" readonly>
+                                        <div class="text-danger mb-n4 error" id="error_menu"><?= form_error('menu'); ?></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="qty-input" class="col-sm-4 col-form-label">Jumlah Menu</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="input-group-text btn-kurang">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" class="form-control font-weight-bold text-center qty_input" id="qty_input" value="1" readonly>
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="input-group-text btn-tambah">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="waktuPengambilan" class="col-sm-4 col-form-label">Harga Satuan</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">RP</span>
+                                            </div>
+                                            <input type="text" class="form-control font-weight-bold text-center harga" id="harga" name="harga" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="waktuPengambilan" class="col-sm-4 col-form-label">Harga Total</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">RP</span>
+                                            </div>
+                                            <input type="text" class="form-control font-weight-bold text-center text-danger harga_total" name="harga_total" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mt-3">
+                                        <button type="button" class="btn btn-success text-center col-sm-12 btn-hitung">
+                                            Hitung Harga
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
-                    <div class="form-group row">
-                        <label for="waktuPengambilan" class="col-sm-3 col-form-label">Waktu Pengambilan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
-                            <div class="text-danger mb-n4 error" id="error_waktu"><?= form_error('waktuPengambilan'); ?></div>
-                        </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-primary d-none pesan_menu">Pesan</button>
+                        <!-- button loading -->
+                        <button class="btn btn-primary d-none" id="btn-loading" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-primary" id="pesan_menu">Pesan</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

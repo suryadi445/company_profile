@@ -107,6 +107,11 @@ class Admin_model extends CI_Model
         return $this->db->get($tabel)->result_array();
     }
 
+    public function get_where($tabel, $jenis)
+    {
+        return $this->db->get_where($tabel, ['jenis_makanan' => $jenis])->result_array();
+    }
+
     public function insert($tabel, $data)
     {
         return $this->db->insert($tabel, $data);

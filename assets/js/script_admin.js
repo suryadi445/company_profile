@@ -20,6 +20,7 @@ $(document).ready(function(){
         "lengthChange": false,
         "bFilter": true,
         "bInfo": false,
+        "pageLength":5
     });
 
     // halaman yg ada uploadnya

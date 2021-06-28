@@ -36,6 +36,8 @@ class Home extends CI_Controller
         $jumlah     = $this->input->post('jumlah_menu');
         $harga      = $this->input->post('harga_total');
 
+        $harga_DB   = str_replace(".", "", $harga);
+
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
         $this->form_validation->set_rules('phone', 'Phone', 'required|trim|numeric');
@@ -71,7 +73,7 @@ class Home extends CI_Controller
                     'tgl_input'     => $waktu,
                     'menu'          => $menu,
                     'jumlah_menu'   => $jumlah,
-                    'harga_total'   => $harga
+                    'harga_total'   => $harga_DB
                 ];
                 $query  = $this->Admin_model->insert('tbl_pesanan', $data);
                 echo json_encode($query);
@@ -137,7 +139,7 @@ class Home extends CI_Controller
         // email penerima atau email yg digunakan untuk registrasi
         $this->email->to('Suryadi_fb@yahoo.com');
         $this->email->subject('Pesanan Baru');
-        $this->email->message('Nama : ' . $this->input->post('nama') . '<br>' . 'Email : ' . $this->input->post('email') . '<br>'  . 'Phone : ' . $this->input->post('phone') . '<br>'  . 'Gender : ' . $this->input->post('gender') . '<br>' . 'Waktu Pengambilan : ' . $this->input->post('waktuPengambilan') . '<br>' . 'Jumlah Pesanan : ' . $this->input->post('jumlah_pesanan') . '<br>' . 'Menu : ' . $this->input->post('menu') . '<br>' . 'Total Harga : ' . $this->input->post('harga_total'));
+        $this->email->message('Nama : ' . $this->input->post('nama') . '<br>' . 'Email : ' . $this->input->post('email') . '<br>'  . 'Phone : ' . $this->input->post('phone') . '<br>'  . 'Gender : ' . $this->input->post('gender') . '<br>' . 'Waktu Pengambilan : ' . $this->input->post('waktuPengambilan') . '<br>' . 'Jumlah Pesanan : ' . $this->input->post('jumlah_menu') . '<br>' . 'Menu : ' . $this->input->post('menu') . '<br>' . 'Total Harga : ' . $this->input->post('harga_total'));
 
         // jika email terkirim
         if ($this->email->send()) {
