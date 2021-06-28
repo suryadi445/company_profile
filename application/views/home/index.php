@@ -51,90 +51,22 @@
 <section id="rekomendasi" class="mb-3">
     <h2 class="text-center">Rekomendasi</h2>
     <div class="row row-cols-1 row-cols-md-3">
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/martabak_telor.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
-                        <h5 class="card-title">Martabak Telor</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/soto_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        <h5 class="card-title">Soto Ayam</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
+        <?php foreach ($random as $rand) : ?>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="container mt-3">
+                        <img src="<?= base_url('assets/image/makanan/') ?><?= $rand['gambar']; ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
+                            <h5 class="card-title"><?= $rand['nama_menu']; ?></h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-left modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $rand['id']; ?>" data-menu="<?= $rand['nama_menu']; ?>" data-harga="<?= $rand['harga_menu']; ?>" data-gambar="<?= $rand['gambar']; ?>" data-keterangan="<?= $rand['keterangan']; ?>">Detail Menu</a>
+                            <a href="#" class="btn btn_rekomendasi mb-3 float-right buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $rand['id']; ?>" data-menu="<?= $rand['nama_menu']; ?>" data-harga="<?= $rand['harga_menu']; ?>" data-gambar="<?= $rand['gambar']; ?>" data-keterangan="<?= $rand['keterangan']; ?>">Pesan</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/mie_ayam.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="1000">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-                        <h5 class="card-title">Mie Ayam</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/somay.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
-                        <h5 class="card-title">Siomay</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/jus_alpukat.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        <h5 class="card-title">Jus Alpukat</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-                <div class="container mt-3">
-                    <img src="<?= base_url('assets/image/makanan/pempek.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="1000">
-                    <div class="card-body" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-                        <h5 class="card-title">Pempek</h5>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-left" data-toggle="modal" data-target="#exampleModal">Detail Menu</a>
-                        <a href="#" class="btn btn_rekomendasi mb-3 float-right" data-toggle="modal" data-target="#modalpesan">Pesan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endforeach ?>
     </div>
 </section>
 
@@ -159,12 +91,12 @@
     </div>
 </section>
 
-<!-- Modal detail menu -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- modal detail -->
+<div class=" modal fade" id="modal_detail" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">PAKET ABC</h5>
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -174,11 +106,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-6">
-                                <img src="<?= base_url('assets/image/hello.jpg') ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi">
+                                <img data-src="assets/upload_menu/" id="gambar" class="gambar_menu card-img-top img-fluid">
                             </div>
                             <div class="col-lg-6 ml-auto">
-                                <h3 id="harga_modal">Rp. 30.000,-</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sapiente libero at est commodi voluptates hic fugit omnis? Voluptatum dolorem saepe placeat tempora eveniet repellendus rem cumque voluptatibus dignissimos temporibus.</p>
+                                <h3 id="harga_modal"></h3>
+                                <p id="keterangan_modal" class="mr-2 text-justify"></p>
                             </div>
                         </div>
                     </div>
@@ -188,17 +120,13 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                     <i class="fas fa-times"></i>
                     Kembali</button>
-                <button type="button" class="btn btn-primary">
-                    <i class="fas fa-shopping-cart"></i>
-                    Pesan</button>
             </div>
         </div>
     </div>
 </div>
 
-
 <!-- modal pesan -->
-<div class="modal fade" id="modalpesan" data-backdrop="static" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
+<div class="modal fade" id="modalpesan_makanan" data-backdrop="static" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -216,24 +144,24 @@
                                     <div class="form-group row">
                                         <label for="nama" class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="nama" id="nama" value="<?= set_value('nama') ?>">
+                                            <input type="text" class="form-control" id="nama" name="nama">
                                         </div>
-                                        <div class=" text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_nama"><?= form_error('nama'); ?>
+                                        <div class=" text-danger mb-n4 error offset-sm-3 col-sm-9 error_nama"><?= form_error('nama'); ?>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="phone" class="col-sm-3 col-form-label">Phone</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="phone" id="phone" value="<?= set_value('phone') ?>">
+                                            <input type="text" class="form-control" id="phone" name="phone" value="<?= set_value('phone') ?>">
                                         </div>
-                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_phone"><?= form_error('phone'); ?></div>
+                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9 error_phone"><?= form_error('phone'); ?></div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="email" class="col-sm-3 col-form-label">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="email" class="form-control" name="email" id="email" value="<?= set_value('email') ?>">
+                                            <input type="email" class="form-control" id="email" name="email" value="<?= set_value('email') ?>" placeholder="Masukkan Email yang aktif">
                                         </div>
-                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_email"><?= form_error('email'); ?></div>
+                                        <div class="text-danger mb-n4 error offset-sm-3 col-sm-9 error_email"><?= form_error('email'); ?></div>
                                     </div>
                                     <fieldset class="form-group">
                                         <div class="row">
@@ -259,7 +187,7 @@
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
                                             <small class="text-dark">*Waktu pengambilan pesanan</small>
-                                            <div class="text-danger mb-n4 error" id="error_waktu"><?= form_error('waktuPengambilan'); ?></div>
+                                            <div class="text-danger mb-n4 error error_waktu"><?= form_error('waktuPengambilan'); ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -269,7 +197,7 @@
                                 <div class="form-group row">
                                     <label for="menu" class="col-sm-4 col-form-label">Menu</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="menu" autocomplete="off" value="<?= set_value('menu') ?>" id="menu" readonly>
+                                        <input type="text" class="form-control text-center text-capitalize font-weight-bold menu" id="menu" name="menu" autocomplete="off" readonly>
                                         <div class="text-danger mb-n4 error" id="error_menu"><?= form_error('menu'); ?></div>
                                     </div>
                                 </div>
@@ -278,13 +206,13 @@
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <button type="button" class="input-group-text" id="btn-kurang">
+                                                <button type="button" class="input-group-text btn-kurang">
                                                     <i class="fas fa-minus"></i>
                                                 </button>
                                             </div>
-                                            <input type="text" class="form-control text-center" id="qty-input" value="1">
+                                            <input type="text" class="form-control font-weight-bold text-center qty_input" id="qty_input" value="1" readonly>
                                             <div class="input-group-prepend">
-                                                <button type="button" class="input-group-text" id="btn-tambah">
+                                                <button type="button" class="input-group-text btn-tambah">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
                                             </div>
@@ -298,8 +226,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">RP</span>
                                             </div>
-                                            <input type="text" class="form-control text-center" name="harga" id="harga" value="10000">
-                                            <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_hraga"><?= form_error('harga'); ?></div>
+                                            <input type="text" class="form-control font-weight-bold text-center harga" id="harga" name="harga" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -310,14 +237,13 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">RP</span>
                                             </div>
-                                            <input type="text" class="form-control text-center text-danger font-weight-bold" name="harga_total" id="harga_total" value="" readonly>
-                                            <div class="text-danger mb-n4 error offset-sm-3 col-sm-9" id="error_hraga"><?= form_error('harga_total'); ?></div>
+                                            <input type="text" class="form-control font-weight-bold text-center text-danger harga_total" name="harga_total" readonly>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mt-3">
-                                        <button type="button" class="btn btn-success text-center col-sm-12" id="btn-hitung">
+                                        <button type="button" class="btn btn-success text-center col-sm-12 btn-hitung">
                                             Hitung Harga
                                         </button>
                                     </div>
@@ -327,7 +253,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Batal</button>
-                        <button type="button" class="btn btn-primary d-none" id="pesan_menu">Pesan</button>
+                        <button type="button" class="btn btn-primary d-none pesan_menu">Pesan</button>
                         <!-- button loading -->
                         <button class="btn btn-primary d-none" id="btn-loading" type="button" disabled>
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

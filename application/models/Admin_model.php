@@ -149,4 +149,18 @@ class Admin_model extends CI_Model
             ->limit(1)
             ->get()->row_array();
     }
+
+    public function random($tabel)
+    {
+        // SELECT column FROM table
+        // ORDER BY RAND()
+        // LIMIT 10
+
+        return $this->db
+            ->select('*')
+            ->from($tabel)
+            ->order_by('id', 'random')
+            ->limit(6)
+            ->get()->result_array();
+    }
 }

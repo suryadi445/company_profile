@@ -194,10 +194,6 @@ $(document).ready(function(){
         let phone               = $('#phone').val()
         let email               = $('#email').val()
         let waktuPengambilan    = $('.datetimepicker').val()
-        // let jumlah_menu         = $('.qty-input').val()
-        // let harga_total         = $('.harga_total').val()
-        // let menu                = $('#menu').val()
-        // let pesan_menu          = $('.pesan_menu')
     
         if(nama == '' && phone == '' && email =='' && waktuPengambilan == '' ){
 
@@ -268,5 +264,20 @@ $(document).ready(function(){
 
         $("#menu").val(data_menu);
         $("#harga").val(data_harga);
+    })
+
+    $('.modal_detail').click(function(){
+        var data_menu           = $(this).data('menu')
+        var data_harga          = $(this).data('harga')
+        var data_gambar         = $(this).data('gambar')
+        var data_keterangan     = $(this).data('keterangan')
+        var src                 = $('#gambar').data('src')
+        var gambar_upload       = src+data_gambar
+        var harga_mataUang      = parseInt(data_harga).toLocaleString()
+
+        $("#exampleModalLabel").text(data_menu);
+        $("#harga_modal").text('Rp. '+ harga_mataUang);
+        $("#gambar").attr('src',gambar_upload);
+        $("#keterangan_modal").text(data_keterangan);
     })
 })

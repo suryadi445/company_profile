@@ -41,7 +41,8 @@
                             <h5 class="card-title nama_menu"><?= $food['nama_menu'] ?></h5>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_makanan<?= $food['id'] ?>">Detail Menu</a>
+                            <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $food['id']; ?>" data-menu="<?= $food['nama_menu']; ?>" data-harga="<?= $food['harga_menu']; ?>" data-gambar="<?= $food['gambar']; ?>" data-keterangan="<?= $food['keterangan']; ?>">Detail Menu</a>
+
                             <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $food['id']; ?>" data-menu="<?= $food['nama_menu']; ?>" data-harga="<?= $food['harga_menu']; ?>">Pesan</a>
                         </div>
                     </div>
@@ -63,8 +64,8 @@
                             <h5 class="card-title nama_menu"><?= $drink['nama_menu']; ?></h5>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modal_minuman<?= $drink['id']; ?>">Detail Menu</a>
-                            <a href="#" class="btn btn_menu mb-3" data-toggle="modal" data-target="#modalpesan_minuman<?= $drink['id']; ?>">Pesan</a>
+                            <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>" data-gambar="<?= $drink['gambar']; ?>" data-keterangan="<?= $drink['keterangan']; ?>">Detail Menu</a>
+                            <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>">Pesan</a>
                         </div>
                     </div>
                 </div>
@@ -74,85 +75,41 @@
 </section>
 
 <!-- Modal -->
-<!-- modal makanan -->
-<?php foreach ($makanan as $food) : ?>
-    <div class="modal fade" id="modal_makanan<?= $food['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><?= $food['nama_menu']; ?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="<?= base_url('assets/upload_menu/') ?><?= $food['gambar']; ?>" class="gambar_menu card-img-top img-fluid">
-                                </div>
-                                <div class="col-lg-6 ml-auto">
-                                    <h3 id="harga_modal">Rp. <?= $food['harga_menu']; ?></h3>
-                                    <p><?= $food['keterangan']; ?></p>
-                                </div>
+<!-- modal detail -->
+<div class=" modal fade" id="modal_detail" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img data-src="assets/upload_menu/" id="gambar" class="gambar_menu card-img-top img-fluid">
+                            </div>
+                            <div class="col-lg-6 ml-auto">
+                                <h3 id="harga_modal"></h3>
+                                <p id="keterangan_modal" class="mr-2 text-justify"></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                        Kembali</button>
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i>
-                        Pesan</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                    Kembali</button>
             </div>
         </div>
     </div>
-<?php endforeach ?>
+</div>
 
-<!-- modal_minuman -->
-<?php foreach ($minuman as $drink) : ?>
-    <div class="modal fade" id="modal_minuman<?= $drink['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><?= $drink['nama_menu']; ?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="<?= base_url('assets/upload_menu/') ?><?= $drink['gambar']; ?>" class="gambar_menu card-img-top img-fluid">
-                                </div>
-                                <div class="col-lg-6 ml-auto">
-                                    <h3 id="harga_modal">Rp. <?= $drink['harga_menu']; ?></h3>
-                                    <p><?= $drink['keterangan']; ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                        Kembali</button>
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i>
-                        Pesan</button>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php endforeach ?>
-
-<!-- modal percobaan -->
+<!-- modal pesan menu -->
 <div class="modal fade" id="modalpesan_makanan" data-backdrop="static" tabindex="-1" aria-labelledby="modalPesanLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -224,7 +181,7 @@
                                 <div class="form-group row">
                                     <label for="menu" class="col-sm-4 col-form-label">Menu</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control text-center text-capitalize font-weight-bold menu" id="menu" name="menu" autocomplete="off" value="abc" readonly>
+                                        <input type="text" class="form-control text-center text-capitalize font-weight-bold menu" id="menu" name="menu" autocomplete="off" readonly>
                                         <div class="text-danger mb-n4 error" id="error_menu"><?= form_error('menu'); ?></div>
                                     </div>
                                 </div>
