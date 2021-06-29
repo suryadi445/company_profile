@@ -233,11 +233,13 @@ $(document).ready(function(){
         }
     })
 
-    $('#nama').click(function(){
+    $('input , textarea, select').click(function(){
         $('.error_nama').html('')
         $('.error_email').html('')
         $('.error_phone').html('')
         $('.error_waktu').html('')
+        $('.error_kategori').html('')
+        $('.error_pesan').html('')
     })
 
     // button cancel
@@ -279,5 +281,89 @@ $(document).ready(function(){
         $("#harga_modal").text('Rp. '+ harga_mataUang);
         $("#gambar").attr('src',gambar_upload);
         $("#keterangan_modal").text(data_keterangan);
+    })
+
+    $('#btn_hubKami').click(function(){
+        let nama        = $('#nama').val()
+        let email       = $('#email').val()
+        let phone       = $('#phone').val()
+        let kategori    = $('#kategori option:selected').val()
+        let pesan       = $('#pesan').val()
+
+        // form tidak diisi
+        if(nama == '' && email == '' && phone == '' && kategori == '' && pesan == '' ){          
+            $.ajax({
+                url     : 'hubungi_kami/kirim_hubKami',
+                type    : 'post',
+                data    : {
+                    nama        : nama,
+                    email       : email,
+                    phone       : phone,
+                    kategori    : kategori,
+                    pesan       : pesan
+                }, 
+                success: function(data){
+                    console.log(data);
+                    var error = $.parseJSON(data)
+                    // return false
+
+                    if(error != true){
+                        $('.error_nama').html(error.nama)
+                        $('.error_email').html(error.email)
+                        $('.error_phone').html(error.phone)
+                        $('.error_kategori').html(error.kategori)
+                        $('.error_pesan').html(error.pesan)
+                    } else {
+                        // kosong
+                    }
+                }
+            })
+        }
+
+        // form input sudah diisi
+        if(nama != '' && email != '' && phone != '' && kategori != '' && pesan != '' ){
+            $('#btn-loading').removeClass('d-none');
+            $('#btn_hubKami').addClass('d-none')
+
+            $.ajax({
+                url     : 'hubungi_kami/kirim_hubKami',
+                type    : 'post',
+                data    : {
+                    nama        : nama,
+                    email       : email,
+                    phone       : phone,
+                    kategori    : kategori,
+                    pesan       : pesan
+                }, 
+                success: function(data){
+                    console.log(data);
+                    var error = $.parseJSON(data)
+                    // return false
+
+                    if(error != true){
+                        $('.error_nama').html(error.nama)
+                        $('.error_email').html(error.email)
+                        $('.error_phone').html(error.phone)
+                        $('.error_kategori').html(error.kategori)
+                        $('.error_pesan').html(error.pesan)
+                    } else {
+                        Swal.fire({
+                                icon: 'success',
+                                title: 'Sukses',
+                                text: 'Terima kasih, pesan Anda sudah terkirim',
+                                showConfirmButton: true,
+                            })
+                            
+                            $('#btn-loading').addClass('d-none');
+                            $('#btn_hubKami').removeClass('d-none')
+                            $('#nama').val('')
+                            $('#email').val('')
+                            $('#phone').val('')
+                            $('#kategori').val('')
+                            $('#pesan').val('')
+                    }
+                }
+            })
+        }
     })
 })

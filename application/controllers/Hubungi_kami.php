@@ -12,6 +12,18 @@ class Hubungi_kami extends CI_Controller
 
     public function index()
     {
+        $data['judul']   = 'Hubungi Kami';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar');
+        $this->load->view('footer/hubungi_kami', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function kirim_hubKami()
+    {
+        // echo 'oke';
+        // die;
+
         $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('phone', 'Phone', 'trim|required|numeric');
@@ -24,37 +36,51 @@ class Hubungi_kami extends CI_Controller
         $kategori       = htmlspecialchars($this->input->post('kategori', true));
         $pesan          = htmlspecialchars($this->input->post('pesan', true));
 
-        $data               = [
-            'nama'          => $nama,
-            'email'         => $email,
-            'phone'         => $phone,
-            'kategori'      => $kategori,
-            'pesan'         => $pesan,
-            'tanggal_pesan' => date('yyyy-mm-dd')
-        ];
+        // $data               = [
+        //     'nama'          => $nama,
+        //     'email'         => $email,
+        //     'phone'         => $phone,
+        //     'kategori'      => $kategori,
+        //     'pesan'         => $pesan,
+        //     'tanggal_pesan' => date('yyyy-mm-dd')
+        // ];
 
         if ($this->form_validation->run() == false) {
-            $data['judul']   = 'Hubungi Kami';
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/navbar');
-            $this->load->view('footer/hubungi_kami', $data);
-            $this->load->view('templates/footer');
+            $error = [
+                'nama'              => (form_error('nama', '<p>', '</p>')),
+                'email'             => (form_error('email', '<p>', '</p>')),
+                'phone'             => (form_error('phone', '<p>', '</p>')),
+                'kategori'          => (form_error('kategori', '<p>', '</p>')),
+                'pesan'             => (form_error('pesan', '<p>', '</p>')),
+            ];
+            echo json_encode($error);
         } else {
-            $this->Admin_model->insert('email', $data);
 
             $this->_sendEmail();
             $this->_sendEmailToMe();
 
             if ($this->_sendEmail() == false) {
                 $this->session->set_flashdata('gagal', 'Email gagal dikirim, mohon ulangi kembali');
+                $false = false;
+                echo json_encode($false);
             } else {
+                $data               = [
+                    'nama'          => $nama,
+                    'email'         => $email,
+                    'phone'         => $phone,
+                    'kategori'      => $kategori,
+                    'pesan'         => $pesan,
+                    'tanggal_pesan' => date('yyyy-mm-dd')
+                ];
+                $query = $this->Admin_model->insert('email', $data);
+                echo json_encode($query);
+
                 $this->session->set_flashdata('sukses', 'Terima kasih, pesan Anda sudah terkirim');
             }
-
-            redirect('hubungi_kami');
         }
     }
 
+    // kirim email ke user
     private function _sendEmail()
     {
         // konfigurasi untuk library email CI
@@ -93,6 +119,7 @@ class Hubungi_kami extends CI_Controller
         }
     }
 
+    // kirim email ke admin
     private function _sendEmailToMe()
     {
         // konfigurasi untuk library email CI
@@ -112,8 +139,8 @@ class Hubungi_kami extends CI_Controller
         $this->email->from('suryadi.sender@gmail.com', 'Suryadi');
         // email penerima atau email yg digunakan untuk registrasi
         $this->email->to('Suryadi_fb@yahoo.com');
-        $this->email->subject('Komentar Baru');
-        $this->email->message('Nama : ' . $this->input->post('nama') . '<br>' . 'Email : ' . $this->input->post('email') . '<br>'  . 'Phone : ' . $this->input->post('phone') . '<br>'  . 'Pesan : ' . $this->input->post('pesan'));
+        $this->email->subject('Kritik dan Saran');
+        $this->email->message('Nama : ' . $this->input->post('nama') . '<br>' . 'Email : ' . $this->input->post('email') . '<br>'  . 'Phone : ' . $this->input->post('phone') . '<br>' . 'Kategori :' . $this->input->post('kategori')  . 'Pesan : ' . $this->input->post('pesan'));
 
 
         // jika email terkirim
