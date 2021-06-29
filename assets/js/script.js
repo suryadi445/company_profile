@@ -50,27 +50,23 @@ $(document).ready(function(){
                 gender  : gender
             },
             success: function (data) {
-
                 let error = $.parseJSON(data)
                 
                 if(error != true){
-                    $('#error_nama').html(error.nama)
-                    $('#error_email').html(error.email)
-                    $('#error_phone').html(error.phone)
+                    $('.error_nama').html(error.nama)
+                    $('.error_email').html(error.email)
+                    $('.error_phone').html(error.phone)
                 } else {
                     Swal.fire({
                             icon: 'success',
                             title: 'sukses',
                             text: 'Terima kasih, pendaftaran berhasil dilakukan',
-                            showConfirmButton: false,
-                            timer: 2000
                         })
 
                     $('#daftar_karir').modal('hide')
                     $('#nama').val('')
                     $('#email').val('')
                     $('#phone').val('')
-                    $('.error').hide()
                     $("#gridRadios1").prop("checked", true);
                 }
             }
@@ -353,7 +349,7 @@ $(document).ready(function(){
                                 text: 'Terima kasih, pesan Anda sudah terkirim',
                                 showConfirmButton: true,
                             })
-                            
+
                             $('#btn-loading').addClass('d-none');
                             $('#btn_hubKami').removeClass('d-none')
                             $('#nama').val('')

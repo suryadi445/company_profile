@@ -98,7 +98,7 @@
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="daftar_karir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="daftar_karir" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -114,21 +114,21 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nama Anda" name="nama" id="nama">
                         </div>
-                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10" id="error_nama"></div>
+                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10 error_nama"></div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label font-weight-bold">Email</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan email Anda" name="email" id="email">
                         </div>
-                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10 error" id="error_email"></div>
+                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10 error error_email"></div>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-sm-2 col-form-label font-weight-bold">Phone</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control shadow-sm p-3 bg-white rounded" placeholder="Masukkan nomor telepon Anda" name="phone" id="phone">
                         </div>
-                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10 error" id="error_phone"></div>
+                        <div class="text-danger mb-n4 offset-sm-2 col-sm-10 error error_phone"></div>
                     </div>
                     <fieldset class="form-group">
                         <div class="row">
@@ -152,7 +152,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Close</button>
                 <button type="button" id="modal_karir" class="btn btn-success">Kirim</button>
             </div>
         </div>
