@@ -362,4 +362,16 @@ $(document).ready(function(){
             })
         }
     })
+
+    // media query halaman home untuk carousel
+    var smallScreen = window.matchMedia("(max-width: 480px)");
+    if (smallScreen.matches){
+        // Screen is less than 480px
+    }
+
+    var smartphone      = window.matchMedia("(max-width: 575.98px");
+    var carouselCaption = $('.carousel-inner .carousel-item .carousel-caption')
+    if(smartphone.matches){
+        carouselCaption.removeClass('d-none d-md-block')
+    }
 })

@@ -10,8 +10,16 @@
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
                 <p class="lead"><?= $text ?></p>
-                <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
-                <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
@@ -19,8 +27,16 @@
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
                 <p class="lead"><?= $text ?></p>
-                <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
-                <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
@@ -28,8 +44,16 @@
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b>Surya_Resto</b></h1>
                 <p class="lead"><?= $text ?></p>
-                <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
-                <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -49,19 +73,27 @@
 <?php endif ?>
 
 <section id="rekomendasi" class="mb-3">
-    <h2 class="text-center">Rekomendasi</h2>
-    <div class="row row-cols-1 row-cols-md-3">
+    <h2 class="text-center mt-2">MENU REKOMENDASI</h2>
+    <div class="row row-cols-1 row-cols-md-3 pt-2">
         <?php foreach ($random as $rand) : ?>
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="container mt-3">
                         <img src="<?= base_url('assets/image/makanan/') ?><?= $rand['gambar']; ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                         <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
-                            <h5 class="card-title"><?= $rand['nama_menu']; ?></h5>
+                            <h5 class="card-title text-center text-capitalize"><?= $rand['nama_menu']; ?></h5>
                         </div>
-                        <div class="card-body">
-                            <a href="#" class="btn btn_rekomendasi mb-3 float-left modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $rand['id']; ?>" data-menu="<?= $rand['nama_menu']; ?>" data-harga="<?= $rand['harga_menu']; ?>" data-gambar="<?= $rand['gambar']; ?>" data-keterangan="<?= $rand['keterangan']; ?>">Detail Menu</a>
-                            <a href="#" class="btn btn_rekomendasi mb-3 float-right buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $rand['id']; ?>" data-menu="<?= $rand['nama_menu']; ?>" data-harga="<?= $rand['harga_menu']; ?>" data-gambar="<?= $rand['gambar']; ?>" data-keterangan="<?= $rand['keterangan']; ?>">Pesan</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row justify-content-around">
+                                <div class="col-6">
+                                    <a href="#" class="btn btn_rekomendasi mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $rand['id']; ?>" data-menu="<?= $rand['nama_menu']; ?>" data-harga="<?= $rand['harga_menu']; ?>" data-gambar="<?= $rand['gambar']; ?>" data-keterangan="<?= $rand['keterangan']; ?>">Detail</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn_rekomendasi mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $rand['id']; ?>" data-menu="<?= $rand['nama_menu']; ?>" data-harga="<?= $rand['harga_menu']; ?>" data-gambar="<?= $rand['gambar']; ?>" data-keterangan="<?= $rand['keterangan']; ?>">Pesan</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,7 +124,7 @@
 </section>
 
 <!-- modal detail -->
-<div class=" modal fade" id="modal_detail" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_detail" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">

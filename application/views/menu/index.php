@@ -29,6 +29,7 @@
     </div>
 </section>
 
+<!-- section makanan -->
 <section class="container-fluid" id="makanan">
     <h2 class="text-center mb-4">MAKANAN</h2>
     <div class="row row-cols-1 row-cols-md-3 justify-content-center">
@@ -38,12 +39,19 @@
                     <div class="container mt-3">
                         <img src="<?= base_url('assets/upload_menu/') ?><?= $food['gambar']; ?>" class="gambar_menu card-img-top" alt="bakso">
                         <div class="card-body">
-                            <h5 class="card-title nama_menu"><?= $food['nama_menu'] ?></h5>
+                            <h5 class="card-title text-center text-capitalize nama_menu"><?= $food['nama_menu'] ?></h5>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $food['id']; ?>" data-menu="<?= $food['nama_menu']; ?>" data-harga="<?= $food['harga_menu']; ?>" data-gambar="<?= $food['gambar']; ?>" data-keterangan="<?= $food['keterangan']; ?>">Detail Menu</a>
-
-                            <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $food['id']; ?>" data-menu="<?= $food['nama_menu']; ?>" data-harga="<?= $food['harga_menu']; ?>">Pesan</a>
+                            <div class="container">
+                                <div class="row justify-content-around">
+                                    <div class="col-6">
+                                        <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $food['id']; ?>" data-menu="<?= $food['nama_menu']; ?>" data-harga="<?= $food['harga_menu']; ?>" data-gambar="<?= $food['gambar']; ?>" data-keterangan="<?= $food['keterangan']; ?>">Detail</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $food['id']; ?>" data-menu="<?= $food['nama_menu']; ?>" data-harga="<?= $food['harga_menu']; ?>">Pesan</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -52,6 +60,7 @@
     </div>
 </section>
 
+<!-- section minuman -->
 <section class="container-fluid" id="minuman">
     <h2 class="text-center mb-4">MINUMAN</h2>
     <div class="row row-cols-1 row-cols-md-3 justify-content-center">
@@ -76,7 +85,7 @@
 
 <!-- Modal -->
 <!-- modal detail -->
-<div class=" modal fade" id="modal_detail" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_detail" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">

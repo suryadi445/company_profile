@@ -1,4 +1,4 @@
-.garis_vertikal {
+navbar .garis_vertikal {
 	color: goldenrod;
 	margin-top: 7px;
 }
@@ -48,14 +48,14 @@ ul.navbar-nav a {
 .btn_carousel_daftar {
 	color: white;
 	width: 230px;
-	margin-right: 40px;
+	/* margin-right: 40px; */
 	background-color: goldenrod;
 }
 
 .btn_carousel_masuk {
 	color: goldenrod;
 	width: 230px;
-	margin-left: 40px;
+	/* margin-left: 40px; */
 	background-color: white;
 }
 
@@ -294,7 +294,7 @@ footer {
 	width: 150px;
 	color: white;
 	outline: none;
-	margin-left: 15px;
+	/* margin-left: 15px; */
 }
 
 .btn_menu:hover {
@@ -304,6 +304,7 @@ footer {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	outline: none;
 }
+
 
 /* akhir halaman menu */
 
@@ -540,8 +541,6 @@ h3 {
 
 /* akhir halaman snk */
 
-
-
 /* media query home */
 
 /* smartphone */
@@ -551,7 +550,57 @@ h3 {
 	}
 
 	.carousel-item img {
-		height: 600px;
+		height: 460px;
+		margin-top: 40px;
+		width: 100%;
+	}
+
+	.carousel-caption h1 {
+		font-size: 36px;
+		position: relative;
+		bottom: 20px;
+		text-align: center;
+	}
+
+	.carousel-caption p {
+		font-size: 18px;
+		position: relative;
+		bottom: 20px;
+		right: 15px;
+	}
+
+	.carousel-inner .btn_carousel_daftar {
+		position: relative;
+		bottom: 30px;
+		width: 100px;
+		right: 50px;
+	}
+
+	.carousel-inner:hover .btn_carousel_daftar:hover {
+		width: 100px;
+	}
+
+	.carousel-inner:hover .btn_carousel_masuk:hover {
+		width: 100px;
+	}
+
+	.carousel-inner .btn_carousel_masuk {
+		position: relative;
+		bottom: 30px;
+		width: 100px;
+		/* left: 30px; */
+	}
+
+	.carousel-control-prev-icon {
+		width: 20px;
+		position: relative;
+		right: 15px;
+	}
+
+	.carousel-control-next-icon {
+		width: 20px;
+		position: relative;
+		left: 15px;
 	}
 
 	ol li {
@@ -563,14 +612,36 @@ h3 {
 	}
 
 	.btn_rekomendasi {
-		display: inline;
-		width: 110px;
-		font-size: 14px;
+		width: 100%;
+	}
+
+	.btn_rekomendasi:hover {
+		width: 100%;
+		outline: none;
+		font-weight: lighter;
 	}
 
 	.btn_menu {
+		width: 100%;
+	}
+
+	.btn_menu:hover {
+		width: 100%;
+		outline: none;
+		font-weight: lighter;
+	}
+
+	/* modal */
+	.modal-lg {
+		max-width: 90% !important;
+	}
+
+	#harga_modal {
 		text-align: center;
-		margin-left: 25%;
+	}
+
+	#keterangan_modal {
+		margin-left: 8px;
 	}
 
 	#atas_footer {
@@ -750,13 +821,26 @@ h3 {
 		height: 600px;
 	}
 
+	.carousel-item .lead {
+		width: 115%;
+		text-align: center;
+	}
+
+	.carousel-item .display-4 {
+		width: 100%;
+	}
+
 	.btn_carousel_daftar {
-		margin-left: -10px;
-		margin-bottom: 100px;
+		position: relative;
+		bottom: 10px;
+		right: 100px;
 	}
 
 	.btn_carousel_masuk {
 		margin-bottom: 100px;
+		position: relative;
+		bottom: 10px;
+		left: 20px;
 	}
 
 	ol li {
@@ -768,22 +852,50 @@ h3 {
 	}
 
 	.btn_rekomendasi {
-		display: block;
-		width: 140px;
-		font-size: 14px;
-		margin-right: 4px;
+		width: 100%;
+		font-size: 12px;
+	}
+
+	.btn_rekomendasi:hover {
+		width: 100%;
+		height: 32px;
+		outline: none;
+		font-weight: lighter;
+		font-size: 10px;
+		padding-top: 8px;
 	}
 
 	.btn_menu {
-		background-color: red;
-		display: block;
-		width: 140px;
+		width: 100%;
 		font-size: 14px;
-		margin-right: 5px;
+	}
+
+	.btn_menu:hover {
+		width: 100%;
+		height: 70%;
+		padding-top: 9px;
+		font-size: 12px;
+		outline: none;
+		font-weight: lighter;
 	}
 
 	.card-body h5 {
 		text-align: center;
+	}
+
+	/* modal */
+	.modal-lg {
+		max-width: 80% !important;
+	}
+
+	#harga_modal {
+		text-align: center;
+	}
+
+	#keterangan_modal {
+		padding-left: 25px;
+		margin-left: 8px;
+		width: 100%;
 	}
 
 	#atas_footer {
