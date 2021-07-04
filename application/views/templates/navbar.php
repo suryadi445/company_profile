@@ -7,20 +7,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto mr-2">
-                <li class="nav-item active">
-                    <a class="nav-link text-light" href="<?= base_url('home') ?>">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <?php if ($this->uri->segment(1) == 'home') { ?>
+                        <a class="nav-link text-warning" href="<?= base_url('home') ?>">Home<span class="sr-only">(current)</span></a>
+                    <?php } else { ?>
+                        <a class="nav-link text-light" href="<?= base_url('home') ?>">Home<span class="sr-only">(current)</span></a>
+                    <?php } ?>
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= base_url('menu') ?>">Menu</a>
+                    <?php if ($this->uri->segment(1) == 'menu') { ?>
+                        <a class="nav-link text-warning" href="<?= base_url('menu') ?>">Menu<span class="sr-only">(current)</span></a>
+                    <?php } else { ?>
+                        <a class="nav-link text-light" href="<?= base_url('menu') ?>">Menu<span class="sr-only">(current)</span></a>
+                    <?php } ?>
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= base_url('outlet') ?>">Outlet</a>
+                    <?php if ($this->uri->segment(1) == 'outlet') { ?>
+                        <a class="nav-link text-warning" href="<?= base_url('outlet') ?>">Outlet<span class="sr-only">(current)</span></a>
+                    <?php } else { ?>
+                        <a class="nav-link text-light" href="<?= base_url('outlet') ?>">Outlet<span class="sr-only">(current)</span></a>
+                    <?php } ?>
                 </li>
                 <span class="garis_vertikal"> | </span>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= base_url('promo') ?>">Promo</a>
+                    <?php if ($this->uri->segment(1) == 'promo') { ?>
+                        <a class="nav-link text-warning" href="<?= base_url('promo') ?>">Promo<span class="sr-only">(current)</span></a>
+                    <?php } else { ?>
+                        <a class="nav-link text-light" href="<?= base_url('promo') ?>">Promo<span class="sr-only">(current)</span></a>
+                    <?php } ?>
                 </li>
             </ul>
         </div>

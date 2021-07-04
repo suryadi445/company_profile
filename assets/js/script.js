@@ -236,6 +236,7 @@ $(document).ready(function(){
         $('.error_waktu').html('')
         $('.error_kategori').html('')
         $('.error_pesan').html('')
+        $('.error_password').html('')
     })
 
     // button cancel
@@ -362,6 +363,7 @@ $(document).ready(function(){
             })
         }
     })
+
 
     // media query halaman home untuk carousel
     var smallScreen = window.matchMedia("(max-width: 480px)");

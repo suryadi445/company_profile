@@ -140,11 +140,11 @@ if(snk_h1){
 
 AOS.init();
 
-gsap.from("nav", {
-    duration: 1,
+gsap.from("#home .navbar-brand", {
+    duration: 1.5,
     y: -100,
     opacity: 0,
-    ease: 'bounce'
+    ease: 'back',
 });
 
 const carousel_caption = document.querySelector('.carousel-caption .display-4')

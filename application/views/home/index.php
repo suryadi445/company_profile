@@ -1,3 +1,4 @@
+<!-- carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -13,7 +14,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-4">
-                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
+                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
                         </div>
                         <div class="col-4">
                             <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
@@ -30,7 +31,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-4">
-                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
+                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
                         </div>
                         <div class="col-4">
                             <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
@@ -47,7 +48,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-4">
-                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/registrasi') ?>">Daftar</a>
+                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
                         </div>
                         <div class="col-4">
                             <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
@@ -79,7 +80,7 @@
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="container mt-3">
-                        <img src="<?= base_url('assets/image/makanan/') ?><?= $rand['gambar']; ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <img src="<?= base_url('assets/upload_menu/') ?><?= $rand['gambar']; ?>" class="gambar_rekomendasi card-img-top img-fluid" alt="gambar rekomendasi" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                         <div class="card-body" data-aos="fade-up" data-aos-duration="1000">
                             <h5 class="card-title text-center text-capitalize"><?= $rand['nama_menu']; ?></h5>
                         </div>

@@ -10,18 +10,39 @@ class Auth extends CI_Controller
         $this->load->model('Auth_model');
     }
 
+    public function index()
+    {
+        sudah_login();
+
+        $data['judul'] = 'Registrasi';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar');
+        $this->load->view('auth/registrasi');
+        $this->load->view('templates/footer');
+    }
+
     public function registrasi()
     {
-        $nama           = htmlspecialchars($this->input->post('nama', true));
-        $email          = htmlspecialchars($this->input->post('email', true));
-        $phone          = htmlspecialchars($this->input->post('phone', true));
-        $password       = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-        $password2      = password_hash($this->input->post('password2'), PASSWORD_DEFAULT);
-        $gender         = $this->input->post('gridRadios', true);
+        sudah_login();
+
+        $nama                = htmlspecialchars($this->input->post('nama', true));
+        $email               = htmlspecialchars($this->input->post('email', true));
+        $phone               = htmlspecialchars($this->input->post('phone', true));
+        $password            = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+        $password2           = password_hash($this->input->post('password2'), PASSWORD_DEFAULT);
+        $gender              = $this->input->post('gridRadios', true);
+
+        $terima_password     = $this->input->post('password');
+        if ($terima_password === 'adminRestoranPusat') {
+            $status          = 'admin';
+        } else {
+            $status          = 'user';
+        };
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_users.email]');
         $this->form_validation->set_rules('phone', 'Phone', 'required|trim|numeric|is_unique[tbl_users.phone]');
+        $this->form_validation->set_rules('gridRadios', 'Gender', 'required');
         $this->form_validation->set_rules(
             'password',
             'Password',
@@ -40,32 +61,38 @@ class Auth extends CI_Controller
                 'min_length' => 'Password minimal 6 karakter'
             ]
         );
-        $this->form_validation->set_rules('gridRadios', 'Gender', 'required');
 
+        // data yg dikirim ke database untuk proses insert
         $data = [
             'nama'     => $nama,
             'email'    => $email,
             'phone'    => $phone,
             'password' => $password,
-            'gender'   => $gender
+            'gender'   => $gender,
+            'status'   => $status
         ];
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Registrasi';
+            $this->session->set_flashdata('flash', 'Registrasi gagal. Mohon registrasi ulang');
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/navbar', $data);
+            $this->load->view('templates/navbar');
             $this->load->view('auth/registrasi');
             $this->load->view('templates/footer');
         } else {
+            $this->session->set_flashdata('sukses', 'Terima kasih sudah registrasi. Silakan login');
             $this->Auth_model->insert($data);
             redirect('auth/login');
         }
     }
 
+    // login
     public function login()
     {
+        sudah_login();
+
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[6]');
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Login';
@@ -80,17 +107,18 @@ class Auth extends CI_Controller
 
     private function _login()
     {
-        $email       = htmlspecialchars($this->input->post('email', true));
-        $password    = htmlspecialchars($this->input->post('password', true));
+        $email          = htmlspecialchars($this->input->post('email', true));
+        $password       = htmlspecialchars($this->input->post('password', true));
 
-        $user        = $this->Auth_model->getRow($email);
+        $user           = $this->Auth_model->getRow($email);
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
                 $data = [
-                    'id'    =>  $user['id'],
-                    'email' => $user['email'],
-                    'nama'  => $user['nama']
+                    'id'        => $user['id'],
+                    'email'     => $user['email'],
+                    'nama'      => $user['nama'],
+                    'status'    => $user['status']
                 ];
 
                 $this->session->set_flashdata('flash', 'Selamat datang ' . $data['nama']);
@@ -107,6 +135,7 @@ class Auth extends CI_Controller
         }
     }
 
+    // logout
     public function logout()
     {
         $this->session->sess_destroy();

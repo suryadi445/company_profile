@@ -15,15 +15,21 @@
                         <div class="col-md-8">
                             <div class="card shadow-sm p-3 bg-white rounded">
                                 <form action="<?= base_url('auth/login') ?>" method="POST">
-                                    <?php if ($this->session->flashdata()) : ?>
-                                        <div class="alert alert-danger" role="alert">
-                                            <?= $this->session->flashdata('flash') ?>
-                                        </div>
-                                    <?php endif ?>
+                                    <!-- alert -->
+                                    <?php if ($this->session->flashdata()) { ?>
+                                        <?php if ($this->session->flashdata('flash')) { ?>
+                                            <div class="alert alert-danger" role="alert">
+                                                <?= $this->session->flashdata('flash') ?>
+                                            </div>
+                                        <?php } else { ?>
+                                            <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
+                                        <?php } ?>
+                                    <?php } ?>
+                                    <!-- akhir alert -->
                                     <div class="form-group row">
                                         <label for="email_login" class="col-sm-3 col-form-label font-weight-bold">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="email" class="form-control font-weight-bold" placeholder="Masukkan email Anda" name="email" id="email_login">
+                                            <input type="email" class="form-control font-weight-bold" placeholder="Masukkan email Anda" name="email" id="email_login" value="<?= set_value('email') ?>">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
                                             <span class="text-danger"><?php echo form_error('email'); ?></span>
@@ -32,7 +38,7 @@
                                     <div class="form-group row">
                                         <label for="password_login" class="col-sm-3 col-form-label font-weight-bold">Password</label>
                                         <div class="col-sm-9">
-                                            <input type="password" class="form-control font-weight-bold password" placeholder="Masukkan Password Anda" name="password" id="password_login">
+                                            <input type="password" class="form-control font-weight-bold password" placeholder="Masukkan Password Anda" name="password" id="password_login" value="<?= set_value('password') ?>">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
                                             <span class="text-danger"><?php echo form_error('password'); ?></span>

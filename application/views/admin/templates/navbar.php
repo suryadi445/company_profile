@@ -24,7 +24,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <div class="dropdown-divider"></div>
-                        <a href="<?= base_url('home'); ?>" class="dropdown-item">
+                        <a href="<?= base_url('auth/logout'); ?>" class="dropdown-item">
                             <i class="fas fa-door-open mr-2"></i> Logout
                         </a>
                         <div class="dropdown-divider"></div>

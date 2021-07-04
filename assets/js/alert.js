@@ -6,9 +6,8 @@ $('document').ready(function(){
     if(flash){
         toastr.success(flash)
     }else if (flash2){
-    toastr.error(flash2)
+        toastr.error(flash2)
     }
-
 
     $('.hapus').click(function(e){
         e.preventDefault()

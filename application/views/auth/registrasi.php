@@ -15,31 +15,38 @@
                         <div class="col-md-8">
                             <div class="card shadow-sm p-3 bg-white rounded">
                                 <form action="<?= base_url('auth/registrasi') ?>" method="POST">
+                                    <!-- alert -->
+                                    <?php if ($this->session->flashdata()) { ?>
+                                        <div class="alert alert-danger text-capitalize text-center" role="alert">
+                                            <?= $this->session->flashdata('flash') ?>
+                                        </div>
+                                    <?php } ?>
+                                    <!-- akhir alert -->
                                     <div class="form-group row">
                                         <label for="nama_daftar" class="col-sm-3 col-form-label font-weight-bold">Nama</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control font-weight-bold" placeholder="Masukkan Nama Anda" name="nama" id="nama_daftar">
+                                            <input type="text" class="form-control font-weight-bold" placeholder="Masukkan Nama Anda" name="nama" id="nama_daftar" value="<?= set_value('nama'); ?>">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
-                                            <span class="text-danger"><?php echo form_error('nama'); ?></span>
+                                            <span class="text-danger error_nama"><?php echo form_error('nama'); ?></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="email_daftar" class="col-sm-3 col-form-label font-weight-bold">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="email" class="form-control font-weight-bold" placeholder="Masukkan email Anda" name="email" id="email_daftar">
+                                            <input type="email" class="form-control font-weight-bold" placeholder="Masukkan email Anda" name="email" id="email_daftar" value="<?= set_value('email'); ?>">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
-                                            <span class="text-danger"><?php echo form_error('email'); ?></span>
+                                            <span class="text-danger error_email"><?php echo form_error('email'); ?></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="phone_daftar" class="col-sm-3 col-form-label font-weight-bold">Phone</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control font-weight-bold" placeholder="Masukkan No Handphone Anda" name="phone" id="phone_daftar">
+                                            <input type="text" class="form-control font-weight-bold" placeholder="Masukkan No Handphone Anda" name="phone" id="phone_daftar" value="<?= set_value('phone'); ?>">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
-                                            <span class="text-danger"><?php echo form_error('phone'); ?></span>
+                                            <span class="text-danger error_phone"><?php echo form_error('phone'); ?></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -48,7 +55,7 @@
                                             <input type="password" class="form-control font-weight-bold password" placeholder="Masukkan Password Anda" name="password" id="password_daftar">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
-                                            <span class="text-danger"><?php echo form_error('password'); ?></span>
+                                            <span class="text-danger error_password"><?php echo form_error('password'); ?></span>
                                         </div>
                                         <div class="col-sm-6 offset-sm-3 mb-n4">
                                             <p class="mt-1">
@@ -63,7 +70,7 @@
                                             <input type="password" class="form-control font-weight-bold password" placeholder="Masukkan Ulang Password Anda" name="password2" id="password_daftar2">
                                         </div>
                                         <div class="col-sm-9 offset-sm-3 mb-n4">
-                                            <span class="text-danger"><?php echo form_error('password'); ?></span>
+                                            <span class="text-danger error_password"><?php echo form_error('password'); ?></span>
                                         </div>
                                         <div class="col-sm-6 offset-sm-3">
                                             <p class="mt-1">
