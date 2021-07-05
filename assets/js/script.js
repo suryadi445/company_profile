@@ -1,29 +1,5 @@
 // halaman admin tentang kami
 $(document).ready(function(){
-    $('#tab-visi').show()
-    $('#tab-misi').hide()
-    $('#tab-sejarah').hide()
-
-    $('#btn-visi').click(function(){
-        $('#tab-visi').show()
-        $('#tab-misi').hide()
-        $('#tab-sejarah').hide()
-    })
-
-    $('#btn-misi').click(function(){
-        $('#br').hide()
-        $('#tab-visi').hide()
-        $('#tab-misi').show()
-        $('#tab-sejarah').hide()
-    })
-
-    $('#btn-sejarah').click(function(){
-        $('#br').hide()
-        $('#tab-visi').hide()
-        $('#tab-misi').hide()
-        $('#tab-sejarah').show()
-    })
-
     $('.show_password').click(function(){
         if($(this).is(':checked')){
             $('.password').attr('type', 'text')

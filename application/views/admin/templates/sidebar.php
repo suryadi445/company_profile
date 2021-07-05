@@ -65,9 +65,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/forms/general.html" class="nav-link font-weight-bold text-primary">
+                            <a href="<?= base_url('admin/tambah_outlet'); ?>" class="nav-link font-weight-bold text-primary">
                                 <i class="fas fa-angle-right nav-icon"></i>
-                                <p>Add Outlet</p>
+                                <p>Tambah Outlet</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/daftar_outlet'); ?>" class="nav-link font-weight-bold text-primary">
+                                <i class="fas fa-angle-right nav-icon"></i>
+                                <p>Daftar Outlet</p>
                             </a>
                         </li>
                     </ul>

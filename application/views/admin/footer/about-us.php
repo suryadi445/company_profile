@@ -33,7 +33,7 @@
 
     <section class="content">
         <div class="container-fluid">
-            <section id="tab-visi">
+            <section id="tab-visi" class="mb-5">
                 <div class="row">
                     <!-- left column -->
                     <div class="col-md-12">
@@ -76,8 +76,6 @@
                     <!--/.col (left) -->
                 </div>
             </section>
-
-            <br id="br">
 
             <section id="tab-misi">
                 <!-- misi -->

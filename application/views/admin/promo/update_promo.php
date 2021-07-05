@@ -75,11 +75,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="gambar_promo" class="col-sm-4 col-form-label">Upload Gambar</label>
+                                    <label for="gambar" class="col-sm-4 col-form-label">Upload Gambar</label>
                                     <div class="input-group col-sm-8">
                                         <div class="custom-file">
-                                            <input type="file" accept="image/*" class="custom-file-input" id="gambar_promo" name="gambar_promo" autocomplete="off">
-                                            <label class="custom-file-label" for="gambar_promo"><?= $row['gambar_promo']; ?></label>
+                                            <input type="file" accept="image/*" class="custom-file-input" id="gambar" name="gambar" autocomplete="off">
+                                            <label class="custom-file-label" for="gambar"><?= $row['gambar_promo']; ?></label>
                                         </div>
                                     </div>
                                     <div class="text-danger mb-n4 offset-sm-4 col-sm-8"><?= form_error('gambar_promo'); ?></div>

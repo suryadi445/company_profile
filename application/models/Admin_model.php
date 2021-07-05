@@ -3,137 +3,40 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin_model extends CI_Model
 {
-    // query tabel users
-    public function get_all()
-    {
-        return $this->db->get('tbl_users')->result_array();
-    }
-
-    public function get_id($id)
-    {
-        return $this->db->get_where('tbl_users', ['id' => $id])->row_array();
-    }
-
-    public function edit_admin($data)
-    {
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('tbl_users', $data);
-    }
-
-    public function delete_admin($id)
-    {
-        $this->db->where('id', $id);
-        return $this->db->delete('tbl_users');
-    }
-
-    public function update_password($password_baru, $id)
-    {
-        $this->db->set('password', $password_baru);
-        $this->db->where('id', $id);
-        $this->db->update('tbl_users');
-    }
-    // akhir query table users
-
-
-    // query tabel promo
-    public function tambah_promo($data)
-    {
-        $this->db->insert('tbl_promo', $data);
-    }
-
-    public function get_all_promo()
-    {
-        return $this->db->get('tbl_promo')->result_array();
-    }
-
-    public function get_promo($start, $limit)
-    {
-        return $this->db->get('tbl_promo', $start, $limit)->result_array();
-    }
-
-    public function count_rows()
-    {
-        return $this->db->get('tbl_promo')->num_rows();
-    }
-
-    public function get_row($id)
-    {
-        return $this->db->get_where('tbl_promo', ['id' => $id])->row_array();
-    }
-
-    public function update_promo($id, $data)
-    {
-        $this->db->where('id', $id);
-        $this->db->update('tbl_promo', $data);
-    }
-
-    public function hapus_promo($id)
-    {
-        $this->db->where('id', $id);
-        return $this->db->delete('tbl_promo');
-    }
-
-    public function cari_promo()
-    {
-        $cari_barang = $this->input->post('cari_barang');
-
-        $this->db->like('menu_promo', $cari_barang);
-        return $this->db->get('tbl_promo')->result_array();
-    }
-    // akhir query tabel promo
-
-    // query table carousel
-    public function insert_carousel($data)
-    {
-        return $this->db->insert('carousel', $data);
-    }
-
-    public function get_text($tabel)
-    {
-        return $this->db->select("*")->limit(1)->order_by('id', "DESC")->get($tabel)->row_array();
-    }
-    // akhir table carousel
-
-    // query tabel menu
-    public function all_menu()
-    {
-        return $this->db->get('menu_makanan')->result_array();
-    }
-
-    // dinamis
-
+    // CRUD
+    // GET SEMUA DATA
     public function get($tabel)
     {
         return $this->db->get($tabel)->result_array();
     }
 
-    public function get_where($tabel, $jenis)
-    {
-        return $this->db->get_where($tabel, ['jenis_makanan' => $jenis])->result_array();
-    }
-
+    // INSERT DATA
     public function insert($tabel, $data)
     {
         return $this->db->insert($tabel, $data);
     }
 
-    public function row($tabel, $id)
+    // GET 1 ROW
+    public function row($tabel, $id, $field)
     {
-        return $this->db->get_where($tabel, ['id' => $id])->row_array();
+        return $this->db->get_where($tabel, [$field => $id])->row_array();
     }
 
-    public function update_menu($id, $tabel, $data)
+    // UPDATE DATA
+    public function Update($id, $tabel, $data)
     {
         $this->db->where('id', $id);
         $this->db->update($tabel, $data);
     }
 
+    // DELETE DATA
     public function delete($id, $tabel)
     {
         $this->db->where('id', $id);
         return $this->db->delete($tabel);
     }
 
+    // MENCARI ROW TERAKHIR DI TABEL TENTANG KAMI
     public function last_field($field, $where)
     {
         // SELECT id, visi from tentang_kami WHERE visi!='' order by id DESC limit 1
@@ -150,6 +53,29 @@ class Admin_model extends CI_Model
             ->get()->row_array();
     }
 
+    // SET UNTUK UPDATE
+    public function update_password($password_baru, $id)
+    {
+        $this->db->set('password', $password_baru);
+        $this->db->where('id', $id);
+        $this->db->update('tbl_users');
+    }
+
+    // MEGHITUNG ROWS
+    public function count_rows()
+    {
+        return $this->db->get('tbl_promo')->num_rows();
+    }
+
+    // HALAMAN CAROUSEL
+    // MENGAMBIL FIELD TERAKHIR BERDASARKAN DR DATA YG MASUK TERAKHIR
+    public function get_text($tabel)
+    {
+        return $this->db->select("*")->limit(1)->order_by('id', "DESC")->get($tabel)->row_array();
+    }
+    // akhir table carousel
+
+    // HALAMAN HOME UNTUK MENCARI RANDOM ROW
     public function random($tabel)
     {
         // SELECT column FROM table
@@ -162,5 +88,11 @@ class Admin_model extends CI_Model
             ->order_by('id', 'random')
             ->limit(6)
             ->get()->result_array();
+    }
+
+    // MENGAMBIL SEMUA DATA UNTUK PAGINATION
+    public function get_promo($start, $limit)
+    {
+        return $this->db->get('tbl_promo', $start, $limit)->result_array();
     }
 }

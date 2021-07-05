@@ -9,6 +9,7 @@ class Home extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Admin_model');
+        sudah_login();
     }
 
     public function index()

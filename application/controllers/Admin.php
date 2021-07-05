@@ -13,8 +13,6 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        // belum_login();
-
         $data['judul']      = 'Administrator';
 
         $this->load->view('admin/templates/header', $data);
@@ -27,8 +25,6 @@ class Admin extends CI_Controller
     // halaman carousel
     public function home_carousel()
     {
-        // belum_login();
-
         $this->form_validation->set_rules('text_carousel_akhir', 'Text Carousel', 'required|trim|max_length[1000]');
 
         // mengambil baris terakhir dari database
@@ -51,7 +47,7 @@ class Admin extends CI_Controller
             ];
 
             $this->session->set_flashdata('sukses', 'Text carousel berhasil diperbaharui');
-            $this->Admin_model->insert_carousel($data);
+            $this->Admin_model->insert('carousel', $data);
             redirect('admin/home_carousel');
         }
     }
@@ -59,8 +55,6 @@ class Admin extends CI_Controller
     // halaman menu
     public function home_menu()
     {
-        // belum_login();
-
         $data['judul']      = 'Menu';
 
         $this->load->view('admin/templates/header', $data);
@@ -73,13 +67,9 @@ class Admin extends CI_Controller
     // halaman promo
     public function semua_promo()
     {
-        // belum_login();
-
         // awal pagination
-
         // load library
         $this->load->library('pagination');
-
 
         // search
         // $keyword = $this->input->post('keyword');
@@ -109,8 +99,6 @@ class Admin extends CI_Controller
 
     public function tambah_promo()
     {
-        // belum_login();
-
         $this->form_validation->set_rules('promo_awal', 'Promo Awal', 'required|trim');
         $this->form_validation->set_rules('promo_akhir', 'Promo Akhir', 'required|trim');
         $this->form_validation->set_rules('menu_promo', 'Menu Promo', 'required|trim');
@@ -158,7 +146,7 @@ class Admin extends CI_Controller
                     'promo_akhir'   => $promo_akhir,
                     'gambar_promo'  => $gambar_promo
                 ];
-                $this->Admin_model->tambah_promo($data);
+                $this->Admin_model->insert('tbl_promo', $data);
 
                 $this->session->set_flashdata('sukses', 'Promo berhasil ditambahkan');
                 redirect('admin/semua_promo');
@@ -168,10 +156,8 @@ class Admin extends CI_Controller
 
     public function update_promo($id)
     {
-        // belum_login();
-
         $data['judul']      = 'Update Promo';
-        $data['row']        = $this->Admin_model->get_row($id);
+        $data['row']        = $this->Admin_model->row('tbl_promo', $id, 'id');
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
@@ -182,8 +168,6 @@ class Admin extends CI_Controller
 
     public function proses_update_promo()
     {
-        // belum_login();
-
         $id                 = htmlspecialchars($this->input->post('id', true));
         $promo_awal         = htmlspecialchars($this->input->post('promo_awal', true));
         $promo_akhir        = htmlspecialchars($this->input->post('promo_akhir', true));
@@ -199,7 +183,7 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('harga_promo', 'Harga Promo', 'required|trim|numeric');
 
         $data['judul']      = 'Update Promo';
-        $data['row']        = $this->Admin_model->get_row($id);
+        $data['row']        = $this->Admin_model->row('tbl_promo', $id, 'id');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('admin/templates/header', $data);
@@ -220,7 +204,7 @@ class Admin extends CI_Controller
 
                 if ($this->upload->do_upload('gambar')) {
                     // berhasil diupload
-                    $foto_lama          = $data['row']['gambar'];
+                    $foto_lama          = $data['row']['gambar_promo'];
                     $gambar_baru        = $this->upload->data('file_name'); //membuat nama gambar baru
 
                     $data               =   [
@@ -236,7 +220,7 @@ class Admin extends CI_Controller
                     unlink(FCPATH . 'assets/upload_image/' . $foto_lama); // untuk menghapus file yg sudah ada
 
                     $this->session->set_flashdata('sukses', 'Promo berhasil diupdate');
-                    $this->Admin_model->update_promo($id, $data);
+                    $this->Admin_model->update($id, 'tbl_promo', $data);
                     redirect('admin/semua_promo');
                 } else {
                     echo $this->upload->display_errors(); //menampilkan error pada gambar
@@ -252,7 +236,7 @@ class Admin extends CI_Controller
                     'promo_akhir'   => $promo_akhir,
                 ];
 
-                $this->Admin_model->update_promo($id, $data);
+                $this->Admin_model->update($id, 'tbl_promo', $data);
                 $this->session->set_flashdata('sukses', 'Promo berhasil diupdate');
                 redirect('admin/semua_promo');
             }
@@ -261,12 +245,10 @@ class Admin extends CI_Controller
 
     public function hapus_promo($id)
     {
-        // belum_login();
+        $data['row']        = $this->Admin_model->row('tbl_promo', $id, 'id');
+        $foto_lama          = $data['row']['gambar_promo'];
 
-        $data['row']        = $this->Admin_model->get_row($id);
-        $foto_lama          = $data['row']['gambar'];
-
-        $query = $this->Admin_model->hapus_promo($id);
+        $query = $this->Admin_model->delete($id, 'tbl_promo');
 
         if ($query) {
             unlink(FCPATH . 'assets/upload_image/' . $foto_lama); // untuk menghapus file yg sudah ada
@@ -279,8 +261,6 @@ class Admin extends CI_Controller
     // halaman footer
     public function tentang_kami()
     {
-        // belum_login();
-
         $data['judul']      = 'About Us';
         $data['visi']       = $this->Admin_model->last_field('visi', 'visi !=');
         $data['misi']       = $this->Admin_model->last_field('misi', 'misi !=');
@@ -295,8 +275,6 @@ class Admin extends CI_Controller
 
     public function insert_visi()
     {
-        // belum_login();
-
         $visi                   = htmlspecialchars($this->input->post('visi', true));
 
         $this->form_validation->set_rules('visi', 'Visi', 'required|trim|max_length[1000]');
@@ -325,8 +303,6 @@ class Admin extends CI_Controller
 
     public function insert_misi()
     {
-        // belum_login();
-
         $misi                   = htmlspecialchars($this->input->post('misi', true));
 
         $this->form_validation->set_rules('misi', 'misi', 'required|trim|max_length[1000]');
@@ -355,8 +331,6 @@ class Admin extends CI_Controller
 
     public function insert_sejarah()
     {
-        // belum_login();
-
         $sejarah                = htmlspecialchars($this->input->post('sejarah', true));
 
         $this->form_validation->set_rules('sejarah', 'Sejarah', 'required|trim|max_length[1000]');
@@ -385,8 +359,6 @@ class Admin extends CI_Controller
 
     public function hubungi_kami()
     {
-        // belum_login();
-
         $data['result'] = $this->Admin_model->get('email');
 
         $data['judul'] = 'Hubungi Kami';
@@ -399,8 +371,6 @@ class Admin extends CI_Controller
 
     public function karir()
     {
-        // belum_login();
-
         $data['result'] = $this->Admin_model->get('karir');
 
         $data['judul'] = 'Karir';
@@ -413,8 +383,6 @@ class Admin extends CI_Controller
 
     public function layanan()
     {
-        // belum_login();
-
         $data['result'] = $this->Admin_model->get('layanan');
 
         $data['judul']  = 'Layanan';
@@ -427,8 +395,6 @@ class Admin extends CI_Controller
 
     public function insert_layanan()
     {
-        // belum_login();
-
         $this->form_validation->set_rules('jenis_layanan', 'Jenis LAyanan', 'required|trim');
         $this->form_validation->set_rules('link', 'Link', 'required|trim');
 
@@ -483,10 +449,8 @@ class Admin extends CI_Controller
 
     public function update_layanan($id)
     {
-        // belum_login();
-
         $data['judul']  = 'Update Layanan';
-        $data['row']    = $this->Admin_model->row('layanan', $id);
+        $data['row']    = $this->Admin_model->row('layanan', $id, 'id');
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/navbar');
@@ -497,8 +461,6 @@ class Admin extends CI_Controller
 
     public function proses_update_layanan()
     {
-        // belum_login();
-
         $this->form_validation->set_rules('jenis_layanan', 'Jenis Layanan', 'required|trim');
         $this->form_validation->set_rules('link', 'Link', 'required|trim');
 
@@ -506,7 +468,7 @@ class Admin extends CI_Controller
         $jenis_layanan      = htmlspecialchars($this->input->post('jenis_layanan', true));
         $link               = htmlspecialchars($this->input->post('link', true));
         $gambar             = $_FILES['gambar']['name'];
-        $data['row']        = $this->Admin_model->row('layanan', $id);
+        $data['row']        = $this->Admin_model->row('layanan', $id, 'id');
         $gambar_lama        = $data['row']['gambar'];
 
         if ($this->form_validation->run() == false) {
@@ -549,7 +511,7 @@ class Admin extends CI_Controller
                         'gambar'            => $gambar_baru
                     ];
 
-                    $this->Admin_model->update_menu($id, 'layanan', $data);
+                    $this->Admin_model->update($id, 'layanan', $data);
                     $this->session->set_flashdata('sukses', 'Layanan berhasil diubah');
                     redirect('admin/layanan');
                 }
@@ -561,7 +523,7 @@ class Admin extends CI_Controller
                     'gambar'            => $gambar_lama
                 ];
 
-                $this->Admin_model->update_menu($id, 'layanan', $data);
+                $this->Admin_model->update($id, 'layanan', $data);
                 $this->session->set_flashdata('sukses', 'Layanan berhasil diubah');
                 redirect('admin/layanan');
             }
@@ -570,9 +532,7 @@ class Admin extends CI_Controller
 
     public function delete_layanan($id)
     {
-        // belum_login();
-
-        $data['row']        = $this->Admin_model->row('layanan', $id);
+        $data['row']        = $this->Admin_model->row('layanan', $id, 'id');
         $gambar_lama        = $data['row']['gambar'];
 
         unlink(FCPATH . 'assets/upload_layanan/' . $gambar_lama); // untuk menghapus file/gambar yg sudah ada
@@ -584,21 +544,176 @@ class Admin extends CI_Controller
 
     public function csr()
     {
-        // belum_login();
+        $data['all_menu'] = $this->Admin_model->get('csr');
 
         $data['judul'] = 'CSR';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/templates/navbar');
-        $this->load->view('admin/footer/csr');
+        $this->load->view('admin/footer/daftar_csr', $data);
         $this->load->view('admin/templates/footer');
+    }
+
+    public function tambah_csr()
+    {
+        $judul              = htmlspecialchars($this->input->post('judul', true));
+        $keterangan         = htmlspecialchars($this->input->post('keterangan', true));
+        $gambar             = $_FILES['gambar']['name'];
+
+        $this->form_validation->set_rules('judul', 'Judul Csr', 'required|trim');
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required|trim|max_length[1000]');
+
+        if (empty($_FILES['gambar']['name'])) {
+            $this->form_validation->set_rules('gambar', 'Gambar csr', 'required');
+        }
+
+        if ($this->form_validation->run() == false) {
+            $data['judul'] = 'Tambah CSR';
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/footer/tambah_csr', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            // upload file
+            $config['upload_path']      = './assets/upload_image';
+            $config['allowed_types']    = 'jpg|png|jpeg|png';
+            $config['max_size']         = 2000;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('gambar')) {
+                // gagal upload
+                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . $this->upload->display_errors());
+                $data['judul'] = 'Tambah CSR';
+                $this->load->view('admin/templates/header', $data);
+                $this->load->view('admin/templates/navbar');
+                $this->load->view('admin/templates/sidebar');
+                $this->load->view('admin/footer/tambah_csr', $data);
+                $this->load->view('admin/templates/footer');
+            } else {
+                // berhasil upload
+                $gambar = $this->upload->data('file_name');
+
+                $data   = [
+                    'judul'         => $judul,
+                    'keterangan'    => $keterangan,
+                    'gambar'        => $gambar
+                ];
+
+                $this->session->set_flashdata('sukses', 'CSR berhasil ditambahkan');
+                $this->Admin_model->insert('csr', $data);
+                redirect('admin/csr');
+            }
+        }
+    }
+
+    public function update_csr($id)
+    {
+        $data['judul']  = 'Update CSR';
+        $data['row']    = $this->Admin_model->row('csr', $id, 'id');
+
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/footer/update_csr', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function prosesUpdate_csr()
+    {
+        $id                 = htmlspecialchars($this->input->post('id', true));
+        $judul              = htmlspecialchars($this->input->post('judul', true));
+        $keterangan         = htmlspecialchars($this->input->post('keterangan', true));
+        $gambar             = $_FILES['gambar']['name']; //gambar baru
+        $data['row']        = $this->Admin_model->row('csr', $id, 'id');
+
+        $gambar_lama        = $data['row']['gambar']; //gambar baru
+
+        $this->form_validation->set_rules('judul', 'Judul Csr', 'required|trim');
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required|trim|max_length[1000]');
+
+        if ($this->form_validation->run() == false) {
+            $data['all_menu']    = $this->Admin_model->get('csr');
+
+            $data['judul']  = 'CSR';
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/footer/daftar_csr', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+
+            if ($gambar) {
+                $config['upload_path']      = './assets/upload_image/';
+                $config['allowed_types']    = 'jpeg|jpg|png';
+                $config['max_size']         = '2000';
+
+                $this->load->library('upload', $config);
+
+                $this->upload->initialize($config);
+
+                if (!$this->upload->do_upload('gambar')) {
+                    $data['all_menu']    = $this->Admin_model->row('csr');
+
+                    $data['judul']  = 'CSR';
+
+                    // gagal upload
+                    $this->session->set_flashdata('gagal',);
+                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . $this->upload->display_errors());
+
+                    $this->load->view('admin/templates/header', $data);
+                    $this->load->view('admin/templates/navbar');
+                    $this->load->view('admin/templates/sidebar');
+                    $this->load->view('admin/footer/daftar_csr', $data);
+                    $this->load->view('admin/templates/footer');
+                } else {
+                    // berhasil upload
+                    $gambar_baru       = $this->upload->data('file_name');
+
+                    unlink(FCPATH . 'assets/upload_image/' . $gambar_lama); // untuk menghapus file yg sudah ada
+
+                    $data = [
+                        'judul'         => $judul,
+                        'keterangan'    => $keterangan,
+                        'gambar'        => $gambar_baru
+                    ];
+
+                    $this->Admin_model->Update($id, 'csr', $data);
+                    $this->session->set_flashdata('sukses', 'CSR berhasil diubah');
+                    redirect('admin/csr');
+                }
+            } else {
+                // tidakada gambarnya
+                $data = [
+                    'judul'         => $judul,
+                    'keterangan'    => $keterangan,
+                    'gambar'        => $gambar_lama
+                ];
+
+                $this->Admin_model->update($id, 'csr', $data);
+                $this->session->set_flashdata('sukses', 'CSR berhasil diubah');
+                redirect('admin/csr');
+            }
+        }
+    }
+
+    public function delete_csr($id)
+    {
+        $data['row']        = $this->Admin_model->row('csr', $id, 'id');
+        $gambar_lama        = $data['row']['gambar'];
+
+        unlink(FCPATH . 'assets/upload_image/' . $gambar_lama); // untuk menghapus file/gambar yg sudah ada
+
+        $this->Admin_model->delete($id, 'csr', 'id');
+        $this->session->set_flashdata('sukses', 'data berhasil dihapus');
+        redirect('admin/csr');
     }
 
     // admin control
     public function ganti_password()
     {
-        // belum_login();
-
         // data dari session
         $data['judul']      = 'Ganti Password';
         $data['session']    = $this->session->userdata('email');
@@ -618,8 +733,6 @@ class Admin extends CI_Controller
 
     public function reset_password()
     {
-        // belum_login();
-
         $id                 = $this->session->userdata('id');
         $data['session']    = $this->session->userdata('email');
         $data['row']        = $this->Admin_model->get_id($id);
@@ -646,8 +759,6 @@ class Admin extends CI_Controller
 
     public function jumlah_admin()
     {
-        // belum_login();
-
         $data['judul']          = 'Daftar Admin';
         $data['all_admin']      = $this->Admin_model->get_all();
 
@@ -660,8 +771,6 @@ class Admin extends CI_Controller
 
     public function proses_edit($id = '')
     {
-        // belum_login();
-
         $id              = htmlspecialchars($this->input->post('id', true));
         $nama            = htmlspecialchars($this->input->post('nama', true));
         $email           = htmlspecialchars($this->input->post('email', true));
@@ -699,8 +808,6 @@ class Admin extends CI_Controller
 
     public function edit_admin($id)
     {
-        // belum_login();
-
         $data['judul']         = 'Update Admin';
         $data['all_admin']     = $this->Admin_model->get_id($id);
 
@@ -713,8 +820,6 @@ class Admin extends CI_Controller
 
     public function hapus_admin($id)
     {
-        // belum_login();
-
         $this->Admin_model->delete_admin($id);
         $this->session->set_flashdata('sukses', 'User berhasil dihapus!!');
 
@@ -725,8 +830,6 @@ class Admin extends CI_Controller
     // halaman menu
     public function insert_makanan()
     {
-        // belum_login();
-
         $this->form_validation->set_rules('jenis_makanan', 'Jenis Makanan', 'required|trim');
         $this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required|trim');
         $this->form_validation->set_rules('harga_menu', 'Harga Menu', 'required|trim|numeric');
@@ -787,9 +890,7 @@ class Admin extends CI_Controller
 
     public function semua_menu()
     {
-        // belum_login();
-
-        $data['all_menu'] = $this->Admin_model->all_menu();
+        $data['all_menu'] = $this->Admin_model->get('menu_makanan');
 
         $data['judul'] = 'Semua Menu';
         $this->load->view('admin/templates/header', $data);
@@ -801,10 +902,8 @@ class Admin extends CI_Controller
 
     public function update_menu($id)
     {
-        // belum_login();
-
         $data['judul']  = 'Menu';
-        $data['row']    = $this->Admin_model->row('menu_makanan', $id);
+        $data['row']    = $this->Admin_model->row('menu_makanan', $id, 'id');
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/navbar');
@@ -815,8 +914,6 @@ class Admin extends CI_Controller
 
     public function proses_update()
     {
-        // belum_login();
-
         $this->form_validation->set_rules('jenis_makanan', 'Jenis Makanan', 'required|trim');
         $this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required|trim');
         $this->form_validation->set_rules('harga_menu', 'Harga Menu', 'required|trim');
@@ -828,7 +925,7 @@ class Admin extends CI_Controller
         $harga_menu         = htmlspecialchars($this->input->post('harga_menu', true));
         $keterangan         = htmlspecialchars($this->input->post('keterangan_menu', true));
         $gambar             = $_FILES['gambar']['name'];
-        $data['row']        = $this->Admin_model->row('menu_makanan', $id);
+        $data['row']        = $this->Admin_model->row('menu_makanan', $id, 'id');
         $gambar_lama        = $data['row']['gambar'];
 
         if ($this->form_validation->run() == false) {
@@ -874,7 +971,7 @@ class Admin extends CI_Controller
                         'gambar'        => $gambar_baru
                     ];
 
-                    $this->Admin_model->update_menu($id, 'menu_makanan', $data);
+                    $this->Admin_model->Update($id, 'menu_makanan', $data);
                     $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
                     redirect('admin/semua_menu');
                 }
@@ -888,7 +985,7 @@ class Admin extends CI_Controller
                     'gambar'        => $gambar_lama
                 ];
 
-                $this->Admin_model->update_menu($id, 'menu_makanan', $data);
+                $this->Admin_model->update($id, 'menu_makanan', $data);
                 $this->session->set_flashdata('sukses', 'Menu berhasil diubah');
                 redirect('admin/semua_menu');
             }
@@ -897,16 +994,103 @@ class Admin extends CI_Controller
 
     public function delete_menu($id)
     {
-        // belum_login();
-
-        $data['row']        = $this->Admin_model->row('menu_makanan', $id);
+        $data['row']        = $this->Admin_model->row('menu_makanan', $id, 'id');
         $gambar_lama        = $data['row']['gambar'];
 
         unlink(FCPATH . 'assets/upload_menu/' . $gambar_lama); // untuk menghapus file/gambar yg sudah ada
 
-        $this->Admin_model->delete($id, 'menu_makanan');
+        $this->Admin_model->delete($id, 'menu_makanan', 'id');
         $this->session->set_flashdata('sukses', 'data berhasil dihapus');
         redirect('admin/semua_menu');
     }
     // akhir halaman menu
+
+    // halaman outlet
+    public function tambah_outlet()
+    {
+        $nama       = htmlspecialchars($this->input->post('nama', true));
+        $phone      = htmlspecialchars($this->input->post('phone', true));
+        $alamat     = htmlspecialchars($this->input->post('alamat', true));
+
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|numeric|trim|is_unique[outlet.phone]|min_length[10]');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim|max_length[1000]');
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']      = 'Outlet';
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/outlet/tambah_outlet', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $data   = [
+                'nama_outlet'   => $nama,
+                'phone'         => $phone,
+                'alamat'        => $alamat
+            ];
+
+            $this->Admin_model->insert('outlet', $data);
+            $this->session->set_flashdata('sukses', 'Alamat baru berhasil ditambahkan');
+            redirect('admin/daftar_outlet');
+        }
+    }
+
+    public function update_outlet($id)
+    {
+        $data['judul']      = 'Daftar Outlet';
+        $data['row']        = $this->Admin_model->row('outlet', $id);
+
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/outlet/update_outlet', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function prosesUpdate_outlet()
+    {
+        $id         = htmlspecialchars($this->input->post('id', true));
+        $nama       = htmlspecialchars($this->input->post('nama', true));
+        $phone      = htmlspecialchars($this->input->post('phone', true));
+        $alamat     = htmlspecialchars($this->input->post('alamat', true));
+
+        $this->form_validation->set_rules('nama', 'Nama Outlet', 'required|trim');
+        $this->form_validation->set_rules('phone', 'Phone Outlet', 'required|numeric|trim|min_length[10]');
+        $this->form_validation->set_rules('alamat', 'Alamat Outlet', 'required|trim|max_length[1000]');
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']      = 'Update Outlet';
+            $data['row']        = $this->Admin_model->row('outlet', $id);
+
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/outlet/update_outlet', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            $data   = [
+                'nama_outlet'   => $nama,
+                'phone'         => $phone,
+                'alamat'        => $alamat
+            ];
+
+            $this->Admin_model->update($id, 'outlet', $data);
+
+            $this->session->set_flashdata('sukses', 'Alamat baru berhasil ditambahkan');
+            redirect('admin/daftar_outlet');
+        }
+    }
+
+    public function daftar_outlet()
+    {
+        $data['judul']      = 'Daftar Outlet';
+        $data['all_outlet'] = $this->Admin_model->get('outlet');
+
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/outlet/daftar_outlet', $data);
+        $this->load->view('admin/templates/footer');
+    }
 }

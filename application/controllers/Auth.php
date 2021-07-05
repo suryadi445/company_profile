@@ -17,7 +17,7 @@ class Auth extends CI_Controller
         $data['judul'] = 'Registrasi';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar');
-        $this->load->view('auth/registrasi');
+        $this->load->view('auth/index_registrasi');
         $this->load->view('templates/footer');
     }
 
@@ -74,7 +74,7 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Registrasi';
-            $this->session->set_flashdata('flash', 'Registrasi gagal. Mohon registrasi ulang');
+            $this->session->set_flashdata('flash', 'Anda belum registrasi');
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('auth/registrasi');

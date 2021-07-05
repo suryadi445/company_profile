@@ -6,7 +6,6 @@
                 <div class="col-sm-6">
                     <h1 class="m-0 text-dark">CSR</h1>
                 </div><!-- /.col -->
-
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
@@ -25,29 +24,31 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form">
+                        <form action="<?= base_url('admin/tambah_csr'); ?>" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="judul_csr">Judul CSR</label>
-                                    <input type="text" class="form-control" id="judul_csr" placeholder="Masukkan judul untuk CSR">
+                                    <input type="text" class="form-control" name="judul" id="judul_csr" placeholder="Masukkan judul untuk CSR">
+                                    <div class="text-danger error"><?= form_error('judul') ?></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label for="keterangan_csr">Keterangan</label>
+                                    <textarea class="form-control" id="keterangan_csr" name="keterangan" rows="3"></textarea>
+                                    <div class="text-danger error"><?= form_error('keterangan') ?></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="gambar_promo" class="col-sm-4 col-form-label">Upload Gambar</label>
                                     <div class="row">
-                                        <div class="input-group col-sm-8">
+                                        <div class="input-group col-sm-8 mb-n3">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="gambar_promo" name="gambar_promo" autocomplete="off" value="<?= set_value('gambar_promo') ?>">
-                                                <label class="custom-file-label" for="gambar_promo">Pilih Gambar</label>
+                                                <input type="file" class="custom-file-input" id="gambar" name="gambar" autocomplete="off" value="<?= set_value('gambar_promo') ?>">
+                                                <label class="custom-file-label" for="gambar">Pilih Gambar</label>
                                             </div>
                                             <div class="input-group col-sm-4">
                                                 <img src="<?= base_url('assets/image/default.jpg') ?>" width="100px" height="100px" id="blah">
                                             </div>
                                         </div>
-                                        <div class="text-danger mb-n4 offset-sm-4 col-sm-8"><?= form_error('gambar_promo'); ?></div>
+                                        <div class="text-danger mt-n5 col-sm-8 error"><?= form_error('gambar'); ?></div>
                                     </div>
                                 </div>
                             </div>
