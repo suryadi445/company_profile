@@ -196,7 +196,7 @@ class Admin extends CI_Controller
             if ($gambar_promo) {
                 // upload file
                 $config['upload_path']      = './assets/upload_image';
-                $config['allowed_types']    = 'jpg|png|jpeg|png';
+                $config['allowed_types']    = 'jpg|jpeg|png';
                 $config['max_size']         = 2000;
 
                 $this->load->library('upload', $config);
@@ -223,7 +223,15 @@ class Admin extends CI_Controller
                     $this->Admin_model->update($id, 'tbl_promo', $data);
                     redirect('admin/semua_promo');
                 } else {
-                    echo $this->upload->display_errors(); //menampilkan error pada gambar
+                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . '<br>' . $this->upload->display_errors());
+                    $data['judul']      = 'Update Promo';
+                    $data['row']        = $this->Admin_model->row('tbl_promo', $id, 'id');
+
+                    $this->load->view('admin/templates/header', $data);
+                    $this->load->view('admin/templates/sidebar');
+                    $this->load->view('admin/templates/navbar');
+                    $this->load->view('admin/promo/update_promo', $data);
+                    $this->load->view('admin/templates/footer');
                 }
             } else {
                 // tidak ada gambar
@@ -415,7 +423,7 @@ class Admin extends CI_Controller
         } else {
             // upload file
             $config['upload_path']      = './assets/upload_layanan';
-            $config['allowed_types']    = 'jpg|png|jpeg|png';
+            $config['allowed_types']    = 'jpg|png|jpeg';
             $config['max_size']         = 2000;
 
             $this->load->library('upload', $config);
@@ -423,7 +431,7 @@ class Admin extends CI_Controller
 
             if (!$this->upload->do_upload('gambar')) {
                 // gagal upload
-                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . $this->upload->display_errors());
+                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . '<br>' . $this->upload->display_errors());
                 $data['judul'] = 'Layanan';
                 $this->load->view('admin/templates/header', $data);
                 $this->load->view('admin/templates/navbar');
@@ -483,7 +491,7 @@ class Admin extends CI_Controller
 
             if ($gambar) {
                 $config['upload_path']      = './assets/upload_layanan/';
-                $config['allowed_types']    = 'jpeg|jpg|png|png';
+                $config['allowed_types']    = 'jpeg|jpg|png';
                 $config['max_size']         = '2000';
 
                 $this->load->library('upload', $config);
@@ -577,7 +585,7 @@ class Admin extends CI_Controller
         } else {
             // upload file
             $config['upload_path']      = './assets/upload_image';
-            $config['allowed_types']    = 'jpg|png|jpeg|png';
+            $config['allowed_types']    = 'jpg|jpeg|png';
             $config['max_size']         = 2000;
 
             $this->load->library('upload', $config);
@@ -585,7 +593,7 @@ class Admin extends CI_Controller
 
             if (!$this->upload->do_upload('gambar')) {
                 // gagal upload
-                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . $this->upload->display_errors());
+                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . '<br>' . $this->upload->display_errors());
                 $data['judul'] = 'Tambah CSR';
                 $this->load->view('admin/templates/header', $data);
                 $this->load->view('admin/templates/navbar');
@@ -655,13 +663,13 @@ class Admin extends CI_Controller
                 $this->upload->initialize($config);
 
                 if (!$this->upload->do_upload('gambar')) {
-                    $data['all_menu']    = $this->Admin_model->row('csr');
+                    $data['all_menu']    = $this->Admin_model->get('csr');
 
                     $data['judul']  = 'CSR';
 
                     // gagal upload
                     $this->session->set_flashdata('gagal',);
-                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . $this->upload->display_errors());
+                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . '<br>' . $this->upload->display_errors());
 
                     $this->load->view('admin/templates/header', $data);
                     $this->load->view('admin/templates/navbar');
@@ -680,7 +688,7 @@ class Admin extends CI_Controller
                         'gambar'        => $gambar_baru
                     ];
 
-                    $this->Admin_model->Update($id, 'csr', $data);
+                    $this->Admin_model->update($id, 'csr', $data);
                     $this->session->set_flashdata('sukses', 'CSR berhasil diubah');
                     redirect('admin/csr');
                 }
@@ -735,7 +743,7 @@ class Admin extends CI_Controller
     {
         $id                 = $this->session->userdata('id');
         $data['session']    = $this->session->userdata('email');
-        $data['row']        = $this->Admin_model->get_id($id);
+        $data['row']        = $this->Admin_model->row('tbl_users', $id, 'id');
 
         $password_lama      = htmlspecialchars($this->input->post('password_lama', true));
         $password_baru      = password_hash($this->input->post('password_baru'), PASSWORD_DEFAULT);
@@ -760,7 +768,7 @@ class Admin extends CI_Controller
     public function jumlah_admin()
     {
         $data['judul']          = 'Daftar Admin';
-        $data['all_admin']      = $this->Admin_model->get_all();
+        $data['all_admin']      = $this->Admin_model->get('tbl_users');
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
@@ -791,7 +799,7 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('gridRadios', 'Jenis Kelamin', 'required');
 
         if ($this->form_validation->run() == false) {
-            $data['all_admin']     = $this->Admin_model->get_id($id);
+            $data['all_admin']     = $this->Admin_model->row('tbl_users', $id, 'id');
             $data['judul']         = 'Update Admin';
 
             $this->load->view('admin/templates/header', $data);
@@ -800,7 +808,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/administrator/edit_admin', $data);
             $this->load->view('admin/templates/footer');
         } else {
-            $query   = $this->Admin_model->edit_admin($data);
+            $query   = $this->Admin_model->update($id, 'tbl_users', $data);
             $this->session->set_flashdata('sukses', 'Data berhasil diubah!!');
             redirect('admin/jumlah_admin');
         }
@@ -808,8 +816,8 @@ class Admin extends CI_Controller
 
     public function edit_admin($id)
     {
+        $data['all_admin']     = $this->Admin_model->row('tbl_users', $id, 'id');
         $data['judul']         = 'Update Admin';
-        $data['all_admin']     = $this->Admin_model->get_id($id);
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
@@ -820,7 +828,7 @@ class Admin extends CI_Controller
 
     public function hapus_admin($id)
     {
-        $this->Admin_model->delete_admin($id);
+        $this->Admin_model->delete($id, 'tbl_users');
         $this->session->set_flashdata('sukses', 'User berhasil dihapus!!');
 
         redirect('admin/jumlah_admin');
@@ -862,7 +870,7 @@ class Admin extends CI_Controller
 
             if (!$this->upload->do_upload('gambar')) {
                 // gagal upload
-                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . $this->upload->display_errors());
+                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . '<br>' . $this->upload->display_errors());
                 $data['judul'] = 'Menu';
                 $this->load->view('admin/templates/header', $data);
                 $this->load->view('admin/templates/navbar');
@@ -950,7 +958,7 @@ class Admin extends CI_Controller
                 if (!$this->upload->do_upload('gambar')) {
                     // gagal upload
                     $this->session->set_flashdata('gagal',);
-                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . $this->upload->display_errors());
+                    $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . '<br>' . $this->upload->display_errors());
                     // redirect('menu/update_menu/' . $id);
                     $this->load->view('admin/templates/header', $data);
                     $this->load->view('admin/templates/navbar');
@@ -1092,5 +1100,164 @@ class Admin extends CI_Controller
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/outlet/daftar_outlet', $data);
         $this->load->view('admin/templates/footer');
+    }
+
+    public function company()
+    {
+        $company    = htmlspecialchars($this->input->post('company_baru', true));
+        $gambar     = $_FILES['gambar']['name'];
+
+        $this->form_validation->set_rules('company_baru', 'Nama Perusahaan', 'required|trim');
+
+        if (empty($_FILES['gambar']['name'])) {
+            $this->form_validation->set_rules('gambar', 'Gambar', 'required');
+        }
+
+        if ($this->form_validation->run() == false) {
+            $data['judul']      = 'Perusahaan';
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/company/company', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+            // upload file
+            $config['upload_path']      = './assets/upload_company';
+            $config['allowed_types']    = 'jpg|png|jpeg';
+            $config['max_size']         = 2000;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('gambar')) {
+                // gagal upload
+                $this->session->set_flashdata('gagal', 'Gambar gagal diupload' . '<br>' . $this->upload->display_errors());
+                $data['judul'] = 'Company';
+                $this->load->view('admin/templates/header', $data);
+                $this->load->view('admin/templates/navbar');
+                $this->load->view('admin/templates/sidebar');
+                $this->load->view('admin/company/company', $data);
+                $this->load->view('admin/templates/footer');
+            } else {
+                // berhasil upload
+                $gambar = $this->upload->data('file_name');
+
+                $data   = [
+                    'nama_company'  => $company,
+                    'gambar'        => $gambar
+                ];
+
+                $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+                $this->Admin_model->insert('company', $data);
+                redirect('admin/daftar_company');
+                // die;
+            }
+        }
+    }
+
+    public function daftar_company()
+    {
+        $data['all']    = $this->Admin_model->get('company');
+        $data['judul']  = 'Company';
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/company/daftar_company', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function update_company($id)
+    {
+        $data['judul']      = 'Update Company';
+        $data['row']        = $this->Admin_model->row('company', $id, 'id');
+
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/navbar');
+        $this->load->view('admin/company/update_company', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function proses_update_company()
+    {
+        $id         = htmlspecialchars($this->input->post('id', true));
+        $company    = htmlspecialchars($this->input->post('company_baru', true));
+        $gambar     = $_FILES['gambar']['name'];
+
+        $this->form_validation->set_rules('company_baru', 'Nama Perusahaan', 'required|trim');
+
+
+        $data['judul']      = 'Update Company';
+        $data['row']        = $this->Admin_model->row('company', $id, 'id');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('admin/templates/header', $data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('admin/templates/navbar');
+            $this->load->view('admin/company/daftar', $data);
+            $this->load->view('admin/templates/footer');
+        } else {
+
+            if ($gambar) {
+                // upload file
+                $config['upload_path']      = './assets/upload_company';
+                $config['allowed_types']    = 'jpg|jpeg|png';
+                $config['max_size']         = 2000;
+
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('gambar')) {
+                    // berhasil diupload
+                    $foto_lama          = $data['row']['gambar'];
+                    $gambar_baru        = $this->upload->data('file_name'); //membuat nama gambar baru
+
+                    $data               =   [
+                        'nama_company'  => $company,
+                        'gambar'        => $gambar_baru
+                    ];
+
+                    unlink(FCPATH . 'assets/upload_company/' . $foto_lama); // untuk menghapus file yg sudah ada
+
+                    $this->session->set_flashdata('sukses', 'Update berhasil dilakukan');
+                    $this->Admin_model->update($id, 'company', $data);
+                    redirect('admin/daftar_company');
+                } else {
+                    $this->session->set_flashdata('gagal', 'Foto gagal diupload' . '<br>' . $this->upload->display_errors());
+                    $data['judul']      = 'Update company';
+                    $data['row']        = $this->Admin_model->row('company', $id, 'id');
+
+                    $this->load->view('admin/templates/header', $data);
+                    $this->load->view('admin/templates/sidebar');
+                    $this->load->view('admin/templates/navbar');
+                    $this->load->view('admin/company/update_company', $data);
+                    $this->load->view('admin/templates/footer');
+                }
+            } else {
+                // tidak ada gambar
+                $data               =   [
+                    'nama_company'  => $company,
+                ];
+
+                $this->Admin_model->update($id, 'company', $data);
+                $this->session->set_flashdata('sukses', 'Update berhasil dilakukan');
+                redirect('admin/daftar_company');
+            }
+        }
+    }
+
+    public function delete_company($id)
+    {
+        $data['row']        = $this->Admin_model->row('company', $id, 'id');
+        $foto_lama          = $data['row']['gambar'];
+
+        $query = $this->Admin_model->delete($id, 'company');
+
+        if ($query) {
+            unlink(FCPATH . 'assets/upload_company/' . $foto_lama); // untuk menghapus file yg sudah ada
+        }
+
+        $this->session->set_flashdata('sukses', 'Data berhasil dihapus');
+        redirect('admin/daftar_company');
     }
 }

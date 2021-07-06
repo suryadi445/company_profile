@@ -22,9 +22,6 @@ class Hubungi_kami extends CI_Controller
 
     public function kirim_hubKami()
     {
-        // echo 'oke';
-        // die;
-
         $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('phone', 'Phone', 'trim|required|numeric');
@@ -61,13 +58,10 @@ class Hubungi_kami extends CI_Controller
                     'email'         => $email,
                     'phone'         => $phone,
                     'kategori'      => $kategori,
-                    'pesan'         => $pesan,
-                    'tanggal_pesan' => date('yyyy-mm-dd')
+                    'pesan'         => $pesan
                 ];
                 $query = $this->Admin_model->insert('email', $data);
                 echo json_encode($query);
-
-                // $this->session->set_flashdata('sukses', 'Terima kasih, pesan Anda sudah terkirim');
             }
         }
     }

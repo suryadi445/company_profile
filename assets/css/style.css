@@ -633,7 +633,7 @@ h3 {
 
 	/* modal */
 	.modal-lg {
-		max-width: 90% !important;
+		max-width: 100% !important;
 	}
 
 	#harga_modal {
@@ -885,7 +885,7 @@ h3 {
 
 	/* modal */
 	.modal-lg {
-		max-width: 80% !important;
+		max-width: 100% !important;
 	}
 
 	#harga_modal {
@@ -897,6 +897,8 @@ h3 {
 		margin-left: 8px;
 		width: 100%;
 	}
+
+	/* batas modal */
 
 	#atas_footer {
 		margin-top: 150px;

@@ -70,11 +70,19 @@
                     <div class="container mt-3">
                         <img src="<?= base_url('assets/upload_menu/') ?><?= $drink['gambar']; ?>" class="gambar_menu card-img-top" alt="gambar minuman">
                         <div class="card-body">
-                            <h5 class="card-title nama_menu"><?= $drink['nama_menu']; ?></h5>
+                            <h5 class="card-title nama_menu text-center"><?= $drink['nama_menu']; ?></h5>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>" data-gambar="<?= $drink['gambar']; ?>" data-keterangan="<?= $drink['keterangan']; ?>">Detail Menu</a>
-                            <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>">Pesan</a>
+                            <div class="container">
+                                <div class="row justify-content-around">
+                                    <div class="col-6">
+                                        <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>" data-gambar="<?= $drink['gambar']; ?>" data-keterangan="<?= $drink['keterangan']; ?>">Detail Menu</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>">Pesan</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

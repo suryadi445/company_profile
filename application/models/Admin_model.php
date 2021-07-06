@@ -23,7 +23,7 @@ class Admin_model extends CI_Model
     }
 
     // UPDATE DATA
-    public function Update($id, $tabel, $data)
+    public function update($id, $tabel, $data)
     {
         $this->db->where('id', $id);
         $this->db->update($tabel, $data);
@@ -88,6 +88,13 @@ class Admin_model extends CI_Model
             ->order_by('id', 'random')
             ->limit(6)
             ->get()->result_array();
+    }
+
+    // halaman menu
+    // mengambil semua data menggunakan where
+    public function get_where($tabel, $field, $where)
+    {
+        return $this->db->get_where($tabel, [$field => $where])->result_array();
     }
 
     // MENGAMBIL SEMUA DATA UNTUK PAGINATION
