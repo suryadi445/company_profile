@@ -34,6 +34,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Perusahaan</th>
+                                        <th>Email</th>
                                         <th>Gambar Perusahaan</th>
                                         <th>Action</th>
                                     </tr>
@@ -44,6 +45,7 @@
                                         <tr>
                                             <td><?= $no++ ?></td>
                                             <td><?= $result['nama_company'] ?></td>
+                                            <td><?= $result['email'] ?></td>
                                             <td><img src="<?= base_url('assets/upload_company/') . $result['gambar'] ?>" alt="No Image" width="30px"></td>
                                             <td class="text-center">
                                                 <a href="<?= base_url('admin/update_company/') . $result['id'] ?>" class="btn btn-warning">Ubah</a>

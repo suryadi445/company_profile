@@ -121,9 +121,16 @@ class Auth extends CI_Controller
                     'status'    => $user['status']
                 ];
 
-                $this->session->set_flashdata('flash', 'Selamat datang ' . $data['nama']);
-                $this->session->set_userdata($data);
-                redirect('admin');
+                if ($user['status'] == 'user') {
+                    $user_login = $user['nama'];
+                    $this->session->set_flashdata('sukses', 'Selamat datang ' . $data['nama']);
+                    $this->session->set_userdata('nama', $user_login);
+                    redirect('home');
+                } else {
+                    $this->session->set_flashdata('flash', 'Selamat datang ' . $data['nama']);
+                    $this->session->set_userdata($data);
+                    redirect('admin');
+                }
             } else {
                 $this->session->set_flashdata('flash', 'Password yang anda masukkan salah');
 
@@ -138,6 +145,11 @@ class Auth extends CI_Controller
     // logout
     public function logout()
     {
+        $array  = [
+            'id', 'email', 'nama', 'status'
+        ];
+
+        $this->session->unset_userdata($array);
         $this->session->sess_destroy();
 
         redirect('auth/login');

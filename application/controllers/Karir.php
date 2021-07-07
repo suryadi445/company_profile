@@ -13,10 +13,13 @@ class Karir extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'Karir';
+        $data['judul']      = 'Karir';
+        $data['row']        = $this->Admin_model->row('company', 1, 'id');
+        $data['perusahaan'] = $data['row']['nama_company'];
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar', $data);
-        $this->load->view('footer/karir');
+        $this->load->view('footer/karir', $data);
         $this->load->view('templates/footer');
     }
 
@@ -48,7 +51,6 @@ class Karir extends CI_Controller
                 'email'         => $email,
                 'phone'         => $phone,
                 'gender'        => $gender,
-                'tanggal_input' => date('yyyy-mm-dd')
             ];
 
             $query = $this->Admin_model->insert('karir', $data);

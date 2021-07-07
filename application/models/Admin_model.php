@@ -39,10 +39,6 @@ class Admin_model extends CI_Model
     // MENCARI ROW TERAKHIR DI TABEL TENTANG KAMI
     public function last_field($field, $where)
     {
-        // SELECT id, visi from tentang_kami WHERE visi!='' order by id DESC limit 1
-        // SELECT id, misi from tentang_kami WHERE misi !='' order by id DESC LIMIT 1
-        // SELECT id, sejarah from tentang_kami WHERE sejarah !='' order by id DESC LIMIT 1
-
         return $this->db
             ->select('id')
             ->select($field)
@@ -76,17 +72,13 @@ class Admin_model extends CI_Model
     // akhir table carousel
 
     // HALAMAN HOME UNTUK MENCARI RANDOM ROW
-    public function random($tabel)
+    public function random($tabel, $limit)
     {
-        // SELECT column FROM table
-        // ORDER BY RAND()
-        // LIMIT 10
-
         return $this->db
             ->select('*')
             ->from($tabel)
             ->order_by('id', 'random')
-            ->limit(6)
+            ->limit($limit)
             ->get()->result_array();
     }
 

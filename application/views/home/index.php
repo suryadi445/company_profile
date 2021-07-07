@@ -5,54 +5,64 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
+    <!-- alert -->
+    <?php if ($this->session->flashdata()) { ?>
+        <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
+    <?php } ?>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="<?= base_url('assets/image/makanan/bakso.jpg') ?>" class="d-block w-100 img-fluid">
+            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar1; ?>" class="d-block w-100 img-fluid">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4"><b>Surya_Resto</b></h1>
+                <h1 class="display-4"><b><?= $perusahaan; ?></b></h1>
                 <p class="lead"><?= $text ?></p>
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-4">
-                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
-                        </div>
-                        <div class="col-4">
+                        <?php if ($this->session->userdata('nama')) { ?>
+                            <a class="btn btn_carousel_masuk btn-lg logout" href="<?= base_url('auth/logout') ?>" role="button">Logout</a>
+                        <?php } else { ?>
+                            <div class="col-4">
+                                <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
+                            </div>
                             <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('assets/image/makanan/sate_ayam.jpg') ?>" class="d-block w-100 img-fluid">
+            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar2; ?>" class="d-block w-100 img-fluid">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4"><b>Surya_Resto</b></h1>
+                <h1 class="display-4"><b><?= $perusahaan; ?></b></h1>
                 <p class="lead"><?= $text ?></p>
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-4">
-                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
-                        </div>
-                        <div class="col-4">
+                        <?php if ($this->session->userdata('nama')) { ?>
+                            <a class="btn btn_carousel_masuk btn-lg logout" href="<?= base_url('auth/logout') ?>" role="button">Logout</a>
+                        <?php } else { ?>
+                            <div class="col-4">
+                                <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
+                            </div>
                             <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('assets/image/makanan/martabak_manis.jpg') ?>" class="d-block w-100 img-fluid">
+            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar3; ?>" class="d-block w-100 img-fluid">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4"><b>Surya_Resto</b></h1>
+                <h1 class="display-4"><b><?= $perusahaan; ?></b></h1>
                 <p class="lead"><?= $text ?></p>
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-4">
-                            <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
-                        </div>
-                        <div class="col-4">
+                        <?php if ($this->session->userdata('nama')) { ?>
+                            <a class="btn btn_carousel_masuk btn-lg logout" href="<?= base_url('auth/logout') ?>" role="button">Logout</a>
+                        <?php } else { ?>
+                            <div class="col-4">
+                                <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
+                            </div>
                             <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -113,7 +123,7 @@
                     </div>
                     <div class="col-lg-6" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
                         <h1>JADILAH BAGIAN DARI KELUARGA KAMI</h1>
-                        <p>Di PT. Surya_Resto, kami lebih dari sekadar bisnis. Kami adalah komunitas tempat Anda berlatih keterampilan hidup dan sebagai wadah untuk mengejar serta mewujudkan impianmu.</p>
+                        <p>Di <?= $perusahaan; ?>, kami lebih dari sekadar bisnis. Kami adalah komunitas tempat Anda berlatih keterampilan hidup dan sebagai wadah untuk mengejar serta mewujudkan impianmu.</p>
                         <div class="text-center mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="700">
                             <a href="<?= base_url('karir') ?>" class="btn btn_merah">Gabung Bersama Kami</a>
                         </div>

@@ -30,7 +30,7 @@
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
                         <h1 class="text-center font-weight-bold"></h1>
-                        <p class="text-center" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">Di Surya_Resto kami saling menghargai masing-masing. Sebagai komunitas yang ketat, kami beroperasional dengan mengikuti tiga nilai:
+                        <p class="text-center" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-out">Di <?= $perusahaan; ?> kami saling menghargai masing-masing. Sebagai komunitas yang ketat, kami beroperasional dengan mengikuti tiga nilai:
                         </p>
                     </div>
                     <div class="col-lg-3"></div>
@@ -60,7 +60,7 @@
                         <img src="<?= base_url('assets/image/future.png') ?>" class="card-img-top">
                         <div class="card-body">
                             <h4 class="text-center font-weight-bold">Masa Depan</h4>
-                            <p class="card-text text-center">Di Surya_Resto, Kami akan mendorong setiap langkah yang Anda ambil dan menyediakan peluang untuk mengembangkan potensi diri debagai profesional.</p>
+                            <p class="card-text text-center">Di <?= $perusahaan; ?>, Kami akan mendorong setiap langkah yang Anda ambil dan menyediakan peluang untuk mengembangkan potensi diri debagai profesional.</p>
                         </div>
                     </div>
                 </div>

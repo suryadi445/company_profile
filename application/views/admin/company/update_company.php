@@ -35,10 +35,17 @@
                                 <!-- akhir alert -->
                                 <input type="hidden" name="id" value="<?= $row['id']; ?>">
                                 <div class="form-group row">
-                                    <label for="company_baru" class="col-sm-4 col-form-label">Company</label>
+                                    <label for="company_baru" class="col-sm-4 col-form-label">Nama Perusahaan</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" name="company_baru" autocomplete="off" value="<?= $row['nama_company']; ?>">
                                         <div class="text-danger mb-n4"><?= form_error('company_baru'); ?></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-4 col-form-label">Email Perusahaan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="email" autocomplete="off" value="<?= $row['email']; ?>">
+                                        <div class="text-danger mb-n4"><?= form_error('email'); ?></div>
                                     </div>
                                 </div>
                                 <div class="form-group row">

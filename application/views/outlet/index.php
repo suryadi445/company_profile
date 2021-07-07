@@ -8,7 +8,7 @@
                             <img src="<?= base_url('assets/image/maps.jpg') ?>" class="card-img-top logo_jumbotron" width="100%" height="600px">
                         </div>
                         <div class="col-lg-5 text-center">
-                            <h2 class="text-capitalize" id="csr_title">Temukan Surya_Resto di dekatmu</h2>
+                            <h2 class="text-capitalize" id="csr_title">Temukan Kami di dekatmu</h2>
                         </div>
                     </div>
                 </div>

@@ -1105,9 +1105,11 @@ class Admin extends CI_Controller
     public function company()
     {
         $company    = htmlspecialchars($this->input->post('company_baru', true));
+        $email      = htmlspecialchars($this->input->post('email', true));
         $gambar     = $_FILES['gambar']['name'];
 
         $this->form_validation->set_rules('company_baru', 'Nama Perusahaan', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email Perusahaan', 'required|valid_email|trim');
 
         if (empty($_FILES['gambar']['name'])) {
             $this->form_validation->set_rules('gambar', 'Gambar', 'required');
@@ -1144,7 +1146,8 @@ class Admin extends CI_Controller
 
                 $data   = [
                     'nama_company'  => $company,
-                    'gambar'        => $gambar
+                    'gambar'        => $gambar,
+                    'email'         => $email
                 ];
 
                 $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
@@ -1181,6 +1184,7 @@ class Admin extends CI_Controller
     public function proses_update_company()
     {
         $id         = htmlspecialchars($this->input->post('id', true));
+        $email      = htmlspecialchars($this->input->post('email', true));
         $company    = htmlspecialchars($this->input->post('company_baru', true));
         $gambar     = $_FILES['gambar']['name'];
 
@@ -1214,7 +1218,8 @@ class Admin extends CI_Controller
 
                     $data               =   [
                         'nama_company'  => $company,
-                        'gambar'        => $gambar_baru
+                        'gambar'        => $gambar_baru,
+                        'email'         => $email
                     ];
 
                     unlink(FCPATH . 'assets/upload_company/' . $foto_lama); // untuk menghapus file yg sudah ada
@@ -1237,6 +1242,7 @@ class Admin extends CI_Controller
                 // tidak ada gambar
                 $data               =   [
                     'nama_company'  => $company,
+                    'email'         => $email
                 ];
 
                 $this->Admin_model->update($id, 'company', $data);

@@ -41,6 +41,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="email" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="email" autocomplete="off" value="<?= set_value('email') ?>">
+                                        <div class="text-danger mb-n4"><?= form_error('email'); ?></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="gambar" class="col-sm-4 col-form-label">Logo Perusahaan</label>
                                     <div class="input-group col-sm-8">
                                         <div class="custom-file">

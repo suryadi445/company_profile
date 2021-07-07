@@ -1,3 +1,15 @@
+/* navbar */
+.gold {
+	color: goldenrod;
+	font-weight: bolder;
+}
+
+.gold:hover {
+	color: goldenrod;
+	font-weight: bolder;
+}
+
+
 .garis_vertikal {
 	color: goldenrod;
 	margin-top: 7px;
@@ -14,6 +26,11 @@ ul.navbar-nav a {
 
 
 /* slider */
+.carousel-inner .carousel-item img {
+	height: 800px;
+	background-size: cover;
+}
+
 .carousel-item {
 	height: 600px;
 }

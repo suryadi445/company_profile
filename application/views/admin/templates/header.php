@@ -37,6 +37,19 @@
 
 
     <style>
+        /* sidebar */
+        .brand-link img {
+            position: relative;
+            top: 8px;
+            width: 600%;
+        }
+
+        .sidebar p span {
+            margin: auto;
+            text-align: center;
+            width: 50%;
+        }
+
         /* for sweetalert */
         .swal2-popup .swal2-styled:focus {
             box-shadow: none !important;

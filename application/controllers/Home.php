@@ -18,7 +18,13 @@ class Home extends CI_Controller
         // untuk tampilan carousel
         $data['text_carousel_awal']       = $this->Admin_model->get_text('carousel');
         $data['text']                     = $data['text_carousel_awal']['keterangan'];
-        $data['random']                   = $this->Admin_model->random('menu_makanan');
+        $data['random']                   = $this->Admin_model->random('menu_makanan', 6);
+        $data['carousel']                 = $this->Admin_model->random('menu_makanan', 3);
+        $data['row']                      = $this->Admin_model->row('company', 1, 'id');
+        $data['perusahaan']               = $data['row']['nama_company'];
+        $data['gambar1']                  = $data['carousel'][0]['gambar'];
+        $data['gambar2']                  = $data['carousel'][1]['gambar'];
+        $data['gambar3']                  = $data['carousel'][2]['gambar'];
 
         $data['judul'] = 'Home';
         $this->load->view('templates/header', $data);
