@@ -49,10 +49,34 @@ $(document).ready(function(){
         })
     })
 
-    // date time picker
+    //! date time picker
     $(".datetimepicker").datetimepicker({ 
-        format: 'd-m-Y H:i' 
+        format: 'd-m-Y H:i', 
+        minDate: 0,
+        step:15,
     });
+
+    $(document).on('change','.datetime_validasi',function(){
+        var time = $('.datetimepicker').val()
+
+        $.ajax({
+            url: 'home/date_time',
+            type: 'post',
+            data: {
+                time: time
+            },
+            success: function (data) {
+                // console.log(data);
+                if(data != 'pesan'){
+                    $('.error_waktu').html(data)
+                    $('.datetimepicker').val('')
+                }else{
+                    console.log('berhasil');
+                }
+                
+            }
+        })
+    })
 
     // ajax pada modal pesan menu
     $('.pesan_menu').click(function(){

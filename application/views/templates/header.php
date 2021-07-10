@@ -1,3 +1,8 @@
+<?php
+$row        = $this->db->get('company')->row_array();
+$gambar     = $row['gambar'];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
-    <link rel="icon" href="<?= base_url('assets/image/logo_resto.png') ?>" type="image/gif" sizes="50x50">
+    <link rel="icon" href="<?= base_url('assets/upload_company/') ?><?= $gambar; ?>" type="image/gif" sizes="50x50">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">

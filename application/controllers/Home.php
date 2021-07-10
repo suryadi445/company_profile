@@ -20,8 +20,6 @@ class Home extends CI_Controller
         $data['text']                     = $data['text_carousel_awal']['keterangan'];
         $data['random']                   = $this->Admin_model->random('menu_makanan', 6);
         $data['carousel']                 = $this->Admin_model->random('menu_makanan', 3);
-        $data['row']                      = $this->Admin_model->row('company', 1, 'id');
-        $data['perusahaan']               = $data['row']['nama_company'];
         $data['gambar1']                  = $data['carousel'][0]['gambar'];
         $data['gambar2']                  = $data['carousel'][1]['gambar'];
         $data['gambar3']                  = $data['carousel'][2]['gambar'];
@@ -198,5 +196,71 @@ class Home extends CI_Controller
         $result         = $qty_number * $harga_number;
 
         echo number_format($result, "0", ",", ".");
+    }
+
+    public function date_time()
+    {
+        date_default_timezone_set('Asia/jakarta');
+
+        $time = $this->input->post('time');
+
+        // memisahkan jam dan tanggal
+        $pisah_jam      = explode(' ', $time);
+        // memisahkan ':' (titik dua) dalam jam
+        $array_jam      = explode(':', $pisah_jam[1]);
+        $jam_input      = $array_jam[0];
+        $menit_input    = $array_jam[1];
+
+        $date           = date('H:i');
+        $date_int       = strtotime($date);
+
+        $jam_sekarang   = date('Hi', $date_int);
+
+        $jam_integer    = (int)$jam_input;
+
+        $waktu_input = $jam_input . $menit_input;
+
+        // memisahkan jam dan tanggal
+        $pisah_array    = explode('-', $time);
+        // pisah tahun dengan tanggal
+        $array_thn_tgl  = $pisah_array[2];
+        $pisah_tahun    = explode(' ', $array_thn_tgl);
+        //! data fix
+        $tanggal_input  = $pisah_array[0];
+        $bulan_input    = $pisah_array[1];
+        $tahun_input    = $pisah_tahun[0];
+
+        // mendapatkan tanggal sekarang
+        $tgl_sekarang   = date('d-m-Y');
+        $pisah_tgl      = explode('-', $tgl_sekarang);
+
+        $tanggal_skrg   = $pisah_tgl[0];
+        $bulan_skrg     = $pisah_tgl[1];
+        $tahun_skrg     = $pisah_tgl[2];
+
+        if ($tanggal_input != $tanggal_skrg) {
+            if ($jam_integer < 10) {
+                echo 'Tutup. Kami mulai operasional pukul 10.00 pagi';
+            } elseif ($jam_integer > 20) {
+                echo 'Tutup. Kami selesai operasional pukul 21.00 malam ';
+            } else {
+                echo 'pesan';
+            }
+            die;
+        } elseif ($tanggal_input == $tanggal_skrg) {
+            if ($jam_integer < 10) {
+                echo 'Tutup. Kami mulai operasional pukul 10.00 pagi';
+            } elseif ($waktu_input <= $jam_sekarang) {
+                echo 'Anda tidak bisa memesan diwaktu yang sudah lewat';
+            } elseif ($jam_integer > 20) {
+                echo 'Tutup. Kami selesai operasional pukul 21.00 malam ';
+            } elseif ($waktu_input > $jam_sekarang + 15) {
+                echo 'pesan';
+            } elseif ($waktu_input != $jam_sekarang) {
+                echo 'Anda harus memesan 15 menit dari waktu pemesanan';
+            } else {
+                echo 'pesan';
+            }
+        }
     }
 }

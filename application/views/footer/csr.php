@@ -38,8 +38,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1500">
-                        <h1>Kontribusi Sosial Surya_Resto</h1>
-                        <p class="text-justify pr-3">Surya_Resto berkomitmen untuk secara konsisten berkontribusi untuk masyarakat Indonesia. Salah satu gerakan yang selalu kami lakukan ialah berbagi dengan mereka yang membutuhkan melalui jaringan restoran kami. Lebih dari ribuan bantuan dalam bentuk makanan maupun lainnya telah kami salurkan secara langsung baik itu untuk bencana maupun bantuan untuk masyarakat sekitar lingkungan restoran Surya_Resto.</p>
+                        <h1 class="kontribusi">Kontribusi Sosial Surya_Resto</h1>
+                        <p class="text-justify pr-3 kontribusi_text">Surya_Resto berkomitmen untuk secara konsisten berkontribusi untuk masyarakat Indonesia. Salah satu gerakan yang selalu kami lakukan ialah berbagi dengan mereka yang membutuhkan melalui jaringan restoran kami. Lebih dari ribuan bantuan dalam bentuk makanan maupun lainnya telah kami salurkan secara langsung baik itu untuk bencana maupun bantuan untuk masyarakat sekitar lingkungan restoran Surya_Resto.</p>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,6 @@
                     <h1 class="text-center mb-5">Beberapa Program CSR Yang Telah Kami Lakukan</h1>
                 </div>
             </div>
-
             <div class="row row-cols-1 row-cols-md-3">
                 <div class="col mb-4" data-aos="fade-up" data-aos-duration="1200">
                     <div class="card h-100 shadow-sm p-3 mb-5 bg-white rounded">

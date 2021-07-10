@@ -11,7 +11,7 @@
     <?php } ?>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar1; ?>" class="d-block w-100 img-fluid">
+            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar1; ?>" class="d-block w-100 slide img-fluid">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b><?= $perusahaan; ?></b></h1>
                 <p class="lead"><?= $text ?></p>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar2; ?>" class="d-block w-100 img-fluid">
+            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar2; ?>" class="d-block w-100 slide img-fluid">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b><?= $perusahaan; ?></b></h1>
                 <p class="lead"><?= $text ?></p>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar3; ?>" class="d-block w-100 img-fluid">
+            <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar3; ?>" class="d-block w-100 slide img-fluid">
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-4"><b><?= $perusahaan; ?></b></h1>
                 <p class="lead"><?= $text ?></p>
@@ -228,7 +228,7 @@
                                     <div class="form-group row">
                                         <label for="waktuPengambilan" class="col-sm-3 col-form-label">Waktu</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
+                                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>" readonly>
                                             <small class="text-dark">*Waktu pengambilan pesanan</small>
                                             <div class="text-danger mb-n4 error error_waktu"><?= form_error('waktuPengambilan'); ?></div>
                                         </div>

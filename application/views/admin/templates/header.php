@@ -1,3 +1,8 @@
+<?php
+$row        = $this->db->get('company')->row_array();
+$gambar     = $row['gambar'];
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -7,6 +12,8 @@
     <title><?= $judul; ?></title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- icon -->
+    <link rel="icon" href="<?= base_url('assets/upload_company/') ?><?= $gambar; ?>" type="image/gif" sizes="50x50">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/') ?>plugins/fontawesome-free/css/all.min.css">
     <!-- <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"> -->

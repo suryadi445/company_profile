@@ -1,5 +1,5 @@
 <?php
-$data['row']   = $this->db->get_where('company', ['id' => 1])->row_array();
+$data['row']   = $this->db->get('company')->row_array();
 $nama_company  = $data['row']['nama_company'];
 $gambar        = $data['row']['gambar'];
 ?>

@@ -55,6 +55,12 @@
                                             <button type="submit" class="btn btn-primary" id="masuk">Masuk</button>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col text-center mt-3">
+                                            Belum memiliki akun?
+                                            <a href="<?= base_url('auth/index'); ?>" class="text-primary text-decoration-none">Daftar</a>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>

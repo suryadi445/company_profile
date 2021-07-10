@@ -96,6 +96,12 @@
                                             <button type="submit" class="btn btn-primary" id="simpan">Simpan</button>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col text-center mt-3">
+                                            Sudah memiliki akun?
+                                            <a href="<?= base_url('auth/logout'); ?>" class="text-primary text-decoration-none">Masuk</a>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>

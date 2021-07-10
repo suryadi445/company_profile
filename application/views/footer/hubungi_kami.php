@@ -2,7 +2,7 @@
     <div class="container-fluid pt-5">
         <div class="row ml-2 pt-2">
             <div class="col-lg-12">
-                <h1 id="promo_title">Hubungi Kami</h1>
+                <h1 id="hubungi_title">Hubungi Kami</h1>
             </div>
         </div>
         <?php if ($this->session->flashdata()) : ?>

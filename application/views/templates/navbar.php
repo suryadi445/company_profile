@@ -1,25 +1,44 @@
+<?php
+$row        = $this->db->get('company')->row_array();
+$perusahaan = $row['nama_company'];
+?>
+
 <body id="home">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
         <!-- <div class="container"> -->
-        <a class="navbar-brand text-light ml-3" href="#"><?= $perusahaan; ?></a>
-        <div class="btn-group">
-            <button type="button" class="btn gold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user mr-2"></i>
-                <?php if ($this->session->userdata('nama')) { ?>
-                    <span class="text-capitalize"><?= $this->session->userdata('nama'); ?></span>
-                <?php } else { ?>
-                    Login
-                <?php } ?>
-            </button>
-            <div class="dropdown-menu">
-                <?php if ($this->session->userdata('nama')) { ?>
-                    <a class="dropdown-item gold logout" href="<?= base_url('auth/logout'); ?>">Logout</a>
-                <?php } else { ?>
-                    <a class="dropdown-item gold" href="<?= base_url('auth/login'); ?>">Masuk</a>
-                <?php } ?>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a class="navbar-brand text-light ml-3" href="#"><?= $perusahaan; ?></a>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="btn-group">
+                            <button type="button" id="btn_login" class="btn gold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="text-capitalize">
+                                    <i class="fas fa-user mr-2"></i>
+                                    <?php if ($this->session->userdata('nama')) { ?>
+                                        Logout
+                                    <?php } else { ?>
+                                        Login
+                                    <?php } ?>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <?php if ($this->session->userdata('nama')) { ?>
+                                    <small>( <?= $this->session->userdata('nama'); ?> )</small>
+                                    <a class="dropdown-item gold logout" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                                <?php } else { ?>
+                                    <a class="dropdown-item gold" href="<?= base_url('auth/login'); ?>">Masuk</a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+        <button class="navbar-toggler navbar-toggler-right btn_navbarNav" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
