@@ -186,7 +186,7 @@
                                     <div class="form-group row">
                                         <label for="waktuPengambilan" class="col-sm-3 col-form-label">Waktu</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
+                                            <input type="text" class="form-control datetimepicker datetime_validasi" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>">
                                             <small class="text-dark">*Waktu pengambilan pesanan</small>
                                             <div class="text-danger mb-n4 error error_waktu"><?= form_error('waktuPengambilan'); ?></div>
                                         </div>

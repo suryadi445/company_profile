@@ -1,3 +1,10 @@
+<?php
+$data['row']        = $this->db->get('company')->row_array();
+$perusahaan         = $data['row']['nama_company'];
+$logo               = $data['row']['gambar'];
+$email              = $data['row']['email'];
+?>
+
 <!-- carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -5,7 +12,6 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-    <!-- alert -->
     <?php if ($this->session->flashdata()) { ?>
         <div class="flash" data-id="<?= $this->session->flashdata('sukses') ?>"></div>
     <?php } ?>
@@ -13,17 +19,19 @@
         <div class="carousel-item active">
             <img src="<?= base_url('assets/upload_menu/') ?><?= $gambar1; ?>" class="d-block w-100 slide img-fluid">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4"><b><?= $perusahaan; ?></b></h1>
-                <p class="lead"><?= $text ?></p>
+                <h1 class="display-4"><b><?= $perusahaan; ?></b></h1><!-- PT SURYA RESTO -->
+                <p class="lead"><?= $text ?></p><!-- TEXT CAROUSEL -->
                 <div class="container">
                     <div class="row justify-content-center">
                         <?php if ($this->session->userdata('nama')) { ?>
                             <a class="btn btn_carousel_masuk btn-lg logout" href="<?= base_url('auth/logout') ?>" role="button">Logout</a>
                         <?php } else { ?>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
                             </div>
-                            <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                            <div class="col-6">
+                                <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -39,10 +47,12 @@
                         <?php if ($this->session->userdata('nama')) { ?>
                             <a class="btn btn_carousel_masuk btn-lg logout" href="<?= base_url('auth/logout') ?>" role="button">Logout</a>
                         <?php } else { ?>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
                             </div>
-                            <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                            <div class="col-6">
+                                <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -58,10 +68,12 @@
                         <?php if ($this->session->userdata('nama')) { ?>
                             <a class="btn btn_carousel_masuk btn-lg logout" href="<?= base_url('auth/logout') ?>" role="button">Logout</a>
                         <?php } else { ?>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <a class="btn btn_carousel_daftar btn-lg" href="<?= base_url('auth/index') ?>">Daftar</a>
                             </div>
-                            <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                            <div class="col-6">
+                                <a class="btn btn_carousel_masuk btn-lg" href="<?= base_url('auth/login') ?>" role="button">Masuk</a>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -153,7 +165,7 @@
                             </div>
                             <div class="col-lg-6 ml-auto">
                                 <h3 id="harga_modal"></h3>
-                                <p id="keterangan_modal" class="mr-2 text-justify"></p>
+                                <p id="keterangan_modal" class="text-justify ml-1 mr-1"></p>
                             </div>
                         </div>
                     </div>
@@ -228,7 +240,7 @@
                                     <div class="form-group row">
                                         <label for="waktuPengambilan" class="col-sm-3 col-form-label">Waktu</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control datetimepicker" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>" readonly>
+                                            <input type="text" class="form-control datetimepicker datetime_validasi" name="waktuPengambilan" autocomplete="off" value="<?= set_value('waktuPengambilan') ?>" readonly>
                                             <small class="text-dark">*Waktu pengambilan pesanan</small>
                                             <div class="text-danger mb-n4 error error_waktu"><?= form_error('waktuPengambilan'); ?></div>
                                         </div>

@@ -66,13 +66,10 @@ $email              = $data['row']['email'];
                                     </a>
                                 </div>
                                 <div class="col-lg-12 text-center mt-3" id="wrap_email">
-                                    <a href="">
+                                    <a href="mailto:<?= $email; ?>" target="_blank">
                                         <i class="fas fa-envelope text-center logo" id="email">
                                         </i>
                                     </a>
-                                </div>
-                                <div class="col-lg-12 text-center">
-                                    <p class="text_email"><?= $email; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -87,15 +84,21 @@ $email              = $data['row']['email'];
         <div class="row ml-1 mt-1 pb-1">
             <div class="col-lg-12 text-left">
                 <div class="row" id="pt_suryadi">
-                    <div class="col-lg-6">
-                        <i class="far fa-copyright"></i>
-                        <?= $perusahaan; ?>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="container">
-                            <div class="row float-right">
-                                <a href="<?= base_url('kebijakan') ?>" class="mr-3" id="kebijakan">Kebijakan Privasi</a>
-                                <a href="<?= base_url('snk') ?>" class="mr-3" id="syarat">Syarat & Ketentuan</a>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <i class="far fa-copyright"></i>
+                                <?= $perusahaan; ?>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row justify-content-end">
+                                    <div class="col-lg-4">
+                                        <a href="<?= base_url('kebijakan') ?>" class="mr-3" id="kebijakan">Kebijakan Privasi</a>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a href="<?= base_url('snk') ?>" class="mr-3" id="syarat">Syarat & Ketentuan</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
