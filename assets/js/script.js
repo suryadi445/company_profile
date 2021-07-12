@@ -1,3 +1,4 @@
+
 // halaman admin tentang kami
 $(document).ready(function(){
     $('.show_password').click(function(){
@@ -363,8 +364,15 @@ $(document).ready(function(){
             })
         }
     })
-
-
+    
+    $(window).on('click',function() {
+        $('.navbar-collapse').collapse('hide');
+    });
+    
+    $(window).on('scroll',function() {
+        $('.navbar-collapse').collapse('hide');
+    });
+    
     // media query halaman home untuk carousel
     var smallScreen = window.matchMedia("(max-width: 480px)");
     if (smallScreen.matches){

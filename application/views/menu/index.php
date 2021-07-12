@@ -62,7 +62,11 @@
 
 <!-- section minuman -->
 <section class="container-fluid" id="minuman">
-    <h2 class="text-center mb-4">MINUMAN</h2>
+    <?php if (empty($minuman)) { ?>
+        <h2 class="text-center mb-4"></h2>
+    <?php } else { ?>
+        <h2 class="text-center mb-4">MINUMAN</h2>
+    <?php } ?>
     <div class="row row-cols-1 row-cols-md-3 justify-content-center">
         <?php foreach ($minuman as $drink) : ?>
             <div class="col mb-4">
@@ -76,7 +80,7 @@
                             <div class="container">
                                 <div class="row justify-content-around">
                                     <div class="col-6">
-                                        <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>" data-gambar="<?= $drink['gambar']; ?>" data-keterangan="<?= $drink['keterangan']; ?>">Detail Menu</a>
+                                        <a href="#" class="btn btn_menu mb-3 modal_detail" data-toggle="modal" data-target="#modal_detail" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>" data-gambar="<?= $drink['gambar']; ?>" data-keterangan="<?= $drink['keterangan']; ?>">Detail</a>
                                     </div>
                                     <div class="col-6">
                                         <a href="#" class="btn btn_menu mb-3 buka_modal" data-toggle="modal" data-target="#modalpesan_makanan" data-id="<?= $drink['id']; ?>" data-menu="<?= $drink['nama_menu']; ?>" data-harga="<?= $drink['harga_menu']; ?>">Pesan</a>

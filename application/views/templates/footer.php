@@ -88,7 +88,7 @@ $email              = $data['row']['email'];
                         <div class="row">
                             <div class="col-lg-6">
                                 <i class="far fa-copyright"></i>
-                                <?= $perusahaan; ?>
+                                <span class="company"><?= $perusahaan; ?></span>
                             </div>
                             <div class="col-lg-6">
                                 <div class="row justify-content-end">
